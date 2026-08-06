@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prosumer Matrix | Hardware & Equipment Spec Database</title>
+  <meta name="description" content="Comprehensive database of prosumer hardware specifications including 3D printers, CNC/laser cutters, solar power systems, drones, espresso machines, and utility EVs.">
+  <meta name="theme-color" content="#0F172A">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+
+  <!-- Preconnect for external resources -->
+  <link rel="preconnect" href="https://images.weserv.nl">
+  <link rel="dns-prefetch" href="https://images.weserv.nl">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Vite will inject the module script -->
+  <script type="module" crossorigin src="./assets/main-Calmjgaj.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DZbHRBoY.css">
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Main Application Container -->
+  <div id="matrixContainer"></div>
+
+  <!-- Loading State -->
+  <div id="loadingState" class="loading-state" aria-live="polite">
+    <div class="loading-spinner">
+      <svg viewBox="0 0 50 50">
+        <circle cx="25" cy="25" r="20" fill="none" stroke="#1E293B" stroke-width="4"/>
+        <path d="M25 5a20 20 0 0140 0" fill="none" stroke="#0EA5E9" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <p class="loading-text">Loading Prosumer Matrix...</p>
+  </div>
+
+  <!-- Import main app module -->
+
+  <!-- Inline critical CSS for initial render -->
+  <style>
+    /* Critical CSS for initial paint */
+    .loading-state {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #0F172A;
+      color: #94A3B8;
+      font-family: 'Inter', system-ui, sans-serif;
+      z-index: 9999;
+    }
+    .loading-spinner {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+      animation: spin 1s linear infinite;
+    }
+    .loading-spinner svg {
+      width: 100%;
+      height: 100%;
+    }
+    .loading-text {
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    :root {
+      --bg-primary: #0F172A;
+      --bg-surface: #1E293B;
+      --bg-elevated: #334155;
+      --border-color: #334155;
+      --accent-sky: #0EA5E9;
+      --accent-emerald: #10B981;
+      --text-primary: #F1F5F9;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --error: #EF4444;
+      --warning: #F59E0B;
+      --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-ui);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+      background: var(--accent-sky);
+      color: var(--bg-primary);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent-sky);
+      outline-offset: 2px;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    a {
+      color: var(--accent-sky);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .skip-link:focus {
+      left: 16px;
+      top: 16px;
+      width: auto;
+      height: auto;
+      padding: 8px 16px;
+      background: var(--accent-sky);
+      color: var(--bg-primary);
+      border-radius: 4px;
+      z-index: 10000;
+    }
+
+    .error-state {
+      padding: 48px 24px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .error-state h2 {
+      color: var(--error);
+      margin-bottom: 16px;
+    }
+
+    .error-state pre {
+      background: var(--bg-surface);
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      text-align: left;
+      margin-top: 16px;
+    }
+
+    /* Loading state hidden when app renders */
+    .loading-state.loaded {
+      display: none;
+    }
+  </style>
+</body>
+</html>
