@@ -1,0 +1,30 @@
+{
+  "name": "prosumer-matrix",
+  "version": "1.0.0",
+  "description": "Enterprise-grade Hardware & Equipment Spec Matrix - Static deployment to GitHub Pages",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "ajv test -s src/data/HardwareSchema.json -d src/data/hardware.json --valid && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "hardware",
+    "specifications",
+    "matrix",
+    "prosumer",
+    "3d-printers",
+    "cnc",
+    "solar",
+    "drones",
+    "espresso",
+    "ev"
+  ],
+  "author": "Prosumer Matrix Team",
+  "license": "MIT",
+  "devDependencies": {
+    "ajv": "^8.12.0",
+    "ajv-cli": "^5.0.0",
+    "vite": "^5.0.0"
+  }
+}

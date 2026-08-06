@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hardware Spec Matrix Schema",
+  "description": "JSON Schema for validating hardware product entries in the Prosumer Matrix application",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "brand",
+      "category",
+      "priceUsd",
+      "directUrl",
+      "imageUrl",
+      "affiliateNetwork",
+      "merchantId",
+      "roiScore",
+      "specs"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "Unique identifier for the product (used in URLs and data attributes)",
+        "pattern": "^[a-z0-9-]+$"
+      },
+      "name": {
+        "type": "string",
+        "description": "Product display name",
+        "minLength": 1
+      },
+      "brand": {
+        "type": "string",
+        "description": "Manufacturer/brand name",
+        "minLength": 1
+      },
+      "category": {
+        "type": "string",
+        "description": "Product category",
+        "enum": [
+          "3D Printers",
+          "CNC & Laser Cutters",
+          "Off-Grid Solar & Power",
+          "Thermal & Mapping Drones",
+          "Prosumer Espresso",
+          "Utility EVs"
+        ]
+      },
+      "priceUsd": {
+        "type": "number",
+        "description": "Price in USD",
+        "minimum": 0
+      },
+      "directUrl": {
+        "type": "string",
+        "description": "Direct OEM/product page URL",
+        "pattern": "^https?://"
+      },
+      "imageUrl": {
+        "type": "string",
+        "description": "External CDN image URL",
+        "pattern": "^https?://"
+      },
+      "affiliateNetwork": {
+        "type": "string",
+        "description": "Primary affiliate network for this product",
+        "enum": [
+          "impact",
+          "awin",
+          "shareasale",
+          "amazon",
+          "none"
+        ]
+      },
+      "merchantId": {
+        "type": "string",
+        "description": "Merchant/merchant ID within the affiliate network",
+        "minLength": 1
+      },
+      "roiScore": {
+        "type": "number",
+        "description": "Return on Investment score (1-100)",
+        "minimum": 1,
+        "maximum": 100
+      },
+      "specs": {
+        "type": "object",
+        "description": "Category-specific technical specifications",
+        "minProperties": 1,
+        "additionalProperties": {
+          "type": ["string", "number", "boolean"]
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "minItems": 1,
+  "uniqueItems": true
+}
