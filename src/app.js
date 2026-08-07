@@ -59,6 +59,38 @@ function startApp() {
 // Auto-start
 init();
 
+// Register service worker for offline support and cache management
+if ('serviceWorker' in navigator) {
+  // Wait for the page to fully load before registering
+  window.addEventListener('load', () => {
+    // The service worker is at /sw.js which becomes /prosumer-matrix/sw.js when deployed
+    // Its scope will be /prosumer-matrix/ which takes precedence over root site's SW
+    navigator.serviceWorker.register('/sw.js', {
+      scope: '/prosumer-matrix/'
+    })
+      .then((registration) => {
+        console.log('ServiceWorker registered:', registration.scope);
+        
+        // Check for updates
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          if (newWorker) {
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                console.log('New content available, refreshing...');
+                // Optionally auto-refresh or notify user
+                // window.location.reload();
+              }
+            });
+          }
+        });
+      })
+      .catch((error) => {
+        console.error('ServiceWorker registration failed:', error);
+      });
+  });
+}
+
 // Export for potential module usage
 export { init, MatrixApp };
 export default hardwareData;

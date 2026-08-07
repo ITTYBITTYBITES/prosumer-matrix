@@ -11,6 +11,8 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
+    // Copy service worker to dist folder
+    copyPublicDir: true,
     // Enable asset hashing for cache-busting
     rollupOptions: {
       input: {
