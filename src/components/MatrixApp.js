@@ -95,20 +95,6 @@ export class MatrixApp {
               <p class="matrix-subtitle">HARDWARE & EQUIPMENT SPECIFICATION DATA</p>
             </div>
           </div>
-          <div class="matrix-stats">
-            <div class="stat-item">
-              <span class="stat-value">${this.products.length}</span>
-              <span class="stat-label">Products</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-value">${this.getCategoryCount()}</span>
-              <span class="stat-label">Categories</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-value">${this.getPriceRange()}</span>
-              <span class="stat-label">Price Range</span>
-            </div>
-          </div>
         </header>
         <div class="header-disclosure" style="text-align: center; margin-top: -12px; margin-bottom: 12px; font-size: 11px; color: rgba(148, 163, 184, 0.8);">
           We may earn an affiliate commission from merchant links on this site at no extra cost to you.

@@ -2,8 +2,6 @@
 // HEADER COMPONENT
 // ============================================================================
 
-import { formatPriceRange } from '../utils/formatUtils.js';
-
 export function Header({
   products = [],
   onToggleDrawer = () => {}
@@ -12,9 +10,6 @@ export function Header({
 }
 
 export function renderHeaderHtml(products = []) {
-  const categoryCount = new Set(products.map((p) => p.category)).size;
-  const priceRange = formatPriceRange(products);
-
   return `
     <header class="matrix-header">
       <div class="matrix-brand">
@@ -37,20 +32,6 @@ export function renderHeaderHtml(products = []) {
         <div class="matrix-brand-text">
           <h1 class="matrix-title">PROSUMER MATRIX</h1>
           <p class="matrix-subtitle">HARDWARE & EQUIPMENT SPECIFICATION DATA</p>
-        </div>
-      </div>
-      <div class="matrix-stats">
-        <div class="stat-item">
-          <span class="stat-value">${products.length}</span>
-          <span class="stat-label">Products</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-value">${categoryCount}</span>
-          <span class="stat-label">Categories</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-value">${priceRange}</span>
-          <span class="stat-label">Price Range</span>
         </div>
       </div>
     </header>
