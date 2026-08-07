@@ -2,11 +2,14 @@
 // MATRIX APP COMPONENT
 // ============================================================================
 // Main application component for the Hardware & Equipment Spec Matrix
-// Handles rendering, filtering, sorting, and responsive views
+// Handles rendering, filtering, sorting, responsive views, carousel, and modals
 // ============================================================================
 
 import { getImageUrl, getProductImageFallback } from '../utils/imageProxy.js';
 import { buildProductLink, getNetworkDisplayName } from '../utils/linkBuilder.js';
+import { renderSpecsModalContent, formatSpecKey, formatSpecValue } from './SpecsModal.js';
+import { formatPriceRange, formatCurrency } from '../utils/formatUtils.js';
+import { renderImageCarouselHtml } from './ImageCarousel.js';
 
 /**
  * MatrixApp - Main application class
@@ -23,9 +26,43 @@ export class MatrixApp {
     this.searchQuery = '';
     this.sortColumn = 'name';
     this.sortDirection = 'asc';
+    this.selectedProduct = null;
+    this.isDrawerOpen = false;
 
     this.render();
     this.attachEventListeners();
+  }
+
+  /**
+   * Set selected product for Full Specs modal
+   * @param {Object|null} product
+   */
+  setSelectedProduct(product) {
+    this.selectedProduct = product;
+    if (product) {
+      this.showSpecsModal(product);
+    } else {
+      this.hideModal('specsModal');
+    }
+  }
+
+  /**
+   * Toggle the mobile slide-out drawer
+   * @param {boolean} [open]
+   */
+  toggleDrawer(open) {
+    this.isDrawerOpen = typeof open === 'boolean' ? open : !this.isDrawerOpen;
+    const drawer = this.container.querySelector('#mobileDrawer');
+    const toggleBtn = this.container.querySelector('#mobileMenuToggle');
+
+    if (drawer) {
+      drawer.classList.toggle('open', this.isDrawerOpen);
+      drawer.setAttribute('aria-hidden', (!this.isDrawerOpen).toString());
+    }
+
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-expanded', this.isDrawerOpen.toString());
+    }
   }
 
   /**
@@ -37,6 +74,17 @@ export class MatrixApp {
         <!-- Header -->
         <header class="matrix-header">
           <div class="matrix-brand">
+            <button
+              type="button"
+              class="mobile-menu-toggle"
+              id="mobileMenuToggle"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M3 6h18M3 18h18" stroke-linecap="round"/>
+              </svg>
+            </button>
             <svg class="matrix-logo" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect width="32" height="32" rx="6" fill="#0EA5E9"/>
               <path d="M8 10h16M8 16h12M8 22h8" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
@@ -57,11 +105,61 @@ export class MatrixApp {
               <span class="stat-label">Categories</span>
             </div>
             <div class="stat-item">
-              <span class="stat-value">$${this.getPriceRange()}</span>
+              <span class="stat-value">${this.getPriceRange()}</span>
               <span class="stat-label">Price Range</span>
             </div>
           </div>
         </header>
+
+        <!-- Slide-Out Mobile Drawer -->
+        <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Mobile Navigation">
+          <div class="drawer-overlay" id="drawerOverlay"></div>
+          <div class="drawer-panel">
+            <div class="drawer-header">
+              <div class="drawer-brand">
+                <svg class="matrix-logo" viewBox="0 0 32 32" fill="none">
+                  <rect width="32" height="32" rx="6" fill="#0EA5E9"/>
+                  <path d="M8 10h16M8 16h12M8 22h8" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
+                  <circle cx="24" cy="22" r="3" fill="#10B981"/>
+                </svg>
+                <div class="drawer-brand-text">
+                  <h2 class="drawer-title">PROsumer MATRIX</h2>
+                  <p class="drawer-subtitle">Categories & Controls</p>
+                </div>
+              </div>
+              <button type="button" class="drawer-close" id="drawerClose" aria-label="Close navigation menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+            <div class="drawer-body">
+              <div class="drawer-section">
+                <h3 class="drawer-section-title">Hardware Categories</h3>
+                <div class="drawer-categories" id="drawerCategories">
+                  ${this.getDrawerCategories()}
+                </div>
+              </div>
+              <div class="drawer-section">
+                <h3 class="drawer-section-title">Database Overview</h3>
+                <div class="drawer-stats">
+                  <div class="drawer-stat">
+                    <span class="drawer-stat-val">${this.products.length}</span>
+                    <span class="drawer-stat-lbl">Total Products</span>
+                  </div>
+                  <div class="drawer-stat">
+                    <span class="drawer-stat-val">${this.getCategoryCount()}</span>
+                    <span class="drawer-stat-lbl">Categories</span>
+                  </div>
+                  <div class="drawer-stat">
+                    <span class="drawer-stat-val">${this.getPriceRange()}</span>
+                    <span class="drawer-stat-lbl">Price Range</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- Search and Filter Bar -->
         <div class="matrix-controls">
@@ -77,7 +175,7 @@ export class MatrixApp {
               id="searchInput"
               aria-label="Search products"
             >
-            <button class="search-clear" id="searchClear" aria-label="Clear search" style="display: none;">
+            <button type="button" class="search-clear" id="searchClear" aria-label="Clear search" style="display: none;">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 6L6 18M6 6l12 12"/>
               </svg>
@@ -97,7 +195,7 @@ export class MatrixApp {
               <option value="priceUsd" ${this.sortColumn === 'priceUsd' ? 'selected' : ''}>Price</option>
               <option value="roiScore" ${this.sortColumn === 'roiScore' ? 'selected' : ''}>ROI Score</option>
             </select>
-            <button class="sort-direction" id="sortDirection" aria-label="Toggle sort direction" title="${this.sortDirection === 'asc' ? 'Ascending' : 'Descending'}">
+            <button type="button" class="sort-direction" id="sortDirection" aria-label="Toggle sort direction" title="${this.sortDirection === 'asc' ? 'Ascending' : 'Descending'}">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="${this.sortDirection === 'desc' ? 'rotated' : ''}">
                 <path d="M12 5v14M19 12l-7 7-7-7"/>
               </svg>
@@ -108,10 +206,10 @@ export class MatrixApp {
         <!-- Results Count -->
         <div class="results-info">
           <span class="results-count">${this.filteredProducts.length} product${this.filteredProducts.length !== 1 ? 's' : ''}</span>
-          ${this.searchQuery ? `<span class="search-query">matching "${this.searchQuery}"</span>` : ''}
+          ${this.searchQuery ? `<span class="search-query">matching "${this.escapeHtml(this.searchQuery)}"</span>` : ''}
         </div>
 
-        <!-- Main Content -->
+        <!-- Main Content (Desktop & Tablet Table) -->
         <div class="matrix-content" id="matrixContent">
           ${this.getDesktopView()}
         </div>
@@ -128,7 +226,7 @@ export class MatrixApp {
         <div class="modal-content">
           <div class="modal-header">
             <h2 id="modalTitle">Purchase Options</h2>
-            <button class="modal-close" id="modalClose" aria-label="Close modal">
+            <button type="button" class="modal-close" id="modalClose" aria-label="Close modal">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 6L6 18M6 6l12 12"/>
               </svg>
@@ -140,20 +238,20 @@ export class MatrixApp {
         </div>
       </div>
 
-      <!-- Full Specs Modal for Mobile -->
+      <!-- Full Specs Modal -->
       <div class="matrix-modal" id="specsModal" role="dialog" aria-modal="true" aria-labelledby="specsModalTitle">
         <div class="modal-overlay" id="specsModalOverlay"></div>
         <div class="modal-content modal-specs">
           <div class="modal-header">
             <h2 id="specsModalTitle">Full Specifications</h2>
-            <button class="modal-close" id="specsModalClose" aria-label="Close modal">
+            <button type="button" class="modal-close" id="specsModalClose" aria-label="Close modal">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M18 6L6 18M6 6l12 12"/>
               </svg>
             </button>
           </div>
           <div class="modal-body" id="specsModalBody">
-            <!-- Dynamic content -->
+            <!-- Dynamic content populated by showSpecsModal -->
           </div>
         </div>
       </div>
@@ -187,7 +285,7 @@ export class MatrixApp {
                       <path d="M21 15l-5-5L5 21"/>
                     </svg>
                   </span>
-                  <button class="th-sort-btn" data-column="name" aria-label="Sort by name">
+                  <button type="button" class="th-sort-btn" data-column="name" aria-label="Sort by name">
                     Product
                     <svg class="sort-arrow ${this.sortColumn === 'name' ? 'active' : ''} ${this.sortDirection === 'desc' ? 'desc' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M12 5v14M19 12l-7 7-7-7"/>
@@ -197,9 +295,9 @@ export class MatrixApp {
               </th>
               <th class="th-brand" scope="col">
                 <div class="th-content">
-                  <button class="th-sort-btn" data-column="brand" aria-label="Sort by brand">
+                  <button type="button" class="th-sort-btn" data-column="brand" aria-label="Sort by brand">
                     Brand
-                    <svg class="sort-arrow ${this.sortColumn === 'brand' ? 'active' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg class="sort-arrow ${this.sortColumn === 'brand' ? 'active' : ''} ${this.sortDirection === 'desc' ? 'desc' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path d="M12 5v14M19 12l-7 7-7-7"/>
                     </svg>
                   </button>
@@ -207,14 +305,19 @@ export class MatrixApp {
               </th>
               <th class="th-specs" scope="col">
                 <div class="th-content">
-                  <button class="th-sort-btn" data-column="specs" aria-label="Sort by specs" disabled>
+                  <button type="button" class="th-sort-btn" data-column="specs" aria-label="Sort by specs" disabled>
                     Key Specifications
                   </button>
                 </div>
               </th>
               <th class="th-price-roi" scope="col">
                 <div class="th-content">
-                  <span class="th-label">Price / ROI</span>
+                  <button type="button" class="th-sort-btn" data-column="priceUsd" aria-label="Sort by price">
+                    Price / ROI
+                    <svg class="sort-arrow ${this.sortColumn === 'priceUsd' ? 'active' : ''} ${this.sortDirection === 'desc' ? 'desc' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 5v14M19 12l-7 7-7-7"/>
+                    </svg>
+                  </button>
                 </div>
               </th>
               <th class="th-action" scope="col">
@@ -254,18 +357,22 @@ export class MatrixApp {
     }
 
     return this.filteredProducts.map(product => {
-      const imageUrl = getImageUrl(product.imageUrl, 80);
+      const rawList = Array.isArray(product.images) && product.images.length > 0
+        ? product.images
+        : (product.imageUrl ? [product.imageUrl] : []);
+      const firstImage = rawList[0] || product.imageUrl;
+      const imageUrl = getImageUrl(firstImage, 80) || firstImage;
       const imageFallback = getProductImageFallback(product);
       const productLink = buildProductLink(product);
 
       return `
         <tr class="matrix-row" data-id="${product.id}" data-category="${product.category}">
-          <td class="td-product">
+          <td class="td-product" data-action="specs" title="Click to view full specifications">
             <div class="product-cell">
               <div class="product-thumbnail">
                 <img
                   src="${imageUrl}"
-                  alt="${product.name}"
+                  alt="${this.escapeHtml(product.name)}"
                   loading="lazy"
                   onerror="this.onerror=null;this.src='${imageFallback}';"
                   class="product-image"
@@ -278,14 +385,14 @@ export class MatrixApp {
             </div>
           </td>
           <td class="td-brand">${this.escapeHtml(product.brand)}</td>
-          <td class="td-specs">
+          <td class="td-specs" data-action="specs" title="Click to view full specifications">
             <div class="specs-preview">
               ${this.getSpecsPreview(product.specs)}
             </div>
           </td>
           <td class="td-price-roi">
-            <span class="price-value">$${product.priceUsd.toLocaleString()}</span>
-            <span class="roi-inline">ROI ${product.roiScore}</span>
+            <span class="price-value">${formatCurrency(product.priceUsd)}</span>
+            <span class="roi-inline">ROI ${product.roiScore || 'N/A'}</span>
           </td>
           <td class="td-action">
             <div class="action-cell">
@@ -293,7 +400,7 @@ export class MatrixApp {
                 href="${productLink}"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn-buy"
+                class="btn-buy whitespace-nowrap"
                 aria-label="View ${this.escapeHtml(product.name)} in a new tab"
               >
                 View Item →
@@ -306,7 +413,7 @@ export class MatrixApp {
   }
 
   /**
-   * Get mobile cards HTML
+   * Get mobile cards HTML with ImageCarousel
    */
   getMobileCards() {
     if (this.filteredProducts.length === 0) {
@@ -322,59 +429,54 @@ export class MatrixApp {
     }
 
     return this.filteredProducts.map(product => {
-      const imageUrl = getImageUrl(product.imageUrl, 400);
-      const imageFallback = getProductImageFallback(product);
       const productLink = buildProductLink(product);
+      const carouselHtml = renderImageCarouselHtml(product, 0);
 
       return `
         <div class="mobile-card" data-id="${product.id}">
           <div class="mobile-card-image">
-            <img
-              src="${imageUrl}"
-              alt="${product.name}"
-              loading="lazy"
-              onerror="this.onerror=null;this.src='${imageFallback}';"
-              class="mobile-image"
-            >
-            <span class="mobile-category-badge">${product.category}</span>
+            ${carouselHtml}
           </div>
           <div class="mobile-card-body">
-            <h3 class="mobile-card-title">${this.escapeHtml(product.name)}</h3>
+            <h3 class="mobile-card-title cursor-pointer" data-action="specs" data-id="${product.id}">${this.escapeHtml(product.name)}</h3>
             <p class="mobile-card-brand">${this.escapeHtml(product.brand)}</p>
 
-            <div class="mobile-card-specs">
+            <div class="mobile-card-specs" data-action="specs" data-id="${product.id}">
               ${this.getMobileSpecs(product.specs)}
             </div>
 
             <div class="mobile-card-footer">
               <div class="mobile-price">
-                <span class="price-value">$${product.priceUsd.toLocaleString()}</span>
+                <span class="price-value">${formatCurrency(product.priceUsd)}</span>
               </div>
               <div class="mobile-roi">
                 <span class="roi-label">ROI</span>
-                <span class="roi-value">${product.roiScore}/100</span>
+                <span class="roi-value">${product.roiScore || 'N/A'}/100</span>
               </div>
             </div>
 
-            <button
-              class="btn-fullspecs"
-              data-id="${product.id}"
-              aria-label="View full specifications for ${this.escapeHtml(product.name)}"
-            >
-              Full Specs
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 5v14M5 12l7 7 7-7"/>
-              </svg>
-            </button>
-            <a
-              href="${productLink}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-buy mobile-card-cta"
-              aria-label="View ${this.escapeHtml(product.name)} in a new tab"
-            >
-              View Item →
-            </a>
+            <div class="mobile-card-actions">
+              <button
+                type="button"
+                class="btn-fullspecs"
+                data-id="${product.id}"
+                aria-label="View full specifications for ${this.escapeHtml(product.name)}"
+              >
+                Full Specs
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+              </button>
+              <a
+                href="${productLink}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-buy mobile-card-cta whitespace-nowrap"
+                aria-label="View ${this.escapeHtml(product.name)} in a new tab"
+              >
+                View Item →
+              </a>
+            </div>
           </div>
         </div>
       `;
@@ -382,63 +484,43 @@ export class MatrixApp {
   }
 
   /**
-   * Get specs preview for table view
+   * Get specs preview for desktop table
    */
   getSpecsPreview(specs) {
-    if (!specs || Object.keys(specs).length === 0) return '<span class="specs-none">No specs</span>';
+    if (!specs || Object.keys(specs).length === 0) {
+      return '<span class="spec-empty">No specs available</span>';
+    }
 
-    const entries = Object.entries(specs).slice(0, 3);
-    return entries.map(([key, value]) => `
+    return Object.entries(specs).slice(0, 3).map(([key, val]) => `
       <div class="spec-item">
-        <span class="spec-key">${this.formatSpecKey(key)}:</span>
-        <span class="spec-value">${this.formatSpecValue(value)}</span>
+        <span class="spec-label">${this.escapeHtml(this.formatSpecKey(key))}:</span>
+        <span class="spec-val">${this.escapeHtml(this.formatSpecValue(val))}</span>
       </div>
     `).join('');
   }
 
   /**
-   * Get specs for mobile view
+   * Get specs for mobile cards
    */
   getMobileSpecs(specs) {
-    if (!specs || Object.keys(specs).length === 0) return '<span class="specs-none">No specifications available</span>';
+    if (!specs || Object.keys(specs).length === 0) {
+      return '<span class="spec-empty">No specs available</span>';
+    }
 
-    return Object.entries(specs).map(([key, value]) => `
+    return Object.entries(specs).slice(0, 2).map(([key, val]) => `
       <div class="mobile-spec">
-        <span class="mobile-spec-key">${this.formatSpecKey(key)}</span>
-        <span class="mobile-spec-value">${this.formatSpecValue(value)}</span>
+        <span class="mobile-spec-label">${this.escapeHtml(this.formatSpecKey(key))}</span>
+        <span class="mobile-spec-value">${this.escapeHtml(this.formatSpecValue(val))}</span>
       </div>
     `).join('');
   }
 
-  /**
-   * Format spec key for display
-   */
   formatSpecKey(key) {
-    return key
-      .replace(/_/g, ' ')
-      .replace(/([A-Z])/g, ' $1')
-      .replace(/^./, str => str.toUpperCase())
-      .trim();
+    return formatSpecKey(key);
   }
 
-  /**
-   * Format spec value for display
-   */
-  formatSpecValue(value) {
-    if (value === true) return 'Yes';
-    if (value === false) return 'No';
-    if (typeof value === 'string') return value;
-    return String(value);
-  }
-
-  /**
-   * Get ROI color based on score
-   */
-  getRoiColor(score) {
-    if (score >= 80) return '#10B981'; // Emerald
-    if (score >= 60) return '#0EA5E9'; // Sky Blue
-    if (score >= 40) return '#F59E0B'; // Amber
-    return '#EF4444'; // Red
+  formatSpecValue(val) {
+    return formatSpecValue(val);
   }
 
   /**
@@ -450,12 +532,37 @@ export class MatrixApp {
       const label = cat === 'all' ? 'All' : cat;
       return `
         <button
+          type="button"
           class="category-pill ${this.selectedCategory === cat ? 'active' : ''}"
           data-category="${this.escapeHtml(cat)}"
           role="tab"
           aria-selected="${this.selectedCategory === cat}"
         >
           ${this.escapeHtml(label)}
+        </button>
+      `;
+    }).join('');
+  }
+
+  /**
+   * Get drawer categories HTML
+   */
+  getDrawerCategories() {
+    const categories = ['all', ...new Set(this.products.map(p => p.category))];
+    return categories.map(cat => {
+      const label = cat === 'all' ? 'All Products' : cat;
+      const count = cat === 'all'
+        ? this.products.length
+        : this.products.filter(p => p.category === cat).length;
+
+      return `
+        <button
+          type="button"
+          class="drawer-category-btn ${this.selectedCategory === cat ? 'active' : ''}"
+          data-category="${this.escapeHtml(cat)}"
+        >
+          <span>${this.escapeHtml(label)}</span>
+          <span class="drawer-category-count">${count}</span>
         </button>
       `;
     }).join('');
@@ -469,29 +576,27 @@ export class MatrixApp {
   }
 
   /**
-   * Get price range string
+   * Get price range string without duplicate currency symbols
    */
   getPriceRange() {
-    if (this.products.length === 0) return '$0';
-    const prices = this.products.map(p => p.priceUsd);
-    const min = Math.min(...prices);
-    const max = Math.max(...prices);
-    if (min === max) return `$${min.toLocaleString()}`;
-    return `$${min.toLocaleString()} - $${max.toLocaleString()}`;
+    return formatPriceRange(this.products);
   }
 
   /**
    * Escape HTML entities
    */
   escapeHtml(text) {
-    if (typeof text !== 'string') return String(text);
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
+    if (typeof text !== 'string') return String(text ?? '');
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
   }
 
   /**
-   * Attach event listeners
+   * Attach event listeners using robust event delegation
    */
   attachEventListeners() {
     // Search input
@@ -500,27 +605,54 @@ export class MatrixApp {
 
     searchInput?.addEventListener('input', (e) => {
       this.searchQuery = e.target.value.trim().toLowerCase();
-      searchClear.style.display = this.searchQuery ? 'flex' : 'none';
+      if (searchClear) {
+        searchClear.style.display = this.searchQuery ? 'flex' : 'none';
+      }
       this.applyFilters();
     });
 
     searchClear?.addEventListener('click', () => {
-      searchInput.value = '';
+      if (searchInput) {
+        searchInput.value = '';
+      }
       this.searchQuery = '';
       searchClear.style.display = 'none';
       this.applyFilters();
     });
 
-    // Category pills
-    this.container.querySelectorAll('.category-pill').forEach(pill => {
-      pill.addEventListener('click', () => {
-        this.selectedCategory = pill.dataset.category;
-        this.container.querySelectorAll('.category-pill').forEach(p => {
-          p.classList.toggle('active', p.dataset.category === this.selectedCategory);
-          p.setAttribute('aria-selected', p.dataset.category === this.selectedCategory);
-        });
-        this.applyFilters();
-      });
+    // Mobile Hamburger Menu Toggle
+    const mobileMenuToggle = this.container.querySelector('#mobileMenuToggle');
+    mobileMenuToggle?.addEventListener('click', () => {
+      this.toggleDrawer();
+    });
+
+    const drawerClose = this.container.querySelector('#drawerClose');
+    drawerClose?.addEventListener('click', () => {
+      this.toggleDrawer(false);
+    });
+
+    const drawerOverlay = this.container.querySelector('#drawerOverlay');
+    drawerOverlay?.addEventListener('click', () => {
+      this.toggleDrawer(false);
+    });
+
+    // Drawer Categories
+    this.container.querySelector('#drawerCategories')?.addEventListener('click', (e) => {
+      const btn = e.target.closest('.drawer-category-btn');
+      if (btn) {
+        const category = btn.dataset.category;
+        this.selectCategory(category);
+        this.toggleDrawer(false);
+      }
+    });
+
+    // Category pills click
+    this.container.querySelector('#categoryPills')?.addEventListener('click', (e) => {
+      const pill = e.target.closest('.category-pill');
+      if (pill) {
+        const category = pill.dataset.category;
+        this.selectCategory(category);
+      }
     });
 
     // Sort select
@@ -542,9 +674,9 @@ export class MatrixApp {
 
     // Table sort buttons
     this.container.querySelectorAll('.th-sort-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', () => {
         const column = btn.dataset.column;
-        if (column === 'specs') return; // Disabled
+        if (column === 'specs') return;
 
         const isCurrent = column === this.sortColumn;
         this.sortColumn = column;
@@ -555,31 +687,101 @@ export class MatrixApp {
       });
     });
 
-    // Product CTAs are standard anchors with target="_blank". They use
-    // buildProductLink() in each renderer and therefore need no click handler.
+    // Global Container Event Delegation for Full Specs, Modals, and Carousel
+    this.container.addEventListener('click', (e) => {
+      // 1. Carousel Arrow Previous
+      const prevBtn = e.target.closest('[data-carousel-action="prev"]');
+      if (prevBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const productId = prevBtn.dataset.productId;
+        const carousel = prevBtn.closest('.image-carousel');
+        this.navigateCarousel(carousel, productId, -1);
+        return;
+      }
 
-    // Full specs buttons (mobile)
-    this.container.querySelectorAll('.btn-fullspecs').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const productId = btn.dataset.id;
+      // 2. Carousel Arrow Next
+      const nextBtn = e.target.closest('[data-carousel-action="next"]');
+      if (nextBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const productId = nextBtn.dataset.productId;
+        const carousel = nextBtn.closest('.image-carousel');
+        this.navigateCarousel(carousel, productId, 1);
+        return;
+      }
+
+      // 3. Carousel Dot
+      const dotBtn = e.target.closest('[data-carousel-action="dot"]');
+      if (dotBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const productId = dotBtn.dataset.productId;
+        const targetIndex = Number.parseInt(dotBtn.dataset.index, 10);
+        const carousel = dotBtn.closest('.image-carousel');
+        this.setCarouselIndex(carousel, productId, targetIndex);
+        return;
+      }
+
+      // 4. Full Specs button click
+      const specsBtn = e.target.closest('.btn-fullspecs');
+      if (specsBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const productId = specsBtn.dataset.id;
         const product = this.products.find(p => p.id === productId);
         if (product) {
-          this.showSpecsModal(product);
+          this.setSelectedProduct(product);
         }
-      });
+        return;
+      }
+
+      // 5. Table Specs Cell or Product Cell click (opens full specs)
+      const specsCell = e.target.closest('.td-specs, .td-product[data-action="specs"], [data-action="specs"]');
+      if (specsCell && !e.target.closest('a, button')) {
+        const row = specsCell.closest('.matrix-row, .mobile-card');
+        const productId = row?.dataset.id || specsCell.dataset.productId || specsCell.dataset.id;
+        const product = this.products.find(p => p.id === productId);
+        if (product) {
+          this.setSelectedProduct(product);
+        }
+        return;
+      }
     });
 
     // Modal close buttons
     document.getElementById('modalClose')?.addEventListener('click', () => this.hideModal('buyModal'));
     document.getElementById('modalOverlay')?.addEventListener('click', () => this.hideModal('buyModal'));
-    document.getElementById('specsModalClose')?.addEventListener('click', () => this.hideModal('specsModal'));
-    document.getElementById('specsModalOverlay')?.addEventListener('click', () => this.hideModal('specsModal'));
+    document.getElementById('specsModalClose')?.addEventListener('click', () => this.setSelectedProduct(null));
+    document.getElementById('specsModalOverlay')?.addEventListener('click', () => this.setSelectedProduct(null));
+
+    // Click outside modal content
+    document.getElementById('specsModal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'specsModal' || e.target.id === 'specsModalOverlay') {
+        this.setSelectedProduct(null);
+      }
+    });
+
+    // Modal thumbnail clicks for image preview
+    document.getElementById('specsModalBody')?.addEventListener('click', (e) => {
+      const thumb = e.target.closest('.specs-thumb-btn');
+      if (thumb) {
+        const newSrc = thumb.dataset.imgSrc;
+        const mainImg = document.getElementById('modalCarouselImg');
+        if (mainImg && newSrc) {
+          mainImg.src = newSrc;
+          document.querySelectorAll('.specs-thumb-btn').forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+        }
+      }
+    });
 
     // Keyboard shortcuts
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         this.hideModal('buyModal');
-        this.hideModal('specsModal');
+        this.setSelectedProduct(null);
+        this.toggleDrawer(false);
       }
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
@@ -587,9 +789,80 @@ export class MatrixApp {
       }
     });
 
-    // Update views on resize
+    // Responsive layout resize handler
     this.handleResize();
     window.addEventListener('resize', () => this.handleResize());
+  }
+
+  /**
+   * Navigate carousel forward or backward
+   * @param {HTMLElement} carousel
+   * @param {string} productId
+   * @param {number} delta
+   */
+  navigateCarousel(carousel, productId, delta) {
+    if (!carousel) return;
+    const product = this.products.find(p => p.id === productId);
+    if (!product) return;
+
+    const rawList = Array.isArray(product.images) && product.images.length > 0
+      ? product.images
+      : (product.imageUrl ? [product.imageUrl] : []);
+    if (rawList.length <= 1) return;
+
+    let currentIndex = Number.parseInt(carousel.dataset.currentIndex || '0', 10);
+    currentIndex = (currentIndex + delta + rawList.length) % rawList.length;
+    this.setCarouselIndex(carousel, productId, currentIndex);
+  }
+
+  /**
+   * Set carousel to specific index
+   * @param {HTMLElement} carousel
+   * @param {string} productId
+   * @param {number} targetIndex
+   */
+  setCarouselIndex(carousel, productId, targetIndex) {
+    if (!carousel) return;
+    const product = this.products.find(p => p.id === productId);
+    if (!product) return;
+
+    const rawList = Array.isArray(product.images) && product.images.length > 0
+      ? product.images
+      : (product.imageUrl ? [product.imageUrl] : []);
+    if (rawList.length <= 1) return;
+
+    const safeIndex = Math.min(Math.max(0, targetIndex), rawList.length - 1);
+    carousel.dataset.currentIndex = safeIndex.toString();
+
+    const img = carousel.querySelector('.carousel-img');
+    if (img) {
+      const newSrc = rawList[safeIndex];
+      img.src = getImageUrl(newSrc, 400) || newSrc;
+    }
+
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === safeIndex);
+    });
+  }
+
+  /**
+   * Select a category and update pills
+   * @param {string} category
+   */
+  selectCategory(category) {
+    this.selectedCategory = category;
+    this.container.querySelectorAll('.category-pill').forEach(p => {
+      const isSelected = p.dataset.category === this.selectedCategory;
+      p.classList.toggle('active', isSelected);
+      p.setAttribute('aria-selected', isSelected.toString());
+    });
+
+    this.container.querySelectorAll('.drawer-category-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.category === this.selectedCategory);
+    });
+
+    this.applyFilters();
   }
 
   /**
@@ -668,13 +941,13 @@ export class MatrixApp {
             : bValue.localeCompare(aValue);
 
         case 'priceUsd':
-          aValue = a.priceUsd;
-          bValue = b.priceUsd;
+          aValue = a.priceUsd ?? 0;
+          bValue = b.priceUsd ?? 0;
           return this.sortDirection === 'asc' ? aValue - bValue : bValue - aValue;
 
         case 'roiScore':
-          aValue = a.roiScore;
-          bValue = b.roiScore;
+          aValue = a.roiScore ?? 0;
+          bValue = b.roiScore ?? 0;
           return this.sortDirection === 'asc' ? aValue - bValue : bValue - aValue;
 
         default:
@@ -698,22 +971,20 @@ export class MatrixApp {
       mobileView.innerHTML = this.getMobileCards();
     }
 
-    // Update table body specifically
+    // Update table body specifically if needed
     const tableBody = this.container.querySelector('#tableBody');
     if (tableBody) {
       tableBody.innerHTML = this.getTableRows();
     }
 
-    this.updateSortIndicators();
-    this.attachBuyDropdownHandlers();
-  }
+    // Update results count
+    const resultsCount = this.container.querySelector('.results-count');
+    if (resultsCount) {
+      resultsCount.textContent = `${this.filteredProducts.length} product${this.filteredProducts.length !== 1 ? 's' : ''}`;
+    }
 
-  /**
-   * CTA anchors require no runtime event binding. Kept as a named hook because
-   * updateViews() calls it after replacing the table and mobile-card markup.
-   */
-  attachBuyDropdownHandlers() {
-    // Intentionally empty: every .btn-buy is a normal, accessible anchor.
+    this.updateSortIndicators();
+    this.handleResize();
   }
 
   /**
@@ -727,21 +998,18 @@ export class MatrixApp {
       // Mobile view
       if (mobileView) mobileView.style.display = 'block';
       if (desktopContent) desktopContent.style.display = 'none';
-    } else if (window.innerWidth < 1024) {
-      // Tablet view - show both, desktop is scrollable
-      if (mobileView) mobileView.style.display = 'none';
-      if (desktopContent) desktopContent.style.display = 'block';
     } else {
-      // Desktop view
+      // Desktop & Tablet view
       if (mobileView) mobileView.style.display = 'none';
       if (desktopContent) desktopContent.style.display = 'block';
+      // Close mobile drawer on desktop resize
+      this.toggleDrawer(false);
     }
   }
 
   /**
    * Show buy modal
-   * For non-affiliate products, show a simplified modal with just the direct link.
-   * For affiliate products, show both direct and affiliate options.
+   * @param {Object} product
    */
   showBuyModal(product) {
     const modal = document.getElementById('buyModal');
@@ -751,70 +1019,26 @@ export class MatrixApp {
     if (!modal || !body) return;
 
     const imageFallback = getProductImageFallback(product);
-
-    // For non-affiliate products, use a simpler modal with just the direct link
-    if (product.affiliateNetwork === 'none') {
-      title.textContent = `${product.name} - Direct Link`;
-      body.innerHTML = `
-        <div class="modal-product">
-          <div class="modal-product-image">
-            <img
-              src="${getImageUrl(product.imageUrl, 200)}"
-              alt="${product.name}"
-              onerror="this.onerror=null;this.src='${imageFallback}';"
-            >
-          </div>
-          <div class="modal-product-info">
-            <span class="modal-product-brand">${this.escapeHtml(product.brand)}</span>
-            <h3 class="modal-product-name">${this.escapeHtml(product.name)}</h3>
-            <p class="modal-product-price">$${product.priceUsd.toLocaleString()}</p>
-          </div>
-        </div>
-
-        <div class="modal-link-item modal-link-item-primary">
-          <div class="modal-link-label">
-            <span>Official Product Page</span>
-          </div>
-          <a
-            href="${product.directUrl}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="modal-link-btn modal-link-btn-primary"
-          >
-            Visit Manufacturer Site
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-        </div>
-      `;
-      modal.style.display = 'flex';
-      return;
-    }
-
-    // For affiliate products, show full modal with both options
-    title.textContent = `${product.name} - Purchase Options`;
-
     const directUrl = product.directUrl;
     const affiliateUrl = buildProductLink(product);
     const networkName = getNetworkDisplayName(product.affiliateNetwork);
-    const hasAffiliate = product.affiliateNetwork !== 'none';
+    const hasAffiliate = product.affiliateNetwork && product.affiliateNetwork !== 'none';
+
+    title.textContent = `${product.name} - Purchase Options`;
 
     body.innerHTML = `
       <div class="modal-product">
         <div class="modal-product-image">
           <img
             src="${getImageUrl(product.imageUrl, 200)}"
-            alt="${product.name}"
+            alt="${this.escapeHtml(product.name)}"
             onerror="this.onerror=null;this.src='${imageFallback}';"
           >
         </div>
         <div class="modal-product-info">
           <span class="modal-product-brand">${this.escapeHtml(product.brand)}</span>
           <h3 class="modal-product-name">${this.escapeHtml(product.name)}</h3>
-          <p class="modal-product-price">$${product.priceUsd.toLocaleString()}</p>
+          <p class="modal-product-price">${formatCurrency(product.priceUsd)}</p>
         </div>
       </div>
 
@@ -854,7 +1078,7 @@ export class MatrixApp {
                 <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>
               </svg>
             </span>
-            <span>${networkName} Affiliate Link</span>
+            <span>${this.escapeHtml(networkName)} Affiliate Link</span>
             <span class="affiliate-note">Supports our work</span>
           </div>
           <a
@@ -863,7 +1087,7 @@ export class MatrixApp {
             rel="noopener noreferrer"
             class="modal-link-btn modal-link-btn-affiliate"
           >
-            Visit via ${networkName}
+            Visit via ${this.escapeHtml(networkName)}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
               <polyline points="15 3 21 3 21 9"/>
@@ -893,6 +1117,7 @@ export class MatrixApp {
 
   /**
    * Hide modal
+   * @param {string} modalId
    */
   hideModal(modalId) {
     const modal = document.getElementById(modalId);
@@ -902,7 +1127,8 @@ export class MatrixApp {
   }
 
   /**
-   * Show specs modal (mobile)
+   * Show full specs modal
+   * @param {Object} product
    */
   showSpecsModal(product) {
     const modal = document.getElementById('specsModal');
@@ -911,70 +1137,11 @@ export class MatrixApp {
 
     if (!modal || !body) return;
 
-    const imageFallback = getProductImageFallback(product);
-    const productLink = buildProductLink(product);
+    if (title) {
+      title.textContent = `${product.name} - Full Specifications`;
+    }
 
-    title.textContent = `${product.name} - Full Specifications`;
-
-    const specsHtml = product.specs && Object.keys(product.specs).length > 0
-      ? Object.entries(product.specs).map(([key, value]) => `
-        <div class="specs-row">
-          <span class="specs-key">${this.formatSpecKey(key)}</span>
-          <span class="specs-value">${this.formatSpecValue(value)}</span>
-        </div>
-      `).join('')
-      : '<p class="no-specs">No specifications available</p>';
-
-    body.innerHTML = `
-      <div class="specs-header">
-        <img
-          src="${getImageUrl(product.imageUrl, 120)}"
-          alt="${product.name}"
-          onerror="this.onerror=null;this.src='${imageFallback}';"
-          class="specs-image"
-        >
-        <div class="specs-meta">
-          <span class="specs-brand">${this.escapeHtml(product.brand)}</span>
-          <span class="specs-category">${this.escapeHtml(product.category)}</span>
-        </div>
-      </div>
-
-      <div class="specs-content">
-        <div class="specs-list">
-          ${specsHtml}
-        </div>
-
-        <div class="specs-footer">
-          <div class="specs-price">
-            <span class="price-label">Price</span>
-            <span class="price-value">$${product.priceUsd.toLocaleString()}</span>
-          </div>
-          <div class="specs-roi">
-            <span class="roi-label">ROI Score</span>
-            <span class="roi-value">${product.roiScore}/100</span>
-          </div>
-          <div class="specs-network">
-            <span class="network-label">Network</span>
-            <span class="network-value">${getNetworkDisplayName(product.affiliateNetwork)}</span>
-          </div>
-
-          <a
-            href="${productLink}"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-specs-buy"
-          >
-            View Item →
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    `;
-
+    body.innerHTML = renderSpecsModalContent(product);
     modal.style.display = 'flex';
   }
 }

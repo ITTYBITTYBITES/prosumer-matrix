@@ -61,6 +61,15 @@
         "description": "External CDN image URL",
         "pattern": "^https?://"
       },
+      "images": {
+        "type": "array",
+        "description": "Optional array of product image URLs for carousel",
+        "items": {
+          "type": "string",
+          "pattern": "^https?://"
+        },
+        "minItems": 1
+      },
       "affiliateNetwork": {
         "type": "string",
         "description": "Primary affiliate network for this product (Awin now includes former ShareASale merchants)",
