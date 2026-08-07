@@ -1494,3 +1494,24 @@ function startApp() {
   }
 }
 init();
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js", {
+      scope: "/prosumer-matrix/"
+    }).then((registration) => {
+      console.log("ServiceWorker registered:", registration.scope);
+      registration.addEventListener("updatefound", () => {
+        const newWorker = registration.installing;
+        if (newWorker) {
+          newWorker.addEventListener("statechange", () => {
+            if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+              console.log("New content available, refreshing...");
+            }
+          });
+        }
+      });
+    }).catch((error) => {
+      console.error("ServiceWorker registration failed:", error);
+    });
+  });
+}
