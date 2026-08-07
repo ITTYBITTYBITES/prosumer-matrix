@@ -84,11 +84,10 @@ export class MatrixApp {
             </button>
           </div>
 
-          <div class="category-pills" id="categoryPills" role="tablist" aria-label="Filter by category">
-            <button class="category-pill ${this.selectedCategory === 'all' ? 'active' : ''}" data-category="all" role="tab" aria-selected="${this.selectedCategory === 'all'}">
-              All
-            </button>
-            ${this.getCategoryPills()}
+          <div class="category-pills-scroll" aria-label="Category filters">
+            <div class="category-pills" id="categoryPills" role="tablist" aria-label="Filter by category">
+              ${this.getCategoryPills()}
+            </div>
           </div>
 
           <div class="sort-controls">
@@ -478,17 +477,20 @@ export class MatrixApp {
    * Get category pills HTML
    */
   getCategoryPills() {
-    const categories = [...new Set(this.products.map(p => p.category))];
-    return categories.map(cat => `
-      <button
-        class="category-pill ${this.selectedCategory === cat ? 'active' : ''}"
-        data-category="${this.escapeHtml(cat)}"
-        role="tab"
-        aria-selected="${this.selectedCategory === cat}"
-      >
-        ${this.escapeHtml(cat)}
-      </button>
-    `).join('');
+    const categories = ['all', ...new Set(this.products.map(p => p.category))];
+    return categories.map(cat => {
+      const label = cat === 'all' ? 'All' : cat;
+      return `
+        <button
+          class="category-pill ${this.selectedCategory === cat ? 'active' : ''}"
+          data-category="${this.escapeHtml(cat)}"
+          role="tab"
+          aria-selected="${this.selectedCategory === cat}"
+        >
+          ${this.escapeHtml(label)}
+        </button>
+      `;
+    }).join('');
   }
 
   /**
