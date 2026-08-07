@@ -1,5 +1,5 @@
 // ============================================================================
-// Vite Configuration
+// Vite Configuration - Production-optimized with cache-busting
 // ============================================================================
 
 import { defineConfig } from 'vite';
@@ -11,11 +11,22 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
+    // Enable asset hashing for cache-busting
     rollupOptions: {
       input: {
         main: './index.html'
+      },
+      output: {
+        // Generate hashed filenames for all assets
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       }
-    }
+    },
+    // Minify for production
+    minify: 'default',
+    // Sourcemaps for debugging (disable in production if needed)
+    sourcemap: false
   },
   server: {
     port: 3000,

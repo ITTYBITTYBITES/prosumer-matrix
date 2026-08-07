@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Cache-busting: Prevent browser from caching this HTML -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  
   <title>Prosumer Matrix | Hardware & Equipment Spec Database</title>
-  <meta name="description" content="Comprehensive database of prosumer hardware specifications including 3D printers, CNC/laser cutters, solar power systems, drones, espresso machines, and utility EVs.">
+  <meta name="description" content="Comprehensive database of prosumer hardware specifications including 3D printers, CNC laser cutters, solar power systems, drones, espresso machines, and utility EVs.">
   <meta name="theme-color" content="#0F172A">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Preconnect for external resources -->
-  <link rel="preconnect" href="https://images.weserv.nl">
-  <link rel="dns-prefetch" href="https://images.weserv.nl">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Vite will inject the module script -->
-  <link rel="stylesheet" href="/src/styles/main.css">
+  <!-- Vite will inject processed CSS and JS with hashed filenames -->
 </head>
 <body>
   <!-- Skip link for accessibility -->
@@ -40,7 +41,7 @@
     <p class="loading-text">Loading Prosumer Matrix...</p>
   </div>
 
-  <!-- Import main app module -->
+  <!-- Vite will inject the processed module script -->
   <script type="module" src="/src/app.js"></script>
 
   <!-- Inline critical CSS for initial render -->
