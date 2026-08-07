@@ -87,7 +87,7 @@
         "description": "Category-specific technical specifications",
         "minProperties": 1,
         "additionalProperties": {
-          "type": ["string", "number", "boolean"]
+          "type": "string"
         }
       }
     },
