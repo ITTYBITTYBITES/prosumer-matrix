@@ -16,17 +16,55 @@
   <!-- Impact Site Verification -->
   <meta name="impact-site-verification" value="e1775b7e-fc95-4f9e-bdee-dd2b4e0117e2">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <!-- Favicon. BASE_URL is replaced by Vite for the GitHub Pages subpath. -->
+  <link rel="icon" type="image/svg+xml" href="/prosumer-matrix/favicon.svg">
 
   <!-- Preconnect for external resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!--
+    Install the startup failure handler before Vite's module entry is fetched.
+    This also catches a failed entry-script request (for example, a stale cache
+    pointing at an old hashed file) that cannot be caught inside app.js.
+  -->
+  <script>
+    window.showStartupError = function () {
+      const container = document.getElementById('matrixContainer');
+      const loadingState = document.getElementById('loadingState');
+
+      // A failed module can report before the parser has reached the body.
+      // Retry once the loading elements exist rather than leaving them visible.
+      if (!container || !loadingState) {
+        document.addEventListener('DOMContentLoaded', window.showStartupError, { once: true });
+        return;
+      }
+
+      if (container) {
+        container.innerHTML = `
+          <div class="error-state">
+            <h2>Unable to start Prosumer Matrix</h2>
+            <p>The application files could not be loaded. Please refresh the page.</p>
+          </div>
+        `;
+      }
+
+      if (loadingState) {
+        loadingState.classList.add('loaded');
+      }
+    };
+
+    window.addEventListener('error', function (event) {
+      const failedElement = event.target;
+      if (failedElement && failedElement.tagName === 'SCRIPT' && failedElement.type === 'module') {
+        window.showStartupError();
+      }
+    }, true);
+  </script>
+
   <!-- Vite will inject processed CSS and JS with hashed filenames -->
-  <script type="module" crossorigin src="./assets/main-hU3TaCUs.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-C-D2tot0.css">
+  <script type="module" crossorigin src="/prosumer-matrix/assets/main-CSF5Q5u0.js"></script>
 </head>
 <body>
   <!-- Skip link for accessibility -->
@@ -46,7 +84,11 @@
     <p class="loading-text">Loading Prosumer Matrix...</p>
   </div>
 
-  <!-- Vite will inject the processed module script -->
+  <!--
+    Keep the loader from becoming a permanent screen if app.js or one of its
+    imports cannot be fetched. Vite rewrites this import to the GitHub Pages
+    asset path during the production build.
+  -->
 
   <!-- Inline critical CSS for initial render -->
   <style>
