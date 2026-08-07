@@ -1228,6 +1228,36 @@ a:hover {
   background: var(--accent-emerald-hover);
 }
 
+/* Primary direct link style (for non-affiliate products) */
+.modal-link-item-primary {
+  padding: var(--space-lg);
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-surface) 100%);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--accent-sky);
+  text-align: center;
+}
+
+.modal-link-item-primary .modal-link-label {
+  justify-content: center;
+  margin-bottom: var(--space-md);
+  color: var(--accent-sky);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+.modal-link-item-primary .modal-link-btn {
+  width: 100%;
+  justify-content: center;
+  padding: var(--space-md);
+  background: var(--accent-sky);
+}
+
+.modal-link-item-primary .modal-link-btn:hover {
+  background: var(--accent-sky-hover);
+}
+
 .modal-footer {
   margin-top: var(--space-lg);
   padding-top: var(--space-md);
