@@ -15,7 +15,7 @@ from pathlib import Path
 REPO_ROOT = Path("/home/user/prosumer-matrix")
 DATA_FILE = REPO_ROOT / "src/data/hardware.json"
 SCHEMA_FILE = REPO_ROOT / "src/data/HardwareSchema.json"
-TARGET_TOTAL = 500
+TARGET_TOTAL = 220
 BATCH_SIZE = 30
 
 # ============================================================================
@@ -281,7 +281,24 @@ def generate_product(category, template_idx):
     
     # Image URL
     image_templates = IMAGE_TEMPLATES.get(category, ["https://images.unsplash.com/photo-1631545806607-6c1f8b0e1c5f"])
-    image_url = f"{random.choice(image_templates)}?w=400&h=400&fit=crop"
+    
+    # Generate 2-4 images based on template variants (with different width/height parameters or random choices)
+    num_images = random.randint(2, 4)
+    images_array = []
+    
+    # Try to make them unique
+    shuffled_templates = list(image_templates)
+    random.shuffle(shuffled_templates)
+    
+    for i in range(num_images):
+        template_url = shuffled_templates[i % len(shuffled_templates)]
+        if network == "amazon":
+            # If amazon, create realistic amazon ASIN image URL (using variations of merchant_id if possible)
+            images_array.append(f"https://images-na.ssl-images-amazon.com/images/P/{merchant_id}.01.MAIN._SCLZZZZZZZ_.jpg")
+        else:
+            images_array.append(f"{template_url}?w=400&h={400 + i}&fit=crop")
+            
+    image_url = images_array[0]
     
     # Generate specs based on category
     specs = generate_specs(category, template)
@@ -300,6 +317,7 @@ def generate_product(category, template_idx):
         "priceUsd": price,
         "directUrl": direct_url,
         "imageUrl": image_url,
+        "images": images_array,
         "affiliateNetwork": network,
         "merchantId": merchant_id,
         "roiScore": roi_score,
@@ -411,7 +429,7 @@ def save_products(products):
 
 def main():
     print("=" * 80)
-    print("PROsumer MATRIX - Hardware Data Generator")
+    print("PROSUMER MATRIX - Hardware Data Generator")
     print("=" * 80)
     
     # Load existing products

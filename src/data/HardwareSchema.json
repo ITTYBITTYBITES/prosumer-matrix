@@ -58,15 +58,15 @@
       },
       "imageUrl": {
         "type": "string",
-        "description": "External CDN image URL",
-        "pattern": "^https?://"
+        "description": "Image URL (can be external or local path)",
+        "pattern": "^(https?://|/images/)"
       },
       "images": {
         "type": "array",
         "description": "Optional array of product image URLs for carousel",
         "items": {
           "type": "string",
-          "pattern": "^https?://"
+          "pattern": "^(https?://|/images/)"
         },
         "minItems": 1
       },

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/download-amazon-images.js",
     "build": "ajv test -s src/data/HardwareSchema.json -d src/data/hardware.json --valid && vite build",
     "preview": "vite preview"
   },

@@ -98,6 +98,10 @@ export function renderSpecsModalContent(product) {
           <span class="network-value">${escapeHtml(networkName)}</span>
         </div>
 
+        <p class="specs-disclosure" style="font-size: 11px; color: rgba(148, 163, 184, 0.8); text-align: center; margin-top: 16px; margin-bottom: 8px;">
+          * Clicking this link takes you to our partner merchant. We may earn a qualifying commission.
+        </p>
+
         <a
           href="${productLink}"
           target="_blank"

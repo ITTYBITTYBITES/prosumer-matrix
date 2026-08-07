@@ -1,5 +1,5 @@
 /* ============================================================================
-   PROsumer MATRIX - Main Stylesheet
+   PROSUMER MATRIX - Main Stylesheet
    Dark Slate Industrial Engineering Dashboard
    ============================================================================
    Palette:
@@ -208,8 +208,8 @@ input, select {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
@@ -256,42 +256,12 @@ input, select {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  white-space: nowrap;
+  white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.matrix-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-md);
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: var(--space-sm) var(--space-md);
-  background: var(--bg-primary);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-  flex: 1 1 auto;
-}
-
-.stat-value {
-  font-family: var(--font-mono);
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--accent-sky);
-  white-space: nowrap;
-}
-
-.stat-label {
-  font-size: 0.625rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 /* --------------------------------------------------------------------------
@@ -1665,18 +1635,6 @@ input, select {
     padding: var(--space-md);
   }
 
-  .matrix-stats {
-    justify-content: center;
-  }
-
-  .stat-item {
-    padding: var(--space-xs) var(--space-sm);
-  }
-
-  .stat-value {
-    font-size: 1rem;
-  }
-
   .matrix-controls {
     flex-direction: column;
   }
@@ -1728,32 +1686,12 @@ input, select {
   }
 
   .matrix-subtitle {
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
   }
 
   .matrix-logo {
     width: 32px;
     height: 32px;
-  }
-
-  .matrix-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-xs);
-    width: 100%;
-  }
-
-  .stat-item {
-    padding: var(--space-xs);
-    min-width: 70px;
-  }
-
-  .stat-value {
-    font-size: 0.875rem;
-  }
-
-  .stat-label {
-    font-size: 0.5625rem;
   }
 
   .matrix-controls {
@@ -1877,13 +1815,8 @@ input, select {
     font-size: 0.9375rem;
   }
 
-  .matrix-stats {
-    gap: 4px;
-  }
-
-  .stat-item {
-    padding: 2px 4px;
-    min-width: 60px;
+  .matrix-subtitle {
+    display: none;
   }
 }
 

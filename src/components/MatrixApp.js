@@ -91,25 +91,14 @@ export class MatrixApp {
               <circle cx="24" cy="22" r="3" fill="#10B981"/>
             </svg>
             <div class="matrix-brand-text">
-              <h1 class="matrix-title">PROsumer MATRIX</h1>
-              <p class="matrix-subtitle">Hardware & Equipment Specification Database</p>
-            </div>
-          </div>
-          <div class="matrix-stats">
-            <div class="stat-item">
-              <span class="stat-value">${this.products.length}</span>
-              <span class="stat-label">Products</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-value">${this.getCategoryCount()}</span>
-              <span class="stat-label">Categories</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-value">${this.getPriceRange()}</span>
-              <span class="stat-label">Price Range</span>
+              <h1 class="matrix-title">PROSUMER MATRIX</h1>
+              <p class="matrix-subtitle">HARDWARE & EQUIPMENT SPECIFICATION DATA</p>
             </div>
           </div>
         </header>
+        <div class="header-disclosure" style="text-align: center; margin-top: -12px; margin-bottom: 12px; font-size: 11px; color: rgba(148, 163, 184, 0.8);">
+          We may earn an affiliate commission from merchant links on this site at no extra cost to you.
+        </div>
 
         <!-- Slide-Out Mobile Drawer -->
         <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Mobile Navigation">
@@ -123,7 +112,7 @@ export class MatrixApp {
                   <circle cx="24" cy="22" r="3" fill="#10B981"/>
                 </svg>
                 <div class="drawer-brand-text">
-                  <h2 class="drawer-title">PROsumer MATRIX</h2>
+                  <h2 class="drawer-title">PROSUMER MATRIX</h2>
                   <p class="drawer-subtitle">Categories & Controls</p>
                 </div>
               </div>
@@ -218,6 +207,11 @@ export class MatrixApp {
         <div class="matrix-mobile-view" id="mobileView" style="display: none;">
           ${this.getMobileCards()}
         </div>
+
+        <!-- Footer Legal Disclosure -->
+        <footer class="matrix-footer" style="padding: 24px; text-align: center; font-size: 12px; color: rgba(148, 163, 184, 0.7); border-top: 1px solid var(--border-color); margin-top: 32px;">
+          <p>PROSUMER MATRIX is an independent hardware specification database. We participate in affiliate programs with Amazon, Awin, Impact, and other retailers. When you click links to buy products through our site, we may earn a commission that supports our independent research at no additional cost to you.</p>
+        </footer>
       </div>
 
       <!-- Buy Modal -->
