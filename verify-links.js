@@ -16,6 +16,7 @@ const products = JSON.parse(
 const REQUEST_TIMEOUT_MS = Number.parseInt(process.env.VERIFY_LINKS_TIMEOUT_MS || '15000', 10);
 const REQUEST_CONCURRENCY = Math.max(1, Number.parseInt(process.env.VERIFY_LINKS_CONCURRENCY || '4', 10));
 const SKIP_NETWORK = process.env.VERIFY_LINKS_SKIP_NETWORK === '1';
+const EXPECTED_PRODUCT_COUNT = 120;
 const REQUIRED_CATEGORIES = [
   '3D Printers',
   'CNC & Laser Cutters',
@@ -28,17 +29,27 @@ const REQUIRED_CATEGORIES = [
 function assertBenchmarkShape() {
   const failures = [];
 
-  if (products.length !== 20) {
-    failures.push(`benchmark must contain exactly 20 products; found ${products.length}`);
+  if (products.length !== EXPECTED_PRODUCT_COUNT) {
+    failures.push(`dataset must contain exactly ${EXPECTED_PRODUCT_COUNT} products; found ${products.length}`);
   }
 
   for (const category of REQUIRED_CATEGORIES) {
-    if (!products.some((product) => product.category === category)) {
+    const inCategory = products.filter((product) => product.category === category);
+    if (inCategory.length === 0) {
       failures.push(`missing required category: ${category}`);
     }
   }
 
+  const seenIds = new Set();
   for (const product of products) {
+    if (!product.id || !/^[a-z0-9-]+$/.test(product.id)) {
+      failures.push(`${product.id || 'unnamed'}: ID must match regex ^[a-z0-9-]+$`);
+    }
+    if (seenIds.has(product.id)) {
+      failures.push(`${product.id}: duplicate product ID detected`);
+    }
+    seenIds.add(product.id);
+
     if (product.affiliateNetwork === 'amazon') {
       if (!/^[A-Z0-9]{10}$/.test(product.merchantId)) {
         failures.push(`${product.id}: Amazon merchantId must be a 10-character ASIN`);
@@ -55,6 +66,10 @@ function assertBenchmarkShape() {
 
     if (product.affiliateNetwork === 'none' && product.merchantId !== 'direct') {
       failures.push(`${product.id}: direct records must use merchantId "direct"`);
+    }
+
+    if (product.imageUrl && (product.imageUrl.includes('pixel.glitch.me') || product.imageUrl.includes('via.placeholder.com'))) {
+      failures.push(`${product.id}: placeholder image domain detected`);
     }
   }
 
@@ -197,10 +212,10 @@ for (const [index, product] of products.entries()) {
     : direct.ok
       ? `${direct.status} ${direct.method}${direct.usedGetFallback ? ' fallback' : ''}`
       : `${direct.status ?? 'NETWORK ERROR'} ${direct.method}`;
-  console.log(`${String(index + 1).padStart(2, '0')}. ${product.category} | ${product.affiliateNetwork} | direct ${directStatus}`);
-  console.log(`    ${product.name}`);
-  console.log(`    image: ${product.imageUrl}`);
-  console.log(`    link:  ${route.generated}`);
+  console.log(`${String(index + 1).padStart(3, '0')}. ${product.category} | ${product.affiliateNetwork} | direct ${directStatus}`);
+  console.log(`     ${product.name}`);
+  console.log(`     image: ${product.imageUrl}`);
+  console.log(`     link:  ${route.generated}`);
 }
 
 if (benchmarkFailures.length) {

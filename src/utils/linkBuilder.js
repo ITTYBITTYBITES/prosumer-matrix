@@ -44,62 +44,197 @@ export function cleanDestinationUrl(url) {
 }
 
 /**
- * Builds a product link based on affiliate configuration.
+ * Builds a product link based on affiliate configuration with safe deep-link
+ * encoding and robust fallback to clean direct URLs.
  *
  * @param {Object} product - Hardware product object with affiliateNetwork and merchantId
- * @param {string} product.directUrl - Canonical OEM or merchant product URL
- * @param {string} product.affiliateNetwork - Affiliate network identifier
- * @param {string} product.merchantId - ASIN or network advertiser ID
+ * @param {string} [product.directUrl] - Canonical OEM or merchant product URL
+ * @param {string} [product.affiliateUrl] - Pre-built affiliate destination URL
+ * @param {string} [product.affiliateNetwork] - Affiliate network identifier (impact, awin, amazon, shareasale, none)
+ * @param {string} [product.merchantId] - ASIN or network advertiser ID
+ * @param {string} [product.impactCampaignId] - Impact campaign ID override
+ * @param {string} [product.impactPublisherId] - Impact publisher ID override
+ * @param {string} [product.awinMid] - Awin merchant ID override
+ * @param {string} [product.awinAffid] - Awin publisher ID override
+ * @param {string} [product.asin] - Amazon ASIN override
+ * @param {string} [product.amazonTag] - Amazon Associate tag override
+ * @param {string} [product.affiliateId] - General affiliate ID override
  * @returns {string} affiliate or clean direct destination URL
  */
 export function buildProductLink(product) {
-  const destination = cleanDestinationUrl(product?.directUrl);
-  if (!destination) {
+  if (!product || typeof product !== 'object') {
+    return '#';
+  }
+
+  // Direct clean URL fallback if no affiliate structure exists
+  if (!product.affiliateUrl && !product.affiliateNetwork && product.directUrl) {
+    return cleanDestinationUrl(product.directUrl) || product.directUrl;
+  }
+
+  const destination = cleanDestinationUrl(product.directUrl) || (typeof product.directUrl === 'string' ? product.directUrl.trim() : '');
+  const fallbackUrl = product.affiliateUrl || destination || product.directUrl || '#';
+
+  if (!destination && !product.affiliateUrl && !product.directUrl) {
     return '#';
   }
 
   // A deliberate routing disable or an all-placeholder configuration must never
   // emit a malformed tracking URL.
-  if (!AFFILIATE_CONFIG.ENABLE_AFFILIATE_ROUTING || areAllIdsPlaceholder()) {
-    return destination;
+  if (!AFFILIATE_CONFIG?.ENABLE_AFFILIATE_ROUTING || areAllIdsPlaceholder()) {
+    return destination || fallbackUrl;
   }
 
-  switch ((product?.affiliateNetwork || '').toLowerCase()) {
+  const network = (product.affiliateNetwork || '').trim().toLowerCase();
+
+  // If no affiliate network or network is 'none' / 'direct'
+  if (!network || network === 'none' || network === 'direct') {
+    return destination || fallbackUrl;
+  }
+
+  switch (network) {
     case 'impact':
-      return buildImpactLink(product, destination);
+      return buildImpactLink(product, destination) || fallbackUrl;
     case 'awin':
-      return buildAwinLink(product, destination);
+      return buildAwinLink(product, destination) || fallbackUrl;
     case 'amazon':
-      return buildAmazonLink(product);
+      return buildAmazonLink(product, destination) || fallbackUrl;
+    case 'shareasale':
+      return buildShareASaleLink(product, destination) || fallbackUrl;
     default:
-      return destination;
+      return product.affiliateUrl || destination || fallbackUrl;
   }
 }
 
-/** @param {Object} product @param {string} destination @returns {string} */
+/**
+ * Handle Impact Radius deep-linking with URL encoding and fallback
+ * @param {Object} product
+ * @param {string} destination
+ * @returns {string}
+ */
 function buildImpactLink(product, destination) {
-  const merchantId = encodeURIComponent(product.merchantId || '');
-  const affiliateId = encodeURIComponent(AFFILIATE_CONFIG.IMPACT_PUBLISHER_ID);
+  const target = destination || cleanDestinationUrl(product?.directUrl) || product?.directUrl;
+  const campaignId = String(
+    product?.impactCampaignId ||
+    (product?.merchantId && product?.merchantId !== 'direct' ? product?.merchantId : '') ||
+    '248631'
+  ).trim();
+  const affiliateId = String(
+    product?.affiliateId ||
+    product?.impactPublisherId ||
+    AFFILIATE_CONFIG?.IMPACT_PUBLISHER_ID ||
+    '7575765'
+  ).trim();
 
-  return `https://impact.com/c/${merchantId}?affid=${affiliateId}&u=${encodeURIComponent(destination)}`;
+  // Fallback if target is missing, or IDs are placeholder or invalid
+  if (
+    !target ||
+    !campaignId ||
+    campaignId === 'direct' ||
+    campaignId.startsWith('PLACEHOLDER') ||
+    !affiliateId ||
+    affiliateId.startsWith('PLACEHOLDER')
+  ) {
+    return target || product?.affiliateUrl || '#';
+  }
+
+  const encodedCampaign = encodeURIComponent(campaignId);
+  const encodedAffiliate = encodeURIComponent(affiliateId);
+  const encodedTarget = encodeURIComponent(target);
+
+  return `https://impact.com/c/${encodedCampaign}?affid=${encodedAffiliate}&u=${encodedTarget}`;
 }
 
-/** @param {Object} product @param {string} destination @returns {string} */
+/**
+ * Handle Awin deep-linking with URL encoding and fallback
+ * @param {Object} product
+ * @param {string} destination
+ * @returns {string}
+ */
 function buildAwinLink(product, destination) {
-  const merchantId = encodeURIComponent(product.merchantId || '');
-  const affiliateId = encodeURIComponent(AFFILIATE_CONFIG.AWIN_PUBLISHER_ID);
+  const target = destination || cleanDestinationUrl(product?.directUrl) || product?.directUrl;
+  const merchantId = String(
+    product?.awinMid ||
+    (product?.merchantId && product?.merchantId !== 'direct' ? product?.merchantId : '') ||
+    '46345'
+  ).trim();
+  const affiliateId = String(
+    product?.affiliateId ||
+    product?.awinAffid ||
+    AFFILIATE_CONFIG?.AWIN_PUBLISHER_ID ||
+    '3025417'
+  ).trim();
 
-  return `https://www.awin1.com/cread.php?awinmid=${merchantId}&awinaffid=${affiliateId}&ued=${encodeURIComponent(destination)}`;
+  // Fallback if target is missing, or IDs are placeholder or invalid
+  if (
+    !target ||
+    !merchantId ||
+    merchantId === 'direct' ||
+    merchantId.startsWith('PLACEHOLDER') ||
+    !affiliateId ||
+    affiliateId.startsWith('PLACEHOLDER')
+  ) {
+    return target || product?.affiliateUrl || '#';
+  }
+
+  const encodedMerchant = encodeURIComponent(merchantId);
+  const encodedAffiliate = encodeURIComponent(affiliateId);
+  const encodedTarget = encodeURIComponent(target);
+
+  return `https://www.awin1.com/cread.php?awinmid=${encodedMerchant}&awinaffid=${encodedAffiliate}&ued=${encodedTarget}`;
 }
 
-/** @param {Object} product @returns {string} */
-function buildAmazonLink(product) {
-  const asin = String(product?.merchantId || '').trim();
-  const tag = encodeURIComponent(AFFILIATE_CONFIG.AMAZON_TAG);
+/**
+ * Handle Amazon Associates linking with ASIN and tag encoding and fallback
+ * @param {Object} product
+ * @param {string} destination
+ * @returns {string}
+ */
+function buildAmazonLink(product, destination) {
+  const target = destination || cleanDestinationUrl(product?.directUrl) || product?.directUrl;
+  const asin = String(product?.asin || product?.merchantId || '').trim();
+  const tag = String(product?.amazonTag || AFFILIATE_CONFIG?.AMAZON_TAG || 'prosumatrix-20').trim();
 
-  // Keep the generated path deterministic and leave ASIN validation to the
-  // benchmark verifier, which can identify bad dataset records explicitly.
-  return `https://www.amazon.com/dp/${encodeURIComponent(asin)}/?tag=${tag}`;
+  // Fallback if ASIN or tag is missing, 'direct', or placeholder
+  if (
+    !asin ||
+    asin === 'direct' ||
+    asin.startsWith('PLACEHOLDER') ||
+    !tag ||
+    tag.startsWith('PLACEHOLDER')
+  ) {
+    return target || product?.affiliateUrl || '#';
+  }
+
+  return `https://www.amazon.com/dp/${encodeURIComponent(asin)}/?tag=${encodeURIComponent(tag)}`;
+}
+
+/**
+ * Handle ShareASale linking with URL encoding and fallback
+ * @param {Object} product
+ * @param {string} destination
+ * @returns {string}
+ */
+function buildShareASaleLink(product, destination) {
+  const target = destination || cleanDestinationUrl(product?.directUrl) || product?.directUrl;
+  const merchantId = String(product?.shareasaleMerchantId || product?.merchantId || '').trim();
+  const userId = String(product?.affiliateId || product?.shareasaleUserId || AFFILIATE_CONFIG?.SHAREASALE_USER_ID || '').trim();
+
+  if (
+    !target ||
+    !merchantId ||
+    merchantId === 'direct' ||
+    merchantId.startsWith('PLACEHOLDER') ||
+    !userId ||
+    userId.startsWith('PLACEHOLDER')
+  ) {
+    return target || product?.affiliateUrl || '#';
+  }
+
+  const encodedMerchant = encodeURIComponent(merchantId);
+  const encodedUser = encodeURIComponent(userId);
+  const encodedTarget = encodeURIComponent(target);
+
+  return `https://shareasale.com/r.cfm?b=${encodedMerchant}&u=${encodedUser}&m=${encodedMerchant}&urllink=${encodedTarget}`;
 }
 
 /**
@@ -112,6 +247,7 @@ export function getNetworkDisplayName(network) {
     impact: 'Impact',
     awin: 'Awin',
     amazon: 'Amazon',
+    shareasale: 'ShareASale',
     none: 'Direct'
   };
 
@@ -120,5 +256,5 @@ export function getNetworkDisplayName(network) {
 
 /** @returns {boolean} */
 export function isAffiliateRoutingActive() {
-  return !areAllIdsPlaceholder() && AFFILIATE_CONFIG.ENABLE_AFFILIATE_ROUTING;
+  return !areAllIdsPlaceholder() && Boolean(AFFILIATE_CONFIG?.ENABLE_AFFILIATE_ROUTING);
 }

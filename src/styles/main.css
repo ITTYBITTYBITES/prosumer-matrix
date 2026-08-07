@@ -118,7 +118,7 @@ body {
 
 /* Selection */
 ::selection {
-  background-color: var(--accent-sky);
+  background: var(--accent-sky);
   color: var(--bg-primary);
 }
 
@@ -128,28 +128,11 @@ body {
   outline-offset: 2px;
 }
 
-/* --------------------------------------------------------------------------
-   Typography
-   -------------------------------------------------------------------------- */
-
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-ui);
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.25;
   color: var(--text-primary);
-}
-
-h1 { font-size: 1.875rem; font-weight: 700; }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.25rem; }
-h4 { font-size: 1.125rem; }
-
-p {
-  color: var(--text-secondary);
-}
-
-code, pre {
-  font-family: var(--font-mono);
 }
 
 a {
@@ -163,28 +146,35 @@ a:hover {
   text-decoration: underline;
 }
 
-/* --------------------------------------------------------------------------
-   Matrix App Container
-   -------------------------------------------------------------------------- */
-
-#matrixContainer {
-  width: 100%;
-  min-width: 0;
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
+input, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   App Layout
+   -------------------------------------------------------------------------- */
+
 .matrix-app {
-  width: 100%;
   max-width: 1600px;
-  min-width: 0;
   margin: 0 auto;
   padding: var(--space-lg);
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .matrix-content,
 .matrix-mobile-view {
   width: 100%;
   min-width: 0;
+  box-sizing: border-box;
 }
 
 /* --------------------------------------------------------------------------
@@ -203,12 +193,39 @@ a:hover {
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-lg);
   backdrop-filter: blur(10px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .matrix-brand {
   display: flex;
   align-items: center;
   gap: var(--space-md);
+  min-width: 0;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu-toggle:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent-sky);
+}
+
+.mobile-menu-toggle svg {
+  width: 20px;
+  height: 20px;
 }
 
 .matrix-logo {
@@ -220,6 +237,7 @@ a:hover {
 .matrix-brand-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .matrix-title {
@@ -228,6 +246,9 @@ a:hover {
   font-weight: 700;
   letter-spacing: 0.02em;
   color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .matrix-subtitle {
@@ -235,11 +256,15 @@ a:hover {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .matrix-stats {
   display: flex;
-  gap: var(--space-lg);
+  flex-wrap: wrap;
+  gap: var(--space-md);
 }
 
 .stat-item {
@@ -250,6 +275,7 @@ a:hover {
   background: var(--bg-primary);
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
+  flex: 1 1 auto;
 }
 
 .stat-value {
@@ -257,6 +283,7 @@ a:hover {
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--accent-sky);
+  white-space: nowrap;
 }
 
 .stat-label {
@@ -264,6 +291,186 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Slide-out Drawer
+   -------------------------------------------------------------------------- */
+
+.mobile-drawer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+
+.mobile-drawer.open {
+  display: block;
+}
+
+.drawer-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+  animation: fadeIn var(--transition-fast);
+}
+
+.drawer-panel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 320px;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  animation: slideDrawerIn var(--transition-normal);
+  z-index: 2001;
+  overflow-y: auto;
+}
+
+@keyframes slideDrawerIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-primary);
+}
+
+.drawer-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.drawer-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.drawer-subtitle {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.drawer-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+
+.drawer-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.drawer-body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.drawer-section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-sky);
+  margin-bottom: var(--space-sm);
+}
+
+.drawer-categories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.drawer-category-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.drawer-category-btn:hover {
+  border-color: var(--accent-sky);
+  color: var(--text-primary);
+}
+
+.drawer-category-btn.active {
+  background: var(--accent-sky);
+  border-color: var(--accent-sky);
+  color: var(--bg-primary);
+  font-weight: 600;
+}
+
+.drawer-category-count {
+  font-size: 0.6875rem;
+  padding: 2px 6px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-full);
+}
+
+.drawer-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.drawer-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--bg-primary);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.drawer-stat-val {
+  font-family: var(--font-mono);
+  color: var(--accent-sky);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.drawer-stat-lbl {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
 }
 
 /* --------------------------------------------------------------------------
@@ -277,12 +484,13 @@ a:hover {
   min-width: 0;
   gap: var(--space-md);
   margin-bottom: var(--space-md);
+  box-sizing: border-box;
 }
 
 .search-container {
   position: relative;
-  flex: 1;
-  min-width: 280px;
+  flex: 1 1 280px;
+  min-width: 0;
 }
 
 .search-icon {
@@ -308,6 +516,7 @@ a:hover {
   font-family: var(--font-ui);
   font-size: 0.875rem;
   transition: all var(--transition-fast);
+  box-sizing: border-box;
 }
 
 .matrix-search::placeholder {
@@ -322,7 +531,7 @@ a:hover {
 
 .search-clear {
   position: absolute;
-  right: 8px;
+  right: var(--space-sm);
   top: 50%;
   transform: translateY(-50%);
   width: 28px;
@@ -330,12 +539,11 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-elevated);
+  background: transparent;
   border: none;
   border-radius: var(--radius-sm);
-  color: var(--text-secondary);
+  color: var(--text-muted);
   cursor: pointer;
-  display: none;
 }
 
 .search-clear:hover {
@@ -344,12 +552,13 @@ a:hover {
 }
 
 .search-clear svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 
+/* Category Pills */
 .category-pills-scroll {
-  flex: 1 1 360px;
+  flex: 2 1 360px;
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -357,6 +566,7 @@ a:hover {
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  box-sizing: border-box;
 }
 
 .category-pills-scroll::-webkit-scrollbar {
@@ -380,40 +590,35 @@ a:hover {
   color: var(--text-secondary);
   font-size: 0.75rem;
   font-weight: 500;
-  cursor: pointer;
-  transition: all var(--transition-fast);
   white-space: nowrap;
+  transition: all var(--transition-fast);
+  user-select: none;
 }
 
 .category-pill:hover {
-  background: var(--bg-hover);
-  color: var(--text-primary);
   border-color: var(--border-light);
+  color: var(--text-primary);
+  background: var(--bg-hover);
 }
 
 .category-pill.active {
   background: var(--accent-sky);
   border-color: var(--accent-sky);
   color: var(--bg-primary);
+  font-weight: 600;
 }
 
-.category-pill:focus-visible {
-  outline: 2px solid var(--accent-sky);
-  outline-offset: 2px;
-}
-
+/* Sort Controls */
 .sort-controls {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  flex-shrink: 0;
 }
 
 .sort-label {
   font-size: 0.75rem;
   color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .sort-select {
@@ -422,7 +627,6 @@ a:hover {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
-  font-family: var(--font-ui);
   font-size: 0.75rem;
   cursor: pointer;
 }
@@ -433,26 +637,27 @@ a:hover {
 }
 
 .sort-direction {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  color: var(--accent-sky);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .sort-direction:hover {
-  background: var(--bg-hover);
+  border-color: var(--accent-sky);
+  color: var(--accent-sky);
 }
 
 .sort-direction svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   transition: transform var(--transition-fast);
 }
 
@@ -460,67 +665,123 @@ a:hover {
   transform: rotate(180deg);
 }
 
-/* --------------------------------------------------------------------------
-   Results Info
-   -------------------------------------------------------------------------- */
-
+/* Results Count */
 .results-info {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: var(--space-sm);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
   margin-bottom: var(--space-md);
-  font-size: 0.875rem;
 }
 
 .results-count {
-  color: var(--text-secondary);
+  font-weight: 600;
+  color: var(--accent-sky);
 }
 
 .search-query {
-  color: var(--text-muted);
   font-style: italic;
 }
 
 /* --------------------------------------------------------------------------
-   Desktop Table View
+   Matrix Table (Desktop)
    -------------------------------------------------------------------------- */
 
 .matrix-table-wrapper {
   width: 100%;
   max-width: 100%;
-  min-width: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  overflow-x: auto;
-  overflow-y: hidden;
+  box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
 }
 
 .matrix-table {
   width: 100%;
-  table-layout: auto;
   border-collapse: collapse;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+  text-align: left;
 }
 
-.matrix-table thead {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(30, 41, 59, 0.95);
-  backdrop-filter: blur(10px);
+.matrix-table th,
+.matrix-table td {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .matrix-table th {
-  padding: var(--space-md) var(--space-lg);
-  text-align: left;
-  font-weight: 600;
+  background: var(--bg-primary);
   color: var(--text-secondary);
-  text-transform: uppercase;
+  font-weight: 600;
   font-size: 0.6875rem;
+  text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 1px solid var(--border-color);
-  background: rgba(30, 41, 59, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.matrix-table tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.matrix-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.matrix-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Column specific widths and layouts */
+.th-product, .td-product {
+  min-width: 220px;
+  position: sticky;
+  left: 0;
+  background: inherit;
+  z-index: 1;
+}
+
+.matrix-table th.th-product {
+  z-index: 11;
+  background: var(--bg-primary);
+}
+
+.matrix-table tbody tr .td-product {
+  background: var(--bg-surface);
+  cursor: pointer;
+}
+
+.matrix-table tbody tr:hover .td-product {
+  background: #243044;
+}
+
+.th-brand, .td-brand {
+  min-width: 120px;
+  color: var(--text-secondary);
+}
+
+.th-specs, .td-specs {
+  min-width: 280px;
+}
+
+.td-specs {
+  cursor: pointer;
+}
+
+.th-price-roi, .td-price-roi {
+  min-width: 140px;
+  white-space: nowrap;
+}
+
+.th-action, .td-action {
+  min-width: 140px;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .th-content {
@@ -529,89 +790,49 @@ a:hover {
   gap: var(--space-xs);
 }
 
+.th-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
+}
+
 .th-sort-btn {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  padding: 0;
-  background: none;
-  border: none;
   color: inherit;
-  font: inherit;
-  cursor: pointer;
-  transition: color var(--transition-fast);
-}
-
-.th-sort-btn:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
+  font-weight: inherit;
+  font-size: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  padding: 0;
 }
 
 .th-sort-btn:hover:not(:disabled) {
   color: var(--text-primary);
 }
 
-.th-sort-btn .sort-arrow {
-  width: 14px;
-  height: 14px;
-  color: var(--text-muted);
+.th-sort-btn:disabled {
+  cursor: default;
+}
+
+.sort-arrow {
+  width: 12px;
+  height: 12px;
+  opacity: 0;
   transition: all var(--transition-fast);
 }
 
-.th-sort-btn .sort-arrow.active {
+.sort-arrow.active {
+  opacity: 1;
   color: var(--accent-sky);
 }
 
-.th-sort-btn .sort-arrow.desc {
+.sort-arrow.desc {
   transform: rotate(180deg);
 }
 
-.th-icon {
-  width: 16px;
-  height: 16px;
-  color: var(--accent-sky);
-}
-
-.matrix-table td {
-  padding: var(--space-md) var(--space-lg);
-  border-bottom: 1px solid var(--border-color);
-  vertical-align: middle;
-}
-
-.matrix-table tbody tr {
-  transition: background-color var(--transition-fast);
-}
-
-.matrix-table tbody tr:hover {
-  background: rgba(51, 65, 85, 0.4);
-}
-
-.matrix-row:last-child td {
-  border-bottom: none;
-}
-
-/* Product Cell (First Column - Sticky on Tablet) */
-.th-product,
-.td-product {
-  width: 35%;
-}
-
-.matrix-content .matrix-table-wrapper {
-  overflow-x: auto;
-}
-
-.matrix-content .matrix-table-wrapper thead th:first-child,
-.matrix-content .matrix-table-wrapper tbody td:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 5;
-  background: var(--bg-surface);
-}
-
-.matrix-content .matrix-table-wrapper tbody tr:hover td:first-child {
-  background: rgba(51, 65, 85, 0.6);
-}
-
+/* Product cell */
 .product-cell {
   display: flex;
   align-items: center;
@@ -622,9 +843,9 @@ a:hover {
   width: 56px;
   height: 56px;
   flex-shrink: 0;
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  border-radius: var(--radius-sm);
   background: var(--bg-elevated);
+  overflow: hidden;
   border: 1px solid var(--border-color);
 }
 
@@ -632,25 +853,20 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-normal);
-}
-
-.product-cell:hover .product-image {
-  transform: scale(1.05);
 }
 
 .product-info {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
 }
 
 .product-name {
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-primary);
-  font-size: 0.875rem;
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.3;
 }
 
 .product-brand {
@@ -658,92 +874,56 @@ a:hover {
   color: var(--text-muted);
 }
 
-/* Brand Cell */
-.th-brand,
-.td-brand {
-  width: 15%;
-}
-
-.td-brand {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  color: var(--text-secondary);
-}
-
-/* Specs Cell */
-.th-specs,
-.td-specs {
-  width: 35%;
-}
-
-.td-specs {
-  font-size: 0.8125rem;
-}
-
+/* Specs Preview */
 .specs-preview {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
+.specs-preview:hover .spec-label {
+  color: var(--accent-sky);
+}
+
 .spec-item {
   display: flex;
   gap: var(--space-xs);
-  line-height: 1.4;
-}
-
-.spec-key {
-  color: var(--text-muted);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  flex-shrink: 0;
-  min-width: 70px;
-}
-
-.spec-value {
-  color: var(--text-secondary);
-  font-family: var(--font-mono);
   font-size: 0.75rem;
 }
 
-.specs-none {
+.spec-label {
   color: var(--text-muted);
-  font-style: italic;
+  font-weight: 500;
+  transition: color var(--transition-fast);
 }
 
-/* Price / ROI Cell */
-.th-price-roi,
+.spec-val {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+/* Price & ROI combined cell */
 .td-price-roi {
-  width: 10%;
-  text-align: right;
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.td-price-roi { font-family: var(--font-mono); }
-
-.price-value {
+.td-price-roi .price-value {
   font-family: var(--font-mono);
   font-weight: 600;
   color: var(--text-primary);
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
 }
 
 .roi-inline {
-  display: block;
-  margin-top: 2px;
-  color: var(--text-muted);
-  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--accent-emerald);
+  font-weight: 600;
 }
 
-/* Action Cell */
-.th-action,
-.td-action {
-  width: 5%;
-  text-align: right;
-  white-space: nowrap;
-}
-
+/* Action cell & CTA */
 .action-cell {
   position: relative;
   display: inline-block;
@@ -763,6 +943,7 @@ a:hover {
   cursor: pointer;
   transition: all var(--transition-fast);
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .btn-buy svg {
@@ -776,19 +957,14 @@ a:hover {
   text-decoration: none;
 }
 
-.mobile-card-cta {
-  width: 100%;
-  justify-content: center;
-  margin-top: var(--space-sm);
+.whitespace-nowrap {
+  white-space: nowrap !important;
 }
 
-/* --------------------------------------------------------------------------
-   Empty State
-   -------------------------------------------------------------------------- */
-
+/* Empty State */
 .empty-state {
   text-align: center;
-  padding: var(--space-2xl) var(--space-lg) !important;
+  padding: var(--space-2xl) !important;
 }
 
 .empty-icon {
@@ -823,6 +999,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .mobile-empty {
@@ -847,6 +1025,8 @@ a:hover {
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: box-shadow var(--transition-fast);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .mobile-card:hover {
@@ -857,6 +1037,8 @@ a:hover {
   position: relative;
   aspect-ratio: 16 / 9;
   background: var(--bg-elevated);
+  width: 100%;
+  overflow: hidden;
 }
 
 .mobile-image {
@@ -882,6 +1064,7 @@ a:hover {
 
 .mobile-card-body {
   padding: var(--space-md);
+  box-sizing: border-box;
 }
 
 .mobile-card-title {
@@ -899,16 +1082,15 @@ a:hover {
 
 .mobile-card-specs {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
+  flex-direction: column;
+  gap: var(--space-xs);
   margin-bottom: var(--space-md);
 }
 
 .mobile-spec {
-  flex: 1 1 45%;
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  justify-content: space-between;
+  align-items: center;
   padding: var(--space-xs) 0;
   border-bottom: 1px solid var(--border-color);
 }
@@ -917,12 +1099,8 @@ a:hover {
   border-bottom: none;
 }
 
-.mobile-spec:only-child {
-  flex: 1 1 100%;
-}
-
-.mobile-spec-key {
-  font-size: 0.625rem;
+.mobile-spec-label {
+  font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
@@ -932,6 +1110,7 @@ a:hover {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-secondary);
+  text-align: right;
 }
 
 /* Mobile footer */
@@ -946,6 +1125,9 @@ a:hover {
 
 .mobile-price .price-value {
   font-size: 1.125rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 .mobile-roi {
@@ -966,6 +1148,13 @@ a:hover {
   color: var(--accent-emerald);
 }
 
+.mobile-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 100%;
+}
+
 /* Full Specs Button (Mobile) */
 .btn-fullspecs {
   display: flex;
@@ -974,41 +1163,53 @@ a:hover {
   gap: var(--space-xs);
   width: 100%;
   padding: var(--space-sm);
-  background: var(--accent-sky);
-  border: none;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  color: var(--bg-primary);
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
   transition: all var(--transition-fast);
+  box-sizing: border-box;
 }
 
 .btn-fullspecs svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 
 .btn-fullspecs:hover {
-  background: var(--accent-sky-hover);
+  background: var(--bg-hover);
+  border-color: var(--accent-sky);
+  color: var(--accent-sky);
 }
 
 .btn-fullspecs:active {
   transform: scale(0.98);
 }
 
+.mobile-card-cta {
+  width: 100%;
+  justify-content: center;
+  padding: var(--space-sm);
+  font-size: 0.875rem;
+  box-sizing: border-box;
+}
+
 /* --------------------------------------------------------------------------
-   Modal
+   Modals (Buy Modal & Full Specs Modal)
    -------------------------------------------------------------------------- */
 
 .matrix-modal {
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  z-index: 3000;
   align-items: center;
   justify-content: center;
-  padding: var(--space-lg);
+  padding: var(--space-md);
+  box-sizing: border-box;
 }
 
 .matrix-modal.active {
@@ -1018,7 +1219,7 @@ a:hover {
 .modal-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(4px);
 }
 
@@ -1028,11 +1229,13 @@ a:hover {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 500px;
+  max-width: 520px;
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: var(--shadow-lg);
   animation: modalSlideIn var(--transition-normal);
+  z-index: 3001;
+  box-sizing: border-box;
 }
 
 @keyframes modalSlideIn {
@@ -1052,11 +1255,13 @@ a:hover {
   justify-content: space-between;
   padding: var(--space-md) var(--space-lg);
   border-bottom: 1px solid var(--border-color);
+  background: var(--bg-primary);
 }
 
 .modal-header h2 {
   font-size: 1.125rem;
   margin: 0;
+  color: var(--text-primary);
 }
 
 .modal-close {
@@ -1066,7 +1271,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   background: var(--bg-elevated);
-  border: none;
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   color: var(--text-secondary);
   cursor: pointer;
@@ -1076,6 +1281,7 @@ a:hover {
 .modal-close:hover {
   background: var(--bg-hover);
   color: var(--text-primary);
+  border-color: var(--accent-sky);
 }
 
 .modal-close svg {
@@ -1102,6 +1308,7 @@ a:hover {
   flex-shrink: 0;
   border-radius: var(--radius-md);
   overflow: hidden;
+  background: var(--bg-elevated);
 }
 
 .modal-product-image img {
@@ -1125,6 +1332,7 @@ a:hover {
 .modal-product-name {
   font-size: 1.125rem;
   margin: var(--space-xs) 0;
+  color: var(--text-primary);
 }
 
 .modal-product-price {
@@ -1146,6 +1354,7 @@ a:hover {
   padding: var(--space-md);
   background: var(--bg-primary);
   border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
 }
 
 .modal-link-label {
@@ -1187,6 +1396,7 @@ a:hover {
   font-weight: 500;
   font-size: 0.8125rem;
   transition: all var(--transition-fast);
+  text-decoration: none;
 }
 
 .modal-link-btn svg {
@@ -1197,6 +1407,7 @@ a:hover {
 .modal-link-btn:hover {
   background: var(--accent-sky-hover);
   text-decoration: none;
+  color: var(--bg-primary);
 }
 
 .modal-link-btn-affiliate {
@@ -1207,7 +1418,7 @@ a:hover {
   background: var(--accent-emerald-hover);
 }
 
-/* Primary direct link style (for non-affiliate products) */
+/* Primary direct link style */
 .modal-link-item-primary {
   padding: var(--space-lg);
   background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-surface) 100%);
@@ -1260,7 +1471,7 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
-   Specs Modal (Mobile)
+   Specs Modal Styles
    -------------------------------------------------------------------------- */
 
 .modal-specs .modal-body {
@@ -1278,16 +1489,19 @@ a:hover {
 }
 
 .specs-image {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: var(--radius-md);
   object-fit: cover;
   background: var(--bg-elevated);
+  flex-shrink: 0;
+  border: 1px solid var(--border-color);
 }
 
 .specs-meta {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .specs-brand {
@@ -1295,10 +1509,18 @@ a:hover {
   color: var(--accent-sky);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.specs-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 2px 0;
 }
 
 .specs-category {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
 }
 
@@ -1310,6 +1532,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 1px;
+  margin-bottom: var(--space-md);
 }
 
 .specs-row {
@@ -1318,11 +1541,13 @@ a:hover {
   align-items: center;
   padding: var(--space-sm) 0;
   border-bottom: 1px solid var(--border-color);
+  gap: var(--space-md);
 }
 
 .specs-key {
   color: var(--text-muted);
   font-size: 0.8125rem;
+  flex-shrink: 0;
 }
 
 .specs-value {
@@ -1330,6 +1555,7 @@ a:hover {
   font-size: 0.8125rem;
   color: var(--text-primary);
   text-align: right;
+  word-break: break-word;
 }
 
 .specs-row:last-child {
@@ -1348,16 +1574,20 @@ a:hover {
   flex-wrap: wrap;
   gap: var(--space-md);
   align-items: center;
+  justify-content: space-between;
   padding: var(--space-md);
   background: var(--bg-primary);
   border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
 }
 
 .specs-price,
 .specs-roi,
 .specs-network {
-  flex: 1;
-  min-width: 80px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 60px;
 }
 
 .price-label,
@@ -1391,6 +1621,7 @@ a:hover {
 .btn-specs-buy {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-xs);
   padding: var(--space-sm) var(--space-md);
   background: var(--accent-sky);
@@ -1402,6 +1633,8 @@ a:hover {
   cursor: pointer;
   transition: all var(--transition-fast);
   text-decoration: none;
+  width: 100%;
+  margin-top: var(--space-sm);
 }
 
 .btn-specs-buy svg {
@@ -1412,6 +1645,7 @@ a:hover {
 .btn-specs-buy:hover {
   background: var(--accent-sky-hover);
   color: var(--bg-primary);
+  text-decoration: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -1476,12 +1710,25 @@ a:hover {
     padding: var(--space-sm);
   }
 
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+
   .matrix-header {
-    padding: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .matrix-brand {
+    gap: var(--space-sm);
   }
 
   .matrix-title {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
+  }
+
+  .matrix-subtitle {
+    font-size: 0.6875rem;
   }
 
   .matrix-logo {
@@ -1490,11 +1737,15 @@ a:hover {
   }
 
   .matrix-stats {
-    gap: var(--space-sm);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    width: 100%;
   }
 
   .stat-item {
     padding: var(--space-xs);
+    min-width: 70px;
   }
 
   .stat-value {
@@ -1534,7 +1785,7 @@ a:hover {
 
   .sort-select {
     flex: 1;
-    max-width: 120px;
+    max-width: 140px;
   }
 
   .results-info {
@@ -1574,8 +1825,8 @@ a:hover {
   /* Modal adjustments */
   .modal-content {
     max-width: 100%;
-    margin: var(--space-sm);
-    max-height: calc(100vh - 2 * var(--space-sm));
+    margin: var(--space-xs);
+    max-height: calc(100vh - 2 * var(--space-xs));
   }
 
   .modal-body {
@@ -1600,20 +1851,39 @@ a:hover {
   .specs-roi,
   .specs-network {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: var(--space-sm);
-    min-width: 100%;
-  }
-
-  .specs-price .price-value,
-  .specs-roi .roi-value,
-  .specs-network .network-value {
-    margin-left: auto;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .btn-specs-buy {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* Small mobile (<= 375px) */
+@media (max-width: 375px) {
+  .matrix-app {
+    padding: 6px;
+  }
+
+  .matrix-header {
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .matrix-title {
+    font-size: 0.9375rem;
+  }
+
+  .matrix-stats {
+    gap: 4px;
+  }
+
+  .stat-item {
+    padding: 2px 4px;
+    min-width: 60px;
   }
 }
 
@@ -1722,7 +1992,9 @@ a:hover {
   .search-container,
   .category-pills,
   .sort-controls,
-  .action-cell {
+  .action-cell,
+  .mobile-menu-toggle,
+  .mobile-drawer {
     display: none !important;
   }
 
@@ -1732,9 +2004,5 @@ a:hover {
 
   .matrix-table th {
     background: #f0f0f0 !important;
-  }
-
-  .matrix-table tbody tr:hover {
-    background: none !important;
   }
 }
