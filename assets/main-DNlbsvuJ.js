@@ -695,10 +695,15 @@ class MatrixApp {
     });
     this.container.querySelectorAll(".btn-buy, .btn-buy-primary").forEach((btn) => {
       btn.addEventListener("click", (e) => {
+        e.stopPropagation();
         const productId = btn.dataset.id;
         const product = this.products.find((p) => p.id === productId);
         if (product) {
-          this.showBuyModal(product);
+          if (product.affiliateNetwork === "none") {
+            window.open(product.directUrl, "_blank", "noopener,noreferrer");
+          } else {
+            this.showBuyModal(product);
+          }
         }
       });
     });
@@ -862,15 +867,59 @@ class MatrixApp {
   }
   /**
    * Show buy modal
+   * For non-affiliate products, show a simplified modal with just the direct link.
+   * For affiliate products, show both direct and affiliate options.
    */
   showBuyModal(product) {
     const modal = document.getElementById("buyModal");
     const body = document.getElementById("modalBody");
     const title = document.getElementById("modalTitle");
     if (!modal || !body) return;
+    if (product.affiliateNetwork === "none") {
+      title.textContent = `${product.name} - Direct Link`;
+      body.innerHTML = `
+        <div class="modal-product">
+          <div class="modal-product-image">
+            <img
+              src="${getImageUrl(product.imageUrl, 200)}"
+              alt="${product.name}"
+              onerror="this.onerror=null;this.src='${getCategorySvgFallback(product.category)}';"
+            >
+          </div>
+          <div class="modal-product-info">
+            <span class="modal-product-brand">${this.escapeHtml(product.brand)}</span>
+            <h3 class="modal-product-name">${this.escapeHtml(product.name)}</h3>
+            <p class="modal-product-price">$${product.priceUsd.toLocaleString()}</p>
+          </div>
+        </div>
+
+        <div class="modal-link-item modal-link-item-primary">
+          <div class="modal-link-label">
+            <span>Official Product Page</span>
+          </div>
+          <a
+            href="${product.directUrl}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="modal-link-btn modal-link-btn-primary"
+          >
+            Visit Manufacturer Site
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+      `;
+      modal.style.display = "flex";
+      return;
+    }
     title.textContent = `${product.name} - Purchase Options`;
-    const directUrl = buildProductLink(product);
+    const directUrl = product.directUrl;
+    const affiliateUrl = buildProductLink(product);
     const networkName = getNetworkDisplayName(product.affiliateNetwork);
+    const hasAffiliate = product.affiliateNetwork !== "none";
     body.innerHTML = `
       <div class="modal-product">
         <div class="modal-product-image">
@@ -900,7 +949,7 @@ class MatrixApp {
             <span>Direct OEM Link</span>
           </div>
           <a
-            href="${product.directUrl}"
+            href="${directUrl}"
             target="_blank"
             rel="noopener noreferrer"
             class="modal-link-btn"
@@ -914,7 +963,7 @@ class MatrixApp {
           </a>
         </div>
 
-        ${product.affiliateNetwork !== "none" ? `
+        ${hasAffiliate ? `
         <div class="modal-link-item">
           <div class="modal-link-label">
             <span class="link-icon link-icon-affiliate">
@@ -927,7 +976,7 @@ class MatrixApp {
             <span class="affiliate-note">Supports our work</span>
           </div>
           <a
-            href="${directUrl}"
+            href="${affiliateUrl}"
             target="_blank"
             rel="noopener noreferrer"
             class="modal-link-btn modal-link-btn-affiliate"
@@ -943,6 +992,7 @@ class MatrixApp {
         ` : ""}
       </div>
 
+      ${hasAffiliate ? `
       <div class="modal-footer">
         <p class="modal-note">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -953,14 +1003,9 @@ class MatrixApp {
           Clicking affiliate links may earn us a commission at no extra cost to you.
         </p>
       </div>
+      ` : ""}
     `;
     modal.style.display = "flex";
-    if (product.affiliateNetwork !== "none") {
-      const affiliateLink = body.querySelector(".modal-link-btn-affiliate");
-      if (affiliateLink) {
-        affiliateLink.href = directUrl;
-      }
-    }
   }
   /**
    * Hide modal
