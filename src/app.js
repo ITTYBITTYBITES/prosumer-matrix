@@ -8,7 +8,7 @@ import './styles/main.css';
 import { MatrixApp } from './components/MatrixApp.js';
 import hardwareData from './data/hardware.json' assert { type: 'json' };
 
-/**
+/** 
  * Initialize the application
  */
 function init() {
@@ -22,7 +22,7 @@ function init() {
   }
 }
 
-/**
+/** 
  * Start the Matrix Application
  */
 function startApp() {
@@ -85,7 +85,7 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     // The service worker is at /sw.js which becomes /prosumer-matrix/sw.js when deployed
     // Its scope will be /prosumer-matrix/ which takes precedence over root site's SW
-    navigator.serviceWorker.register('/sw.js', {
+    navigator.serviceWorker.register('/prosumer-matrix/sw.js', {
       scope: '/prosumer-matrix/'
     })
       .then((registration) => {
