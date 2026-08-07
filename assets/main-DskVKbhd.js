@@ -111,8 +111,6 @@ function buildProductLink(item) {
       return buildImpactLink(item);
     case "awin":
       return buildAwinLink(item);
-    case "shareasale":
-      return buildShareASaleLink(item);
     case "amazon":
       return buildAmazonLink(item);
     default:
@@ -131,12 +129,6 @@ function buildAwinLink(item) {
   const { AWIN_PUBLISHER_ID } = AFFILIATE_CONFIG;
   const merchantId = item.merchantId || "";
   const url = `https://www.awin1.com/cread.php?awinmid=${AWIN_PUBLISHER_ID}&awinaffid=${AWIN_PUBLISHER_ID}&clickref=${merchantId}&p=${encodeURIComponent(item.name || "")}`;
-  return url;
-}
-function buildShareASaleLink(item) {
-  const { SHAREASALE_USER_ID } = AFFILIATE_CONFIG;
-  const merchantId = item.merchantId || "";
-  const url = `https://shareasale.com/r.cfm?b=${merchantId}&u=${SHAREASALE_USER_ID}&m=shop`;
   return url;
 }
 function buildAmazonLink(item) {
@@ -165,7 +157,6 @@ function getNetworkDisplayName(network) {
   const names = {
     impact: "Impact",
     awin: "Awin",
-    shareasale: "ShareASale",
     amazon: "Amazon",
     none: "Direct"
   };
@@ -1128,7 +1119,7 @@ const hardwareData = [
     priceUsd: 4999,
     directUrl: "https://www.xtool.com/products/xtool-p2-50w-laser-cutter",
     imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
-    affiliateNetwork: "shareasale",
+    affiliateNetwork: "awin",
     merchantId: "xtool",
     roiScore: 68,
     specs: {
@@ -1320,7 +1311,7 @@ const hardwareData = [
     priceUsd: 2499,
     directUrl: "https://www.lamarzocco.com/linea-micra/",
     imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
-    affiliateNetwork: "shareasale",
+    affiliateNetwork: "awin",
     merchantId: "lamarzocco",
     roiScore: 72,
     specs: {
@@ -1394,7 +1385,7 @@ const hardwareData = [
     priceUsd: 5299,
     directUrl: "https://ternbicycles.com/products/gsd-s10",
     imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
-    affiliateNetwork: "shareasale",
+    affiliateNetwork: "awin",
     merchantId: "tern-gsd-s10",
     roiScore: 89,
     specs: {
