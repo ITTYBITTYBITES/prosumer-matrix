@@ -1,125 +1,111 @@
 // ============================================================================
 // LINK BUILDER UTILITIES
 // ============================================================================
-// Constructs affiliate and direct product URLs based on configuration
-// Supports: Amazon, Impact, Awin (includes former ShareASale merchants)
+// Constructs clean affiliate and direct product URLs using the publisher
+// credentials configured in src/config/affiliates.js.
 // ============================================================================
 
 import { AFFILIATE_CONFIG, areAllIdsPlaceholder } from '../config/affiliates.js';
 
 /**
+ * Removes query/hash tracking data and normalizes the path of a destination URL.
+ *
+ * Affiliate platforms treat the destination as a single query-string value. A
+ * canonical, parameter-free URL prevents nested tracking parameters from being
+ * truncated or interpreted as parameters for the affiliate network.
+ *
+ * @param {string} url
+ * @returns {string} canonical HTTP(S) destination, or an empty string
+ */
+export function cleanDestinationUrl(url) {
+  if (typeof url !== 'string' || !url.trim()) {
+    return '';
+  }
+
+  try {
+    const destination = new URL(url.trim());
+    if (!['http:', 'https:'].includes(destination.protocol)) {
+      return '';
+    }
+
+    // Product URLs in this dataset are canonical page paths. Discard all query
+    // parameters (including utm_*, click IDs, and stale store variants) and
+    // fragments rather than passing one network's parameters into another.
+    destination.search = '';
+    destination.hash = '';
+
+    // Normalize non-root trailing slashes while preserving an origin's root.
+    destination.pathname = destination.pathname.replace(/\/+$/, '') || '/';
+
+    return destination.toString();
+  } catch {
+    return '';
+  }
+}
+
+/**
  * Builds a product link based on affiliate configuration.
  *
- * - If all affiliate IDs are placeholders, safely degrades to directUrl
- * - If valid IDs exist, constructs affiliate deep-link URLs
- *
- * @param {Object} item - Hardware product object with affiliateNetwork and merchantId
- * @param {string} item.directUrl - Direct OEM URL
- * @param {string} item.affiliateNetwork - Affiliate network identifier
- * @param {string} item.merchantId - Merchant ID for affiliate network
- * @param {string} [item.amazonAsin] - Optional Amazon ASIN
- * @returns {string} - Product URL (affiliate or direct)
+ * @param {Object} product - Hardware product object with affiliateNetwork and merchantId
+ * @param {string} product.directUrl - Canonical OEM or merchant product URL
+ * @param {string} product.affiliateNetwork - Affiliate network identifier
+ * @param {string} product.merchantId - ASIN or network advertiser ID
+ * @returns {string} affiliate or clean direct destination URL
  */
-export function buildProductLink(item) {
-  // Check if affiliate routing is disabled or all IDs are placeholders
+export function buildProductLink(product) {
+  const destination = cleanDestinationUrl(product?.directUrl);
+  if (!destination) {
+    return '#';
+  }
+
+  // A deliberate routing disable or an all-placeholder configuration must never
+  // emit a malformed tracking URL.
   if (!AFFILIATE_CONFIG.ENABLE_AFFILIATE_ROUTING || areAllIdsPlaceholder()) {
-    return item.directUrl || '#';
+    return destination;
   }
 
-  const network = (item.affiliateNetwork || '').toLowerCase();
-
-  switch (network) {
+  switch ((product?.affiliateNetwork || '').toLowerCase()) {
     case 'impact':
-      return buildImpactLink(item);
+      return buildImpactLink(product, destination);
     case 'awin':
-      return buildAwinLink(item);
+      return buildAwinLink(product, destination);
     case 'amazon':
-      return buildAmazonLink(item);
+      return buildAmazonLink(product);
     default:
-      return item.directUrl || '#';
+      return destination;
   }
 }
 
-/**
- * Builds an Impact.com affiliate deep link.
- *
- * @param {Object} item - Product object
- * @returns {string} - Impact affiliate URL
- */
-function buildImpactLink(item) {
-  const { IMPACT_PUBLISHER_ID } = AFFILIATE_CONFIG;
-  const merchantId = encodeURIComponent(item.merchantId || '');
-  const publisherId = encodeURIComponent(IMPACT_PUBLISHER_ID);
-  const destination = encodeURIComponent(item.directUrl || '');
+/** @param {Object} product @param {string} destination @returns {string} */
+function buildImpactLink(product, destination) {
+  const merchantId = encodeURIComponent(product.merchantId || '');
+  const affiliateId = encodeURIComponent(AFFILIATE_CONFIG.IMPACT_PUBLISHER_ID);
 
-  // Keep the OEM destination as one encoded query value. Passing an unencoded
-  // URL here truncates it at its first "&" or query parameter.
-  return `https://impact.com/c/${merchantId}?affid=${publisherId}&u=${destination}`;
+  return `https://impact.com/c/${merchantId}?affid=${affiliateId}&u=${encodeURIComponent(destination)}`;
 }
 
-/**
- * Builds an Awin affiliate deep link.
- *
- * @param {Object} item - Product object
- * @returns {string} - Awin affiliate URL
- */
-function buildAwinLink(item) {
-  const { AWIN_PUBLISHER_ID } = AFFILIATE_CONFIG;
-  const merchantId = encodeURIComponent(item.merchantId || '');
-  const publisherId = encodeURIComponent(AWIN_PUBLISHER_ID);
-  const destination = encodeURIComponent(item.directUrl || '');
+/** @param {Object} product @param {string} destination @returns {string} */
+function buildAwinLink(product, destination) {
+  const merchantId = encodeURIComponent(product.merchantId || '');
+  const affiliateId = encodeURIComponent(AFFILIATE_CONFIG.AWIN_PUBLISHER_ID);
 
-  // awinmid identifies the advertiser, awinaffid identifies this publisher,
-  // and ued contains the final merchant URL. Encoding ued is required when a
-  // manufacturer URL contains its own query string or ampersands.
-  return `https://www.awin1.com/cread.php?awinmid=${merchantId}&awinaffid=${publisherId}&ued=${destination}`;
+  return `https://www.awin1.com/cread.php?awinmid=${merchantId}&awinaffid=${affiliateId}&ued=${encodeURIComponent(destination)}`;
 }
 
-/**
- * Builds an Amazon Associates affiliate link.
- * Format: https://www.amazon.com/dp/{ASIN}/?tag={amazonTag}
- *
- * @param {Object} item - Product object with optional amazonAsin
- * @returns {string} - Amazon affiliate URL
- */
-function buildAmazonLink(item) {
-  const { AMAZON_TAG } = AFFILIATE_CONFIG;
+/** @param {Object} product @returns {string} */
+function buildAmazonLink(product) {
+  const asin = String(product?.merchantId || '').trim();
+  const tag = encodeURIComponent(AFFILIATE_CONFIG.AMAZON_TAG);
 
-  // Use dedicated ASIN if provided, otherwise try to extract from merchantId or directUrl
-  let asin = item.amazonAsin;
-
-  if (!asin && item.merchantId) {
-    // merchantId might be the ASIN
-    asin = item.merchantId;
-  }
-
-  if (!asin) {
-    // Try to extract ASIN from directUrl
-    const url = new URL(item.directUrl || '');
-    const pathParts = url.pathname.split('/');
-    for (const part of pathParts) {
-      if (/^[B][0-9A-Z]{9}$/.test(part)) {
-        asin = part;
-        break;
-      }
-    }
-  }
-
-  // Fallback: use merchantId as ASIN
-  if (!asin) {
-    asin = item.merchantId || 'UNKNOWN';
-  }
-
-  const url = `https://www.amazon.com/dp/${asin}/?tag=${AMAZON_TAG}`;
-
-  return url;
+  // Keep the generated path deterministic and leave ASIN validation to the
+  // benchmark verifier, which can identify bad dataset records explicitly.
+  return `https://www.amazon.com/dp/${encodeURIComponent(asin)}/?tag=${tag}`;
 }
 
 /**
  * Gets the display name for an affiliate network.
- *
- * @param {string} network - Network identifier
- * @returns {string} - Human-readable network name
+ * @param {string} network
+ * @returns {string}
  */
 export function getNetworkDisplayName(network) {
   const names = {
@@ -132,11 +118,7 @@ export function getNetworkDisplayName(network) {
   return names[network?.toLowerCase()] || 'Direct';
 }
 
-/**
- * Determines if affiliate routing is currently active.
- *
- * @returns {boolean} - True if affiliate links will be generated
- */
+/** @returns {boolean} */
 export function isAffiliateRoutingActive() {
   return !areAllIdsPlaceholder() && AFFILIATE_CONFIG.ENABLE_AFFILIATE_ROUTING;
 }

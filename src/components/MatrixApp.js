@@ -5,7 +5,7 @@
 // Handles rendering, filtering, sorting, and responsive views
 // ============================================================================
 
-import { getImageUrl, IMAGE_FALLBACK_URL } from '../utils/imageProxy.js';
+import { getImageUrl, getProductImageFallback } from '../utils/imageProxy.js';
 import { buildProductLink, getNetworkDisplayName } from '../utils/linkBuilder.js';
 
 /**
@@ -275,6 +275,8 @@ export class MatrixApp {
 
     return this.filteredProducts.map(product => {
       const imageUrl = getImageUrl(product.imageUrl, 80);
+      const imageFallback = getProductImageFallback(product);
+      const productLink = buildProductLink(product);
 
       return `
         <tr class="matrix-row" data-id="${product.id}" data-category="${product.category}">
@@ -285,7 +287,7 @@ export class MatrixApp {
                   src="${imageUrl}"
                   alt="${product.name}"
                   loading="lazy"
-                  onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_URL}';"
+                  onerror="this.onerror=null;this.src='${imageFallback}';"
                   class="product-image"
                 >
               </div>
@@ -319,28 +321,15 @@ export class MatrixApp {
           </td>
           <td class="td-action">
             <div class="action-cell">
-              <button
+              <a
+                href="${productLink}"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn-buy"
-                data-id="${product.id}"
-                aria-label="View purchase options for ${this.escapeHtml(product.name)}"
+                aria-label="View ${this.escapeHtml(product.name)} in a new tab"
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="9" cy="21" r="1"/>
-                  <circle cx="20" cy="21" r="1"/>
-                  <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
-                </svg>
-                Buy
-              </button>
-              <div class="buy-dropdown" id="dropdown-${product.id}">
-                <button class="btn-buy-primary" data-id="${product.id}">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="9" cy="21" r="1"/>
-                    <circle cx="20" cy="21" r="1"/>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
-                  </svg>
-                  View Options
-                </button>
-              </div>
+                View Item →
+              </a>
             </div>
           </td>
         </tr>
@@ -366,6 +355,8 @@ export class MatrixApp {
 
     return this.filteredProducts.map(product => {
       const imageUrl = getImageUrl(product.imageUrl, 400);
+      const imageFallback = getProductImageFallback(product);
+      const productLink = buildProductLink(product);
 
       return `
         <div class="mobile-card" data-id="${product.id}">
@@ -374,7 +365,7 @@ export class MatrixApp {
               src="${imageUrl}"
               alt="${product.name}"
               loading="lazy"
-              onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_URL}';"
+              onerror="this.onerror=null;this.src='${imageFallback}';"
               class="mobile-image"
             >
             <span class="mobile-category-badge">${product.category}</span>
@@ -407,6 +398,15 @@ export class MatrixApp {
                 <path d="M12 5v14M5 12l7 7 7-7"/>
               </svg>
             </button>
+            <a
+              href="${productLink}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-buy mobile-card-cta"
+              aria-label="View ${this.escapeHtml(product.name)} in a new tab"
+            >
+              View Item →
+            </a>
           </div>
         </div>
       `;
@@ -587,23 +587,8 @@ export class MatrixApp {
       });
     });
 
-    // Buy buttons - handle both affiliate and non-affiliate products
-    this.container.querySelectorAll('.btn-buy, .btn-buy-primary').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const productId = btn.dataset.id;
-        const product = this.products.find(p => p.id === productId);
-        if (product) {
-          // Option B: For non-affiliate products, open direct link immediately
-          if (product.affiliateNetwork === 'none') {
-            window.open(product.directUrl, '_blank', 'noopener,noreferrer');
-          } else {
-            // Option A: For affiliate products, open the purchase modal
-            this.showBuyModal(product);
-          }
-        }
-      });
-    });
+    // Product CTAs are standard anchors with target="_blank". They use
+    // buildProductLink() in each renderer and therefore need no click handler.
 
     // Full specs buttons (mobile)
     this.container.querySelectorAll('.btn-fullspecs').forEach(btn => {
@@ -756,32 +741,11 @@ export class MatrixApp {
   }
 
   /**
-   * Attach buy dropdown handlers
+   * CTA anchors require no runtime event binding. Kept as a named hook because
+   * updateViews() calls it after replacing the table and mobile-card markup.
    */
   attachBuyDropdownHandlers() {
-    // Single buy button opens modal directly
-    this.container.querySelectorAll('.btn-buy').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const productId = btn.dataset.id;
-        const product = this.products.find(p => p.id === productId);
-        if (product) {
-          this.showBuyModal(product);
-        }
-      });
-    });
-
-    // Primary buy button also opens modal
-    this.container.querySelectorAll('.btn-buy-primary, .btn-buy-primary-clone').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const productId = btn.dataset.id;
-        const product = this.products.find(p => p.id === productId);
-        if (product) {
-          this.showBuyModal(product);
-        }
-      });
-    });
+    // Intentionally empty: every .btn-buy is a normal, accessible anchor.
   }
 
   /**
@@ -818,6 +782,8 @@ export class MatrixApp {
 
     if (!modal || !body) return;
 
+    const imageFallback = getProductImageFallback(product);
+
     // For non-affiliate products, use a simpler modal with just the direct link
     if (product.affiliateNetwork === 'none') {
       title.textContent = `${product.name} - Direct Link`;
@@ -827,7 +793,7 @@ export class MatrixApp {
             <img
               src="${getImageUrl(product.imageUrl, 200)}"
               alt="${product.name}"
-              onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_URL}';"
+              onerror="this.onerror=null;this.src='${imageFallback}';"
             >
           </div>
           <div class="modal-product-info">
@@ -874,7 +840,7 @@ export class MatrixApp {
           <img
             src="${getImageUrl(product.imageUrl, 200)}"
             alt="${product.name}"
-            onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_URL}';"
+            onerror="this.onerror=null;this.src='${imageFallback}';"
           >
         </div>
         <div class="modal-product-info">
@@ -977,6 +943,9 @@ export class MatrixApp {
 
     if (!modal || !body) return;
 
+    const imageFallback = getProductImageFallback(product);
+    const productLink = buildProductLink(product);
+
     title.textContent = `${product.name} - Full Specifications`;
 
     const specsHtml = product.specs && Object.keys(product.specs).length > 0
@@ -993,7 +962,7 @@ export class MatrixApp {
         <img
           src="${getImageUrl(product.imageUrl, 120)}"
           alt="${product.name}"
-          onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_URL}';"
+          onerror="this.onerror=null;this.src='${imageFallback}';"
           class="specs-image"
         >
         <div class="specs-meta">
@@ -1022,12 +991,12 @@ export class MatrixApp {
           </div>
 
           <a
-            href="${product.directUrl}"
+            href="${productLink}"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-specs-buy"
           >
-            Buy Now
+            View Item →
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
               <polyline points="15 3 21 3 21 9"/>

@@ -840,6 +840,13 @@ a:hover {
 .btn-buy:hover {
   background: var(--accent-sky);
   color: var(--bg-primary);
+  text-decoration: none;
+}
+
+.mobile-card-cta {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--space-sm);
 }
 
 /* --------------------------------------------------------------------------
