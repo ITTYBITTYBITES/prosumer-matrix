@@ -1,9 +1,6 @@
 # ============================================================================
 # GitHub Actions Workflow: Data Refresh Validation
 # ============================================================================
-# Purpose: Validate hardware.json schema integrity on a weekly schedule
-# Triggers: Every Sunday at 00:00 UTC (cron: '0 0 * * 0')
-# ============================================================================
 
 name: Data Schema Validation
 
@@ -20,6 +17,7 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -34,14 +32,15 @@ jobs:
         run: npm ci
 
       - name: Validate Hardware Schema
-        run: npx ajv test -s src/data/HardwareSchema.json -d src/data/hardware.json
+        id: schema_validation
+        run: npx ajv test -s src/data/HardwareSchema.json -d src/data/hardware.json --valid
 
       - name: Report Results
         if: always()
         run: |
           echo "## Schema Validation Results" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Status**: Schema validation passed" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status**: Schema validation ${{ steps.schema_validation.outcome == 'success' && 'passed' || 'failed' }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Data File**: src/data/hardware.json" >> $GITHUB_STEP_SUMMARY
           echo "- **Schema**: src/data/HardwareSchema.json" >> $GITHUB_STEP_SUMMARY
           echo "- **Timestamp**: $(date -u)" >> $GITHUB_STEP_SUMMARY
