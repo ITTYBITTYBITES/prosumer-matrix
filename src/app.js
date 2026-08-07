@@ -37,22 +37,42 @@ function startApp() {
     // Initialize the MatrixApp
     const app = new MatrixApp('#matrixContainer', hardwareData);
 
+    // Hide loading state after app initializes
+    const loadingState = document.getElementById('loadingState');
+    if (loadingState) {
+      loadingState.classList.add('loaded');
+      // Remove from DOM after transition to free up memory
+      setTimeout(() => {
+        if (loadingState.parentNode) {
+          loadingState.parentNode.removeChild(loadingState);
+        }
+      }, 300);
+    }
+
     // Expose for debugging
     window.__matrixApp = app;
 
     console.log(`Prosumer Matrix initialized with ${hardwareData.length} products`);
   } catch (error) {
     console.error('Failed to initialize MatrixApp:', error);
-    container.innerHTML = `
-      <div class="error-state">
-        <h2>Initialization Error</h2>
-        <p>Failed to load the specification matrix. Please refresh the page.</p>
-        <details>
-          <summary>Error details</summary>
-          <pre>${error.message}</pre>
-        </details>
-      </div>
-    `;
+    const container = document.getElementById('matrixContainer');
+    if (container) {
+      container.innerHTML = `
+        <div class="error-state">
+          <h2>Initialization Error</h2>
+          <p>Failed to load the specification matrix. Please refresh the page.</p>
+          <details>
+            <summary>Error details</summary>
+            <pre>${error.message}</pre>
+          </details>
+        </div>
+      `;
+      // Still hide loading state on error
+      const loadingState = document.getElementById('loadingState');
+      if (loadingState) {
+        loadingState.classList.add('loaded');
+      }
+    }
   }
 }
 
