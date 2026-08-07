@@ -197,35 +197,60 @@ input, select {
   box-sizing: border-box;
 }
 
-.matrix-brand {
+.matrix-header-left {
   display: flex;
   align-items: center;
   gap: var(--space-md);
   min-width: 0;
 }
 
-.mobile-menu-toggle {
+.matrix-menu-btn {
   display: none;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
+  font-size: 1.25rem;
+  line-height: 1;
   flex-shrink: 0;
+  cursor: pointer;
   transition: all var(--transition-fast);
 }
 
-.mobile-menu-toggle:hover {
+.matrix-menu-btn:hover {
   background: var(--bg-hover);
   border-color: var(--accent-sky);
 }
 
-.mobile-menu-toggle svg {
-  width: 20px;
-  height: 20px;
+.matrix-brand-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+.matrix-logo-box {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  border-radius: var(--radius-md);
+  color: #22d3ee;
+}
+
+.matrix-logo-box svg {
+  width: 18px;
+  height: 18px;
+  display: block;
 }
 
 .matrix-logo {
@@ -234,10 +259,19 @@ input, select {
   flex-shrink: 0;
 }
 
-.matrix-brand-text {
+.matrix-title-wrap {
   display: flex;
   flex-direction: column;
   min-width: 0;
+}
+
+.matrix-header-disclosure {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  opacity: 0.85;
 }
 
 .matrix-title {
@@ -1668,7 +1702,7 @@ input, select {
     padding: var(--space-sm);
   }
 
-  .mobile-menu-toggle {
+  .matrix-menu-btn {
     display: inline-flex;
   }
 
@@ -1677,7 +1711,7 @@ input, select {
     gap: var(--space-sm);
   }
 
-  .matrix-brand {
+  .matrix-header-left {
     gap: var(--space-sm);
   }
 
@@ -1926,7 +1960,7 @@ input, select {
   .category-pills,
   .sort-controls,
   .action-cell,
-  .mobile-menu-toggle,
+  .matrix-menu-btn,
   .mobile-drawer {
     display: none !important;
   }

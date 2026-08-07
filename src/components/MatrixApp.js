@@ -9,7 +9,7 @@ import { getImageUrl, getProductImageFallback } from '../utils/imageProxy.js';
 import { buildProductLink, getNetworkDisplayName } from '../utils/linkBuilder.js';
 import { renderSpecsModalContent, formatSpecKey, formatSpecValue } from './SpecsModal.js';
 import { formatPriceRange, formatCurrency } from '../utils/formatUtils.js';
-import { renderImageCarouselHtml } from './ImageCarousel.js';
+import { renderImageCarouselHtml, attachCarouselImageFallback } from './ImageCarousel.js';
 
 /**
  * MatrixApp - Main application class
@@ -53,7 +53,7 @@ export class MatrixApp {
   toggleDrawer(open) {
     this.isDrawerOpen = typeof open === 'boolean' ? open : !this.isDrawerOpen;
     const drawer = this.container.querySelector('#mobileDrawer');
-    const toggleBtn = this.container.querySelector('#mobileMenuToggle');
+    const toggleBtn = this.container.querySelector('#menu-toggle');
 
     if (drawer) {
       drawer.classList.toggle('open', this.isDrawerOpen);
@@ -73,32 +73,32 @@ export class MatrixApp {
       <div class="matrix-app">
         <!-- Header -->
         <header class="matrix-header">
-          <div class="matrix-brand">
+          <div class="matrix-header-left">
             <button
               type="button"
-              class="mobile-menu-toggle"
-              id="mobileMenuToggle"
-              aria-label="Toggle navigation menu"
+              class="matrix-menu-btn"
+              id="menu-toggle"
+              aria-label="Open Menu"
               aria-expanded="false"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 12h18M3 6h18M3 18h18" stroke-linecap="round"/>
-              </svg>
+              &#9776;
             </button>
-            <svg class="matrix-logo" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="32" height="32" rx="6" fill="#0EA5E9"/>
-              <path d="M8 10h16M8 16h12M8 22h8" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="24" cy="22" r="3" fill="#10B981"/>
-            </svg>
-            <div class="matrix-brand-text">
-              <h1 class="matrix-title">PROSUMER MATRIX</h1>
-              <p class="matrix-subtitle">HARDWARE & EQUIPMENT SPECIFICATION DATA</p>
+            <div class="matrix-brand-group">
+              <div class="matrix-logo-box" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <div class="matrix-title-wrap">
+                <h1 class="matrix-title">PROSUMER MATRIX</h1>
+                <p class="matrix-subtitle">HARDWARE &amp; EQUIPMENT SPECIFICATION DATA</p>
+              </div>
             </div>
           </div>
+          <div class="matrix-header-disclosure">
+            We may earn an affiliate commission from merchant links on this site at no extra cost to you.
+          </div>
         </header>
-        <div class="header-disclosure" style="text-align: center; margin-top: -12px; margin-bottom: 12px; font-size: 11px; color: rgba(148, 163, 184, 0.8);">
-          We may earn an affiliate commission from merchant links on this site at no extra cost to you.
-        </div>
 
         <!-- Slide-Out Mobile Drawer -->
         <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Mobile Navigation">
@@ -615,10 +615,13 @@ export class MatrixApp {
     });
 
     // Mobile Hamburger Menu Toggle
-    const mobileMenuToggle = this.container.querySelector('#mobileMenuToggle');
+    const mobileMenuToggle = this.container.querySelector('#menu-toggle');
     mobileMenuToggle?.addEventListener('click', () => {
       this.toggleDrawer();
     });
+
+    // Delegate image error handling (capture phase: the error event does not bubble)
+    attachCarouselImageFallback(this.container);
 
     const drawerClose = this.container.querySelector('#drawerClose');
     drawerClose?.addEventListener('click', () => {

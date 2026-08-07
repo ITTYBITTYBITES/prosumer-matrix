@@ -16,7 +16,7 @@ export function getProductImageFallback(product = {}) {
   const brand = truncateLabel(product.brand || 'Prosumer Matrix', 26);
   const model = truncateLabel(product.name || 'Image unavailable', 34);
   const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="${escapeXml(brand)} ${escapeXml(model)}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${escapeXml(brand)} ${escapeXml(model)}">
       <rect width="640" height="400" fill="#1e293b"/>
       <rect x="20" y="20" width="600" height="360" rx="20" fill="#0f172a" stroke="#334155" stroke-width="4"/>
       <path d="M270 112h100M270 160h76M270 208h124" stroke="#0ea5e9" stroke-width="12" stroke-linecap="round"/>
