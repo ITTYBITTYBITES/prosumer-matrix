@@ -1,9 +1,9 @@
 const __vite_import_meta_env__ = {};
 function getProductImageFallback(product = {}) {
-  const brand = truncateLabel(product.brand || "Prosumer Matrix", 26);
-  const model = truncateLabel(product.name || "Image unavailable", 34);
+  const brand = truncateLabel$1(product.brand || "Prosumer Matrix", 26);
+  const model = truncateLabel$1(product.name || "Image unavailable", 34);
   const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="${escapeXml$1(brand)} ${escapeXml$1(model)}">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${escapeXml$1(brand)} ${escapeXml$1(model)}">
       <rect width="640" height="400" fill="#1e293b"/>
       <rect x="20" y="20" width="600" height="360" rx="20" fill="#0f172a" stroke="#334155" stroke-width="4"/>
       <path d="M270 112h100M270 160h76M270 208h124" stroke="#0ea5e9" stroke-width="12" stroke-linecap="round"/>
@@ -14,7 +14,7 @@ function getProductImageFallback(product = {}) {
     </svg>`;
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
-function truncateLabel(value, maxLength) {
+function truncateLabel$1(value, maxLength) {
   return value.length > maxLength ? `${value.slice(0, maxLength - 1)}…` : value;
 }
 function escapeXml$1(value) {
@@ -306,13 +306,27 @@ function escapeHtml(text) {
   return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 }
 function getCarouselFallbackSvg(brand = "", category = "") {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  const brandLabel = truncateLabel(brand || "Hardware", 26);
+  const categoryLabel = truncateLabel(category || "Product", 34);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${escapeXml(brandLabel)} ${escapeXml(categoryLabel)}">
     <rect width="100%" height="100%" fill="#0f172a"/>
-    <circle cx="150" cy="80" r="28" fill="#1e293b"/>
-    <text x="50%" y="130" dominant-baseline="middle" text-anchor="middle" fill="#38bdf8" font-size="14" font-family="sans-serif" font-weight="bold">${escapeXml(brand || "Hardware")}</text>
-    <text x="50%" y="152" dominant-baseline="middle" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="sans-serif">${escapeXml(category || "Product")}</text>
+    <circle cx="150" cy="75" r="24" fill="#1e293b"/>
+    <path d="M142 75l16 0m-8 -8l0 16" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <text x="50%" y="125" dominant-baseline="middle" text-anchor="middle" fill="#38bdf8" font-size="13" font-family="sans-serif" font-weight="bold">${escapeXml(brandLabel)}</text>
+    <text x="50%" y="148" dominant-baseline="middle" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="sans-serif">${escapeXml(categoryLabel)}</text>
   </svg>`;
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
+function attachCarouselImageFallback(root) {
+  if (!root || typeof root.addEventListener !== "function") return;
+  root.addEventListener("error", (event) => {
+    const img = event.target;
+    if (!(img instanceof HTMLImageElement) || img.dataset.fallbackApplied) return;
+    img.dataset.fallbackApplied = "true";
+    const brand = img.dataset.brand || "";
+    const category = img.dataset.category || "";
+    img.src = getCarouselFallbackSvg(brand, category);
+  }, true);
 }
 function renderImageCarouselHtml(product, activeIdx = 0) {
   if (!product) return "";
@@ -320,9 +334,7 @@ function renderImageCarouselHtml(product, activeIdx = 0) {
   const imageList = rawList.length > 0 ? rawList : ["#placeholder"];
   const currentIndex = Math.min(Math.max(0, activeIdx), imageList.length - 1);
   const currentSrc = imageList[currentIndex];
-  const imageFallback = getCarouselFallbackSvg(product.brand, product.category);
   const title = product.name || "Hardware";
-  product.brand || "Prosumer";
   const category = product.category || "Product";
   const dotsHtml = imageList.length > 1 ? `
       <div class="carousel-dots absolute bottom-2 left-0 right-0 flex justify-center gap-1.5 z-10 pointer-events-auto" data-product-id="${product.id}">
@@ -375,7 +387,8 @@ function renderImageCarouselHtml(product, activeIdx = 0) {
           src="${getImageUrl(currentSrc, 400) || currentSrc}"
           alt="${escapeXml(title)} view ${currentIndex + 1}"
           loading="lazy"
-          onerror="this.onerror=null;this.src='${imageFallback}';"
+          data-brand="${escapeXml(product.brand || "")}"
+          data-category="${escapeXml(product.category || "")}"
           class="carousel-img max-w-full max-h-full object-contain pointer-events-none transition-all duration-200"
         >
         <span class="mobile-category-badge">${escapeXml(category)}</span>
@@ -388,6 +401,10 @@ function renderImageCarouselHtml(product, activeIdx = 0) {
 function escapeXml(text) {
   if (typeof text !== "string") return String(text ?? "");
   return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+function truncateLabel(value, maxLength) {
+  const text = String(value ?? "");
+  return text.length > maxLength ? `${text.slice(0, maxLength - 1)}…` : text;
 }
 class MatrixApp {
   constructor(container, products) {
@@ -422,7 +439,7 @@ class MatrixApp {
   toggleDrawer(open) {
     this.isDrawerOpen = typeof open === "boolean" ? open : !this.isDrawerOpen;
     const drawer = this.container.querySelector("#mobileDrawer");
-    const toggleBtn = this.container.querySelector("#mobileMenuToggle");
+    const toggleBtn = this.container.querySelector("#menu-toggle");
     if (drawer) {
       drawer.classList.toggle("open", this.isDrawerOpen);
       drawer.setAttribute("aria-hidden", (!this.isDrawerOpen).toString());
@@ -439,32 +456,32 @@ class MatrixApp {
       <div class="matrix-app">
         <!-- Header -->
         <header class="matrix-header">
-          <div class="matrix-brand">
+          <div class="matrix-header-left">
             <button
               type="button"
-              class="mobile-menu-toggle"
-              id="mobileMenuToggle"
-              aria-label="Toggle navigation menu"
+              class="matrix-menu-btn"
+              id="menu-toggle"
+              aria-label="Open Menu"
               aria-expanded="false"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 12h18M3 6h18M3 18h18" stroke-linecap="round"/>
-              </svg>
+              &#9776;
             </button>
-            <svg class="matrix-logo" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="32" height="32" rx="6" fill="#0EA5E9"/>
-              <path d="M8 10h16M8 16h12M8 22h8" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="24" cy="22" r="3" fill="#10B981"/>
-            </svg>
-            <div class="matrix-brand-text">
-              <h1 class="matrix-title">PROSUMER MATRIX</h1>
-              <p class="matrix-subtitle">HARDWARE & EQUIPMENT SPECIFICATION DATA</p>
+            <div class="matrix-brand-group">
+              <div class="matrix-logo-box" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <div class="matrix-title-wrap">
+                <h1 class="matrix-title">PROSUMER MATRIX</h1>
+                <p class="matrix-subtitle">HARDWARE &amp; EQUIPMENT SPECIFICATION DATA</p>
+              </div>
             </div>
           </div>
+          <div class="matrix-header-disclosure">
+            We may earn an affiliate commission from merchant links on this site at no extra cost to you.
+          </div>
         </header>
-        <div class="header-disclosure" style="text-align: center; margin-top: -12px; margin-bottom: 12px; font-size: 11px; color: rgba(148, 163, 184, 0.8);">
-          We may earn an affiliate commission from merchant links on this site at no extra cost to you.
-        </div>
 
         <!-- Slide-Out Mobile Drawer -->
         <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Mobile Navigation">
@@ -944,10 +961,11 @@ class MatrixApp {
       searchClear.style.display = "none";
       this.applyFilters();
     });
-    const mobileMenuToggle = this.container.querySelector("#mobileMenuToggle");
+    const mobileMenuToggle = this.container.querySelector("#menu-toggle");
     mobileMenuToggle == null ? void 0 : mobileMenuToggle.addEventListener("click", () => {
       this.toggleDrawer();
     });
+    attachCarouselImageFallback(this.container);
     const drawerClose = this.container.querySelector("#drawerClose");
     drawerClose == null ? void 0 : drawerClose.addEventListener("click", () => {
       this.toggleDrawer(false);
