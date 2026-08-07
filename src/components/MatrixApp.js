@@ -110,6 +110,9 @@ export class MatrixApp {
             </div>
           </div>
         </header>
+        <div class="header-disclosure" style="text-align: center; margin-top: -12px; margin-bottom: 12px; font-size: 11px; color: rgba(148, 163, 184, 0.8);">
+          We may earn an affiliate commission from merchant links on this site at no extra cost to you.
+        </div>
 
         <!-- Slide-Out Mobile Drawer -->
         <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Mobile Navigation">
@@ -218,6 +221,11 @@ export class MatrixApp {
         <div class="matrix-mobile-view" id="mobileView" style="display: none;">
           ${this.getMobileCards()}
         </div>
+
+        <!-- Footer Legal Disclosure -->
+        <footer class="matrix-footer" style="padding: 24px; text-align: center; font-size: 12px; color: rgba(148, 163, 184, 0.7); border-top: 1px solid var(--border-color); margin-top: 32px;">
+          <p>PROSUMER MATRIX is an independent hardware specification database. We participate in affiliate programs with Amazon, Awin, Impact, and other retailers. When you click links to buy products through our site, we may earn a commission that supports our independent research at no additional cost to you.</p>
+        </footer>
       </div>
 
       <!-- Buy Modal -->

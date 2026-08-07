@@ -16,7 +16,7 @@ const products = JSON.parse(
 const REQUEST_TIMEOUT_MS = Number.parseInt(process.env.VERIFY_LINKS_TIMEOUT_MS || '15000', 10);
 const REQUEST_CONCURRENCY = Math.max(1, Number.parseInt(process.env.VERIFY_LINKS_CONCURRENCY || '4', 10));
 const SKIP_NETWORK = process.env.VERIFY_LINKS_SKIP_NETWORK === '1';
-const EXPECTED_PRODUCT_COUNT = 120;
+const EXPECTED_PRODUCT_COUNT = 220;
 const REQUIRED_CATEGORIES = [
   '3D Printers',
   'CNC & Laser Cutters',
@@ -54,7 +54,7 @@ function assertBenchmarkShape() {
       if (!/^[A-Z0-9]{10}$/.test(product.merchantId)) {
         failures.push(`${product.id}: Amazon merchantId must be a 10-character ASIN`);
       }
-      const expectedImage = `https://images-na.ssl-images-amazon.com/images/P/${product.merchantId}.01.MAIN._SCLZZZZZZZ_.jpg`;
+      const expectedImage = `/images/amazon/${product.merchantId}.jpg`;
       if (product.imageUrl !== expectedImage) {
         failures.push(`${product.id}: Amazon imageUrl does not use the deterministic ASIN helper`);
       }

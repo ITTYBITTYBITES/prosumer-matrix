@@ -54,6 +54,9 @@ export function renderHeaderHtml(products = []) {
         </div>
       </div>
     </header>
+    <div class="header-disclosure" style="text-align: center; margin-top: -12px; margin-bottom: 12px; font-size: 11px; color: rgba(148, 163, 184, 0.8);">
+      We may earn an affiliate commission from merchant links on this site at no extra cost to you.
+    </div>
   `;
 }
 
