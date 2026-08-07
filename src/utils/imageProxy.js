@@ -4,9 +4,43 @@
 // Provides image URL wrapping for optimized delivery and fallback SVGs
 // ============================================================================
 
-/** A neutral image shown when an external product image cannot be loaded. */
-export const IMAGE_FALLBACK_URL =
-  'https://placehold.co/600x400/1e293b/64748b?text=Image+Unavailable';
+/**
+ * Builds a self-contained vector card for a product image that failed to load.
+ * The SVG is data-URI encoded so it works without another network request and
+ * always identifies the exact brand and model the visitor was trying to view.
+ *
+ * @param {{brand?: string, name?: string}} product
+ * @returns {string}
+ */
+export function getProductImageFallback(product = {}) {
+  const brand = truncateLabel(product.brand || 'Prosumer Matrix', 26);
+  const model = truncateLabel(product.name || 'Image unavailable', 34);
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="${escapeXml(brand)} ${escapeXml(model)}">
+      <rect width="640" height="400" fill="#1e293b"/>
+      <rect x="20" y="20" width="600" height="360" rx="20" fill="#0f172a" stroke="#334155" stroke-width="4"/>
+      <path d="M270 112h100M270 160h76M270 208h124" stroke="#0ea5e9" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="382" cy="208" r="13" fill="#10b981"/>
+      <text x="320" y="278" text-anchor="middle" fill="#94a3b8" font-family="Arial, sans-serif" font-size="24" font-weight="700">${escapeXml(brand)}</text>
+      <text x="320" y="320" text-anchor="middle" fill="#f1f5f9" font-family="Arial, sans-serif" font-size="22">${escapeXml(model)}</text>
+      <text x="320" y="350" text-anchor="middle" fill="#64748b" font-family="Arial, sans-serif" font-size="16">Product image unavailable</text>
+    </svg>`;
+
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
+
+function truncateLabel(value, maxLength) {
+  return value.length > maxLength ? `${value.slice(0, maxLength - 1)}…` : value;
+}
+
+function escapeXml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
 
 /**
  * Wraps an image URL with the Weserv image proxy service for optimization.

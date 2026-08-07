@@ -1,9 +1,9 @@
 // ============================================================================
 // AFFILIATE CONFIGURATION
 // ============================================================================
-// This file contains affiliate network publisher IDs for monetization.
-// IMPORTANT: All IDs are currently placeholders. Replace with real IDs
-// before enabling affiliate routing in production.
+// This file is the single source of truth for affiliate publisher IDs.
+// Keep account credentials here; linkBuilder.js must import them rather than
+// embedding tags or IDs in product records or UI code.
 //
 // Networks supported:
 //   - Impact.com (IMPACT_PUBLISHER_ID)
