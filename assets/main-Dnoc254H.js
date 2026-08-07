@@ -1477,20 +1477,36 @@ function startApp() {
   }
   try {
     const app = new MatrixApp("#matrixContainer", hardwareData);
+    const loadingState = document.getElementById("loadingState");
+    if (loadingState) {
+      loadingState.classList.add("loaded");
+      setTimeout(() => {
+        if (loadingState.parentNode) {
+          loadingState.parentNode.removeChild(loadingState);
+        }
+      }, 300);
+    }
     window.__matrixApp = app;
     console.log(`Prosumer Matrix initialized with ${hardwareData.length} products`);
   } catch (error) {
     console.error("Failed to initialize MatrixApp:", error);
-    container.innerHTML = `
-      <div class="error-state">
-        <h2>Initialization Error</h2>
-        <p>Failed to load the specification matrix. Please refresh the page.</p>
-        <details>
-          <summary>Error details</summary>
-          <pre>${error.message}</pre>
-        </details>
-      </div>
-    `;
+    const container2 = document.getElementById("matrixContainer");
+    if (container2) {
+      container2.innerHTML = `
+        <div class="error-state">
+          <h2>Initialization Error</h2>
+          <p>Failed to load the specification matrix. Please refresh the page.</p>
+          <details>
+            <summary>Error details</summary>
+            <pre>${error.message}</pre>
+          </details>
+        </div>
+      `;
+      const loadingState = document.getElementById("loadingState");
+      if (loadingState) {
+        loadingState.classList.add("loaded");
+      }
+    }
   }
 }
 init();
