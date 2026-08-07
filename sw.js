@@ -12,10 +12,10 @@ const DYNAMIC_CACHE = 'prosumer-matrix-dynamic-v1';
 
 // Assets to cache immediately on install
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/favicon.svg',
-  '/404.html'
+  '/prosumer-matrix/',
+  '/prosumer-matrix/index.html',
+  '/prosumer-matrix/favicon.svg',
+  '/prosumer-matrix/404.html'
 ];
 
 // Install event - cache static assets
@@ -74,6 +74,7 @@ self.addEventListener('fetch', (event) => {
   }
   
   // For prosumer-matrix paths, use network-first strategy
+  // This ensures we always get fresh content from GitHub Pages
   if (url.pathname.startsWith('/prosumer-matrix/')) {
     event.respondWith(
       fetch(request)
@@ -106,7 +107,7 @@ self.addEventListener('fetch', (event) => {
           fetch(request).then((response) => {
             if (response.ok) {
               caches.open(DYNAMIC_CACHE).then((cache) => {
-                cache.put(request, response);
+                cache.put(request, responseClone);
               });
             }
           }).catch(() => {});

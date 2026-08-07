@@ -1512,7 +1512,7 @@ function startApp() {
 init();
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js", {
+    navigator.serviceWorker.register("/prosumer-matrix/sw.js", {
       scope: "/prosumer-matrix/"
     }).then((registration) => {
       console.log("ServiceWorker registered:", registration.scope);
