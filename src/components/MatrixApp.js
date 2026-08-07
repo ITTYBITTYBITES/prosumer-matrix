@@ -212,29 +212,9 @@ export class MatrixApp {
                   </button>
                 </div>
               </th>
-              <th class="th-price" scope="col">
+              <th class="th-price-roi" scope="col">
                 <div class="th-content">
-                  <button class="th-sort-btn" data-column="priceUsd" aria-label="Sort by price">
-                    Price (USD)
-                    <svg class="sort-arrow ${this.sortColumn === 'priceUsd' ? 'active' : ''} ${this.sortDirection === 'desc' ? 'desc' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M12 5v14M19 12l-7 7-7-7"/>
-                    </svg>
-                  </button>
-                </div>
-              </th>
-              <th class="th-roi" scope="col">
-                <div class="th-content">
-                  <button class="th-sort-btn" data-column="roiScore" aria-label="Sort by ROI">
-                    ROI Score
-                    <svg class="sort-arrow ${this.sortColumn === 'roiScore' ? 'active' : ''} ${this.sortDirection === 'desc' ? 'desc' : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M12 5v14M19 12l-7 7-7-7"/>
-                    </svg>
-                  </button>
-                </div>
-              </th>
-              <th class="th-network" scope="col">
-                <div class="th-content">
-                  <span class="th-label">Network</span>
+                  <span class="th-label">Price / ROI</span>
                 </div>
               </th>
               <th class="th-action" scope="col">
@@ -259,7 +239,7 @@ export class MatrixApp {
     if (this.filteredProducts.length === 0) {
       return `
         <tr>
-          <td colspan="7" class="empty-state">
+          <td colspan="5" class="empty-state">
             <div class="empty-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <circle cx="11" cy="11" r="8"/>
@@ -303,21 +283,9 @@ export class MatrixApp {
               ${this.getSpecsPreview(product.specs)}
             </div>
           </td>
-          <td class="td-price">
+          <td class="td-price-roi">
             <span class="price-value">$${product.priceUsd.toLocaleString()}</span>
-          </td>
-          <td class="td-roi">
-            <div class="roi-cell">
-              <div class="roi-bar">
-                <div class="roi-fill" style="width: ${product.roiScore}%; background: ${this.getRoiColor(product.roiScore)};"></div>
-              </div>
-              <span class="roi-value">${product.roiScore}</span>
-            </div>
-          </td>
-          <td class="td-network">
-            <span class="network-badge ${product.affiliateNetwork}">
-              ${getNetworkDisplayName(product.affiliateNetwork)}
-            </span>
+            <span class="roi-inline">ROI ${product.roiScore}</span>
           </td>
           <td class="td-action">
             <div class="action-cell">
