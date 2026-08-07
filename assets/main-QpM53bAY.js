@@ -82,11 +82,11 @@ const AFFILIATE_CONFIG = {
   // Impact.com Publisher ID
   // Format: numeric string
   // Example: "12345678"
-  IMPACT_PUBLISHER_ID: "PLACEHOLDER_IMPACT_MPID",
+  IMPACT_PUBLISHER_ID: "7575765",
   // Awin Publisher ID
   // Format: numeric string
   // Example: "1234567"
-  AWIN_PUBLISHER_ID: "PLACEHOLDER_AWIN_PID",
+  AWIN_PUBLISHER_ID: "3025417",
   // ShareASale User ID
   // Format: numeric string
   // Example: "123456"
@@ -94,7 +94,7 @@ const AFFILIATE_CONFIG = {
   // Amazon Associates Tag
   // Format: association-tag (usually lowercase, no spaces)
   // Example: "my-tag-20"
-  AMAZON_TAG: "PLACEHOLDER_AMAZON_TAG"
+  AMAZON_TAG: "prosumatrix-20"
 };
 function areAllIdsPlaceholder() {
   const { IMPACT_PUBLISHER_ID, AWIN_PUBLISHER_ID, SHAREASALE_USER_ID, AMAZON_TAG } = AFFILIATE_CONFIG;
