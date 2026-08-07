@@ -41,46 +41,38 @@ export function buildProductLink(item) {
 }
 
 /**
- * Builds an Impact.com affiliate link.
- * Format: https://impact.com/c/{networkId}/{offerId}?...&affid={publisherId}
+ * Builds an Impact.com affiliate deep link.
  *
  * @param {Object} item - Product object
  * @returns {string} - Impact affiliate URL
  */
 function buildImpactLink(item) {
   const { IMPACT_PUBLISHER_ID } = AFFILIATE_CONFIG;
-  const merchantId = item.merchantId || '';
-
-  // Impact links typically use the publisher ID in the query
-  // Format may vary by specific offer setup
-  const base = 'https://impact.com/c/';
+  const merchantId = encodeURIComponent(item.merchantId || '');
   const publisherId = encodeURIComponent(IMPACT_PUBLISHER_ID);
+  const destination = encodeURIComponent(item.directUrl || '');
 
-  // Construct Impact-style URL
-  // This is a template - real implementation depends on specific offer URLs
-  const url = `${base}${merchantId}?affid=${publisherId}&jmp=true`;
-
-  return url;
+  // Keep the OEM destination as one encoded query value. Passing an unencoded
+  // URL here truncates it at its first "&" or query parameter.
+  return `https://impact.com/c/${merchantId}?affid=${publisherId}&u=${destination}`;
 }
 
 /**
- * Builds an Awin affiliate link.
- * Note: Awin acquired ShareASale in 2017 and fully consolidated
- * all merchants into the unified Awin platform by 2025.
- * All former ShareASale products now use this Awin link builder.
- *
- * Format: https://www.awin1.com/cread.php?awinmid={pid}&awinaffid={affid}&clickref={ref}&p={product}
+ * Builds an Awin affiliate deep link.
  *
  * @param {Object} item - Product object
  * @returns {string} - Awin affiliate URL
  */
 function buildAwinLink(item) {
   const { AWIN_PUBLISHER_ID } = AFFILIATE_CONFIG;
-  const merchantId = item.merchantId || '';
+  const merchantId = encodeURIComponent(item.merchantId || '');
+  const publisherId = encodeURIComponent(AWIN_PUBLISHER_ID);
+  const destination = encodeURIComponent(item.directUrl || '');
 
-  const url = `https://www.awin1.com/cread.php?awinmid=${AWIN_PUBLISHER_ID}&awinaffid=${AWIN_PUBLISHER_ID}&clickref=${merchantId}&p=${encodeURIComponent(item.name || '')}`;
-
-  return url;
+  // awinmid identifies the advertiser, awinaffid identifies this publisher,
+  // and ued contains the final merchant URL. Encoding ued is required when a
+  // manufacturer URL contains its own query string or ampersands.
+  return `https://www.awin1.com/cread.php?awinmid=${merchantId}&awinaffid=${publisherId}&ued=${destination}`;
 }
 
 /**

@@ -81,9 +81,13 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
+  max-width: 100vw;
+  overflow-x: hidden;
   font-family: var(--font-ui);
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -163,11 +167,24 @@ a:hover {
    Matrix App Container
    -------------------------------------------------------------------------- */
 
+#matrixContainer {
+  width: 100%;
+  min-width: 0;
+}
+
 .matrix-app {
+  width: 100%;
   max-width: 1600px;
+  min-width: 0;
   margin: 0 auto;
   padding: var(--space-lg);
   min-height: 100vh;
+}
+
+.matrix-content,
+.matrix-mobile-view {
+  width: 100%;
+  min-width: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -256,6 +273,8 @@ a:hover {
 .matrix-controls {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  min-width: 0;
   gap: var(--space-md);
   margin-bottom: var(--space-md);
 }
@@ -329,11 +348,28 @@ a:hover {
   height: 16px;
 }
 
+.category-pills-scroll {
+  flex: 1 1 360px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.category-pills-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 .category-pills {
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-flex;
+  min-width: 100%;
+  width: max-content;
+  flex-wrap: nowrap;
   gap: var(--space-xs);
-  flex-shrink: 0;
+  padding-bottom: var(--space-xs);
 }
 
 .category-pill {
@@ -450,6 +486,9 @@ a:hover {
    -------------------------------------------------------------------------- */
 
 .matrix-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
@@ -1472,8 +1511,8 @@ a:hover {
     min-width: 100%;
   }
 
-  .category-pills {
-    justify-content: center;
+  .category-pills-scroll {
+    flex-basis: 100%;
   }
 
   .sort-controls {
@@ -1538,17 +1577,8 @@ a:hover {
     font-size: 16px; /* Prevents iOS zoom */
   }
 
-  .category-pills {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    padding-bottom: var(--space-xs);
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .category-pills::-webkit-scrollbar {
-    display: none;
+  .category-pills-scroll {
+    flex-basis: 100%;
   }
 
   .category-pill {

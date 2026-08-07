@@ -5,7 +5,7 @@
 // Handles rendering, filtering, sorting, and responsive views
 // ============================================================================
 
-import { getImageUrl, getCategorySvgFallback } from '../utils/imageProxy.js';
+import { getImageUrl, IMAGE_FALLBACK_URL } from '../utils/imageProxy.js';
 import { buildProductLink, getNetworkDisplayName } from '../utils/linkBuilder.js';
 
 /**
@@ -84,11 +84,10 @@ export class MatrixApp {
             </button>
           </div>
 
-          <div class="category-pills" id="categoryPills" role="tablist" aria-label="Filter by category">
-            <button class="category-pill ${this.selectedCategory === 'all' ? 'active' : ''}" data-category="all" role="tab" aria-selected="${this.selectedCategory === 'all'}">
-              All
-            </button>
-            ${this.getCategoryPills()}
+          <div class="category-pills-scroll" aria-label="Category filters">
+            <div class="category-pills" id="categoryPills" role="tablist" aria-label="Filter by category">
+              ${this.getCategoryPills()}
+            </div>
           </div>
 
           <div class="sort-controls">
@@ -276,7 +275,6 @@ export class MatrixApp {
 
     return this.filteredProducts.map(product => {
       const imageUrl = getImageUrl(product.imageUrl, 80);
-      const fallbackSvg = getCategorySvgFallback(product.category);
 
       return `
         <tr class="matrix-row" data-id="${product.id}" data-category="${product.category}">
@@ -287,7 +285,7 @@ export class MatrixApp {
                   src="${imageUrl}"
                   alt="${product.name}"
                   loading="lazy"
-                  onerror="this.onerror=null;this.src='${fallbackSvg}';"
+                  onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_URL}';"
                   class="product-image"
                 >
               </div>
@@ -368,7 +366,6 @@ export class MatrixApp {
 
     return this.filteredProducts.map(product => {
       const imageUrl = getImageUrl(product.imageUrl, 400);
-      const fallbackSvg = getCategorySvgFallback(product.category);
 
       return `
         <div class="mobile-card" data-id="${product.id}">
@@ -377,7 +374,7 @@ export class MatrixApp {
               src="${imageUrl}"
               alt="${product.name}"
               loading="lazy"
-              onerror="this.onerror=null;this.src='${fallbackSvg}';"
+              onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_URL}';"
               class="mobile-image"
             >
             <span class="mobile-category-badge">${product.category}</span>
@@ -480,17 +477,20 @@ export class MatrixApp {
    * Get category pills HTML
    */
   getCategoryPills() {
-    const categories = [...new Set(this.products.map(p => p.category))];
-    return categories.map(cat => `
-      <button
-        class="category-pill ${this.selectedCategory === cat ? 'active' : ''}"
-        data-category="${this.escapeHtml(cat)}"
-        role="tab"
-        aria-selected="${this.selectedCategory === cat}"
-      >
-        ${this.escapeHtml(cat)}
-      </button>
-    `).join('');
+    const categories = ['all', ...new Set(this.products.map(p => p.category))];
+    return categories.map(cat => {
+      const label = cat === 'all' ? 'All' : cat;
+      return `
+        <button
+          class="category-pill ${this.selectedCategory === cat ? 'active' : ''}"
+          data-category="${this.escapeHtml(cat)}"
+          role="tab"
+          aria-selected="${this.selectedCategory === cat}"
+        >
+          ${this.escapeHtml(label)}
+        </button>
+      `;
+    }).join('');
   }
 
   /**
@@ -827,7 +827,7 @@ export class MatrixApp {
             <img
               src="${getImageUrl(product.imageUrl, 200)}"
               alt="${product.name}"
-              onerror="this.onerror=null;this.src='${getCategorySvgFallback(product.category)}';"
+              onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_URL}';"
             >
           </div>
           <div class="modal-product-info">
@@ -874,7 +874,7 @@ export class MatrixApp {
           <img
             src="${getImageUrl(product.imageUrl, 200)}"
             alt="${product.name}"
-            onerror="this.onerror=null;this.src='${getCategorySvgFallback(product.category)}';"
+            onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_URL}';"
           >
         </div>
         <div class="modal-product-info">
@@ -993,7 +993,7 @@ export class MatrixApp {
         <img
           src="${getImageUrl(product.imageUrl, 120)}"
           alt="${product.name}"
-          onerror="this.onerror=null;this.src='${getCategorySvgFallback(product.category)}';"
+          onerror="this.onerror=null;this.src='${IMAGE_FALLBACK_URL}';"
           class="specs-image"
         >
         <div class="specs-meta">

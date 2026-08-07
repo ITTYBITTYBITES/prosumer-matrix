@@ -4,6 +4,10 @@
 // Provides image URL wrapping for optimized delivery and fallback SVGs
 // ============================================================================
 
+/** A neutral image shown when an external product image cannot be loaded. */
+export const IMAGE_FALLBACK_URL =
+  'https://placehold.co/600x400/1e293b/64748b?text=Image+Unavailable';
+
 /**
  * Wraps an image URL with the Weserv image proxy service for optimization.
  *
