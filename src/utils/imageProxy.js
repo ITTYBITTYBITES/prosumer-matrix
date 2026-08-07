@@ -54,6 +54,14 @@ export function getImageUrl(rawUrl, width = 400) {
     return '';
   }
 
+  // If it's a local image path, just return it directly.
+  // GitHub Pages will resolve relative to the root if we use the correct base path.
+  if (rawUrl.startsWith('/images/')) {
+    // Prefix with the Vite base URL or the repo name for GitHub Pages
+    const baseUrl = typeof import.meta !== 'undefined' && import.meta.env ? import.meta.env.BASE_URL : '/prosumer-matrix/';
+    return `${baseUrl.replace(/\/$/, '')}${rawUrl}`;
+  }
+
   // Ensure we have a valid URL
   try {
     new URL(rawUrl);
