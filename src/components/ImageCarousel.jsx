@@ -33,19 +33,47 @@ export function ImageCarousel({
 }
 
 /**
- * Generates the SVG fallback markup for failed image loads
+ * Generates the SVG fallback markup for failed image loads.
+ * Uses a fixed viewBox with `preserveAspectRatio="xMidYMid meet"` so the
+ * vector icon and labels scale uniformly inside any card container —
+ * the glyphs never clip at the edges nor overlap the icon.
  * @param {string} brand
  * @param {string} category
  * @returns {string} Data URI SVG
  */
 export function getCarouselFallbackSvg(brand = '', category = '') {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  const brandLabel = truncateLabel(brand || 'Hardware', 26);
+  const categoryLabel = truncateLabel(category || 'Product', 34);
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${escapeXml(brandLabel)} ${escapeXml(categoryLabel)}">
     <rect width="100%" height="100%" fill="#0f172a"/>
-    <circle cx="150" cy="80" r="28" fill="#1e293b"/>
-    <text x="50%" y="130" dominant-baseline="middle" text-anchor="middle" fill="#38bdf8" font-size="14" font-family="sans-serif" font-weight="bold">${escapeXml(brand || 'Hardware')}</text>
-    <text x="50%" y="152" dominant-baseline="middle" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="sans-serif">${escapeXml(category || 'Product')}</text>
+    <circle cx="150" cy="75" r="24" fill="#1e293b"/>
+    <path d="M142 75l16 0m-8 -8l0 16" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <text x="50%" y="125" dominant-baseline="middle" text-anchor="middle" fill="#38bdf8" font-size="13" font-family="sans-serif" font-weight="bold">${escapeXml(brandLabel)}</text>
+    <text x="50%" y="148" dominant-baseline="middle" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="sans-serif">${escapeXml(categoryLabel)}</text>
   </svg>`;
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
+
+/**
+ * Attaches a delegated error listener that swaps any failed product image
+ * for the brand/category SVG fallback. Uses the capture phase because the
+ * `error` event does not bubble, and a `data-fallback-applied` guard so a
+ * failing fallback can never re-trigger an infinite swap loop.
+ * @param {HTMLElement} root - Container that holds the rendered carousels
+ * @returns {void}
+ */
+export function attachCarouselImageFallback(root) {
+  if (!root || typeof root.addEventListener !== 'function') return;
+
+  root.addEventListener('error', (event) => {
+    const img = event.target;
+    if (!(img instanceof HTMLImageElement) || img.dataset.fallbackApplied) return;
+
+    img.dataset.fallbackApplied = 'true';
+    const brand = img.dataset.brand || '';
+    const category = img.dataset.category || '';
+    img.src = getCarouselFallbackSvg(brand, category);
+  }, true);
 }
 
 /**
@@ -64,9 +92,7 @@ export function renderImageCarouselHtml(product, activeIdx = 0) {
   const imageList = rawList.length > 0 ? rawList : ['#placeholder'];
   const currentIndex = Math.min(Math.max(0, activeIdx), imageList.length - 1);
   const currentSrc = imageList[currentIndex];
-  const imageFallback = getCarouselFallbackSvg(product.brand, product.category);
   const title = product.name || 'Hardware';
-  const brand = product.brand || 'Prosumer';
   const category = product.category || 'Product';
 
   const dotsHtml = imageList.length > 1
@@ -126,7 +152,8 @@ export function renderImageCarouselHtml(product, activeIdx = 0) {
           src="${getImageUrl(currentSrc, 400) || currentSrc}"
           alt="${escapeXml(title)} view ${currentIndex + 1}"
           loading="lazy"
-          onerror="this.onerror=null;this.src='${imageFallback}';"
+          data-brand="${escapeXml(product.brand || '')}"
+          data-category="${escapeXml(product.category || '')}"
           class="carousel-img max-w-full max-h-full object-contain pointer-events-none transition-all duration-200"
         >
         <span class="mobile-category-badge">${escapeXml(category)}</span>
@@ -145,6 +172,11 @@ function escapeXml(text) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
+}
+
+function truncateLabel(value, maxLength) {
+  const text = String(value ?? '');
+  return text.length > maxLength ? `${text.slice(0, maxLength - 1)}…` : text;
 }
 
 export default ImageCarousel;
