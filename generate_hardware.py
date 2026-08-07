@@ -411,7 +411,7 @@ def save_products(products):
 
 def main():
     print("=" * 80)
-    print("PROsumer MATRIX - Hardware Data Generator")
+    print("PROSUMER MATRIX - Hardware Data Generator")
     print("=" * 80)
     
     # Load existing products

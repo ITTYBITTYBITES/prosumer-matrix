@@ -1,5 +1,5 @@
 /* ============================================================================
-   PROsumer MATRIX - Main Stylesheet
+   PROSUMER MATRIX - Main Stylesheet
    Dark Slate Industrial Engineering Dashboard
    ============================================================================
    Palette:
@@ -256,9 +256,12 @@ input, select {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  white-space: nowrap;
+  white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .matrix-stats {
@@ -1728,7 +1731,7 @@ input, select {
   }
 
   .matrix-subtitle {
-    font-size: 0.6875rem;
+    font-size: 0.625rem;
   }
 
   .matrix-logo {
@@ -1875,6 +1878,10 @@ input, select {
 
   .matrix-title {
     font-size: 0.9375rem;
+  }
+
+  .matrix-subtitle {
+    display: none;
   }
 
   .matrix-stats {

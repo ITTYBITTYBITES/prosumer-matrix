@@ -35,8 +35,8 @@ export function renderHeaderHtml(products = []) {
           <circle cx="24" cy="22" r="3" fill="#10B981" />
         </svg>
         <div class="matrix-brand-text">
-          <h1 class="matrix-title">PROsumer MATRIX</h1>
-          <p class="matrix-subtitle">Hardware & Equipment Specification Database</p>
+          <h1 class="matrix-title">PROSUMER MATRIX</h1>
+          <p class="matrix-subtitle">HARDWARE & EQUIPMENT SPECIFICATION DATA</p>
         </div>
       </div>
       <div class="matrix-stats">
