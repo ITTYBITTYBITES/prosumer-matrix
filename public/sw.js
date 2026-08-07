@@ -6,9 +6,10 @@
 // over the root site's service worker for this subdirectory.
 // ============================================================================
 
-const CACHE_NAME = 'prosumer-matrix-v1';
-const STATIC_CACHE = 'prosumer-matrix-static-v1';
-const DYNAMIC_CACHE = 'prosumer-matrix-dynamic-v1';
+// Bump these names when the application shell changes so an existing client
+// cannot remain pinned to an HTML file that references removed hashed assets.
+const STATIC_CACHE = 'prosumer-matrix-static-v2';
+const DYNAMIC_CACHE = 'prosumer-matrix-dynamic-v2';
 
 // Assets to cache immediately on install
 const STATIC_ASSETS = [
@@ -89,9 +90,28 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(() => {
-          // Fallback to cache on network error
+          // A document is not a valid fallback for a failed JS/CSS/image
+          // request. Returning index.html for an asset makes the browser try
+          // to parse HTML as a module and leaves the initial loader visible.
+          // Only navigation requests may use the cached application shell.
           return caches.match(request).then((cachedResponse) => {
-            return cachedResponse || caches.match('/prosumer-matrix/');
+            if (cachedResponse) {
+              return cachedResponse;
+            }
+
+            if (request.mode === 'navigate') {
+              return caches.match('/prosumer-matrix/').then((appShell) => {
+                return appShell || new Response('Offline', {
+                  status: 503,
+                  statusText: 'Offline'
+                });
+              });
+            }
+
+            return new Response('Offline', {
+              status: 503,
+              statusText: 'Offline'
+            });
           });
         })
     );

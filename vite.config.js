@@ -6,7 +6,10 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   root: '.',
-  base: './',
+  // GitHub Pages serves this project from a repository subpath rather than
+  // from the domain root. Vite uses this value for every emitted JS, CSS, and
+  // public-asset URL in the production HTML.
+  base: '/prosumer-matrix/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -33,6 +36,13 @@ export default defineConfig({
   server: {
     port: 3000,
     open: false,
-    host: true
+    host: true,
+    // Permit Arena's proxied development preview host.
+    allowedHosts: ['.e2b.app']
+  },
+  preview: {
+    host: true,
+    // Keep `vite preview` usable through the same proxied host.
+    allowedHosts: ['.e2b.app']
   }
 });

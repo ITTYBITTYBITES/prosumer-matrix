@@ -83,10 +83,11 @@ init();
 if ('serviceWorker' in navigator) {
   // Wait for the page to fully load before registering
   window.addEventListener('load', () => {
-    // The service worker is at /sw.js which becomes /prosumer-matrix/sw.js when deployed
-    // Its scope will be /prosumer-matrix/ which takes precedence over root site's SW
-    navigator.serviceWorker.register('/prosumer-matrix/sw.js', {
-      scope: '/prosumer-matrix/'
+    // Vite substitutes BASE_URL with /prosumer-matrix/ in the GitHub Pages
+    // build, so the worker and its scope always match the deployed subpath.
+    const baseUrl = import.meta.env.BASE_URL;
+    navigator.serviceWorker.register(`${baseUrl}sw.js`, {
+      scope: baseUrl
     })
       .then((registration) => {
         console.log('ServiceWorker registered:', registration.scope);
