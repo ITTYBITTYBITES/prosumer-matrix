@@ -79,7 +79,7 @@
     "priceUsd": 4999,
     "directUrl": "https://www.xtool.com/products/xtool-p2-50w-laser-cutter",
     "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
-    "affiliateNetwork": "shareasale",
+    "affiliateNetwork": "awin",
     "merchantId": "xtool",
     "roiScore": 68,
     "specs": {
@@ -271,7 +271,7 @@
     "priceUsd": 2499,
     "directUrl": "https://www.lamarzocco.com/linea-micra/",
     "imageUrl": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
-    "affiliateNetwork": "shareasale",
+    "affiliateNetwork": "awin",
     "merchantId": "lamarzocco",
     "roiScore": 72,
     "specs": {
@@ -345,7 +345,7 @@
     "priceUsd": 5299,
     "directUrl": "https://ternbicycles.com/products/gsd-s10",
     "imageUrl": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
-    "affiliateNetwork": "shareasale",
+    "affiliateNetwork": "awin",
     "merchantId": "tern-gsd-s10",
     "roiScore": 89,
     "specs": {

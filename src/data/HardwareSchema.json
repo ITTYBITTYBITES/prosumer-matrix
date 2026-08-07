@@ -63,11 +63,10 @@
       },
       "affiliateNetwork": {
         "type": "string",
-        "description": "Primary affiliate network for this product",
+        "description": "Primary affiliate network for this product (Awin now includes former ShareASale merchants)",
         "enum": [
           "impact",
           "awin",
-          "shareasale",
           "amazon",
           "none"
         ]

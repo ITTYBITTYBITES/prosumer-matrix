@@ -2,6 +2,7 @@
 // LINK BUILDER UTILITIES
 // ============================================================================
 // Constructs affiliate and direct product URLs based on configuration
+// Supports: Amazon, Impact, Awin (includes former ShareASale merchants)
 // ============================================================================
 
 import { AFFILIATE_CONFIG, areAllIdsPlaceholder } from '../config/affiliates.js';
@@ -32,8 +33,6 @@ export function buildProductLink(item) {
       return buildImpactLink(item);
     case 'awin':
       return buildAwinLink(item);
-    case 'shareasale':
-      return buildShareASaleLink(item);
     case 'amazon':
       return buildAmazonLink(item);
     default:
@@ -66,6 +65,10 @@ function buildImpactLink(item) {
 
 /**
  * Builds an Awin affiliate link.
+ * Note: Awin acquired ShareASale in 2017 and fully consolidated
+ * all merchants into the unified Awin platform by 2025.
+ * All former ShareASale products now use this Awin link builder.
+ *
  * Format: https://www.awin1.com/cread.php?awinmid={pid}&awinaffid={affid}&clickref={ref}&p={product}
  *
  * @param {Object} item - Product object
@@ -76,22 +79,6 @@ function buildAwinLink(item) {
   const merchantId = item.merchantId || '';
 
   const url = `https://www.awin1.com/cread.php?awinmid=${AWIN_PUBLISHER_ID}&awinaffid=${AWIN_PUBLISHER_ID}&clickref=${merchantId}&p=${encodeURIComponent(item.name || '')}`;
-
-  return url;
-}
-
-/**
- * Builds a ShareASale affiliate link.
- * Format: https://shareasale.com/r.cfm?b={merchantId}&u={userId}&m={networkId}
- *
- * @param {Object} item - Product object
- * @returns {string} - ShareASale affiliate URL
- */
-function buildShareASaleLink(item) {
-  const { SHAREASALE_USER_ID } = AFFILIATE_CONFIG;
-  const merchantId = item.merchantId || '';
-
-  const url = `https://shareasale.com/r.cfm?b=${merchantId}&u=${SHAREASALE_USER_ID}&m=shop`;
 
   return url;
 }
@@ -146,7 +133,6 @@ export function getNetworkDisplayName(network) {
   const names = {
     impact: 'Impact',
     awin: 'Awin',
-    shareasale: 'ShareASale',
     amazon: 'Amazon',
     none: 'Direct'
   };
