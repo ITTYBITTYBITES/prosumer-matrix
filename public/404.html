@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Prosumer Matrix</title>
+  <meta name="description" content="Page not found - Prosumer Matrix Hardware & Equipment Spec Database">
+  <meta name="theme-color" content="#0F172A">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-primary: #0F172A;
+      --bg-surface: #1E293B;
+      --bg-elevated: #334155;
+      --border-color: #334155;
+      --accent-sky: #0EA5E9;
+      --accent-emerald: #10B981;
+      --text-primary: #F1F5F9;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --error: #EF4444;
+      --font-ui: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-ui);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      line-height: 1.6;
+    }
+
+    .error-container {
+      max-width: 600px;
+      text-align: center;
+      padding: 48px 32px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .error-code {
+      font-family: var(--font-mono);
+      font-size: 8rem;
+      font-weight: 700;
+      color: var(--accent-sky);
+      line-height: 1;
+      margin-bottom: 16px;
+      text-shadow: 0 0 40px rgba(14, 165, 233, 0.3);
+    }
+
+    .error-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .error-message {
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      font-size: 0.9375rem;
+    }
+
+    .error-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--accent-sky);
+      color: var(--bg-primary);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .error-link:hover {
+      background: var(--accent-sky);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+      text-decoration: none;
+    }
+
+    .error-link svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .error-home {
+      margin-top: 24px;
+      display: inline-block;
+      padding: 8px 16px;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .error-home:hover {
+      color: var(--text-primary);
+      border-color: var(--accent-sky);
+      background: rgba(14, 165, 233, 0.1);
+    }
+
+    .error-footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    .error-suggestions {
+      text-align: left;
+      background: var(--bg-primary);
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+
+    .error-suggestions h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .error-suggestions ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .error-suggestions li {
+      padding: 6px 0;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .error-suggestions li::before {
+      content: '→';
+      color: var(--accent-sky);
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-message">
+      The page you're looking for doesn't exist or has been moved.
+      <br>This can happen if the link is outdated or there's a temporary glitch.
+    </p>
+    
+    <div class="error-suggestions">
+      <h4>Try these:</h4>
+      <ul>
+        <li>Go to the <a href="/" style="color: var(--accent-sky);">homepage</a></li>
+        <li>Check the URL for typos</li>
+        <li>Wait a moment and try refreshing</li>
+      </ul>
+    </div>
+    
+    <a href="/" class="error-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      Back to Homepage
+    </a>
+    
+    <a href="https://github.com/ITTYBITTYBITES/prosumer-matrix" class="error-home" target="_blank" rel="noopener noreferrer">
+      View on GitHub →
+    </a>
+    
+    <div class="error-footer">
+      Prosumer Matrix | Hardware & Equipment Spec Database
+    </div>
+  </div>
+</body>
+</html>
