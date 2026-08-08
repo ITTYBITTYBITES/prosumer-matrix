@@ -1202,6 +1202,179 @@ input, select {
 }
 
 /* --------------------------------------------------------------------------
+   Image Carousel (Mobile Cards)
+   Fills the 16:9 `.mobile-card-image` frame: contained product image,
+   prev/next arrows on the sides, indicator dots along the bottom.
+   -------------------------------------------------------------------------- */
+
+.image-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-display {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm);
+  background: rgba(15, 23, 42, 0.5);
+  overflow: hidden;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.carousel-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 5;
+}
+
+.carousel-arrow:hover {
+  border-color: var(--accent-sky);
+  color: var(--accent-sky);
+}
+
+.carousel-prev {
+  left: var(--space-sm);
+}
+
+.carousel-next {
+  right: var(--space-sm);
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: var(--space-sm);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  z-index: 5;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-full);
+  background: rgba(148, 163, 184, 0.45);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.carousel-dot:hover {
+  background: var(--text-secondary);
+}
+
+.carousel-dot.active {
+  background: var(--accent-sky);
+  transform: scale(1.25);
+}
+
+/* --------------------------------------------------------------------------
+   Specs Modal Image Gallery
+   Full-width display image with a centered thumbnail strip beneath it.
+   -------------------------------------------------------------------------- */
+
+.specs-carousel-container {
+  margin-bottom: var(--space-md);
+}
+
+.specs-carousel-display {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.specs-carousel-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.specs-thumbnail-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.specs-thumb-btn {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  padding: 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  opacity: 0.65;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.specs-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.specs-thumb-btn:hover {
+  opacity: 1;
+  border-color: var(--border-light);
+}
+
+.specs-thumb-btn.active {
+  opacity: 1;
+  border-color: var(--accent-sky);
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.25);
+}
+
+/* Single-image hero in the specs header keeps the compact 72px treatment */
+.specs-hero-image {
+  flex-shrink: 0;
+}
+
+.specs-disclosure {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
    Modals (Buy Modal & Full Specs Modal)
    -------------------------------------------------------------------------- */
 
@@ -1673,12 +1846,20 @@ input, select {
     flex-direction: column;
   }
 
+  /*
+   * The controls bar is a column here, so flex-basis controls HEIGHT, not
+   * width. Reset it to auto on every child — otherwise the search box grows
+   * 280px tall (icon/clear button float far below the input) and the pills
+   * scroller grows 360px tall, leaving huge empty gaps.
+   */
   .search-container {
+    flex: 1 1 auto;
     min-width: 100%;
   }
 
   .category-pills-scroll {
-    flex-basis: 100%;
+    flex: 0 1 auto;
+    width: 100%;
   }
 
   .sort-controls {
@@ -1733,6 +1914,7 @@ input, select {
   }
 
   .search-container {
+    flex: 1 1 auto;
     min-width: 100%;
   }
 
@@ -1741,7 +1923,8 @@ input, select {
   }
 
   .category-pills-scroll {
-    flex-basis: 100%;
+    flex: 0 1 auto;
+    width: 100%;
   }
 
   .category-pill {
@@ -1752,12 +1935,17 @@ input, select {
 
   .sort-controls {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-end;
+  }
+
+  /* Label pinned left; select + direction button grouped on the right */
+  .sort-label {
+    margin-right: auto;
   }
 
   .sort-select {
-    flex: 1;
-    max-width: 140px;
+    flex: 0 1 auto;
+    max-width: none;
   }
 
   .results-info {
@@ -1812,6 +2000,10 @@ input, select {
   .modal-product-image {
     width: 100%;
     height: 160px;
+  }
+
+  .specs-carousel-display {
+    height: 180px;
   }
 
   .specs-footer {
