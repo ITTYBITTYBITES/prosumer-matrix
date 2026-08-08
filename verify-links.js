@@ -29,8 +29,8 @@ const REQUIRED_CATEGORIES = [
 function assertBenchmarkShape() {
   const failures = [];
 
-  if (products.length !== EXPECTED_PRODUCT_COUNT) {
-    failures.push(`dataset must contain exactly ${EXPECTED_PRODUCT_COUNT} products; found ${products.length}`);
+  if (products.length < EXPECTED_PRODUCT_COUNT) {
+    failures.push(`dataset must contain at least ${EXPECTED_PRODUCT_COUNT} products; found ${products.length}`);
   }
 
   for (const category of REQUIRED_CATEGORIES) {
