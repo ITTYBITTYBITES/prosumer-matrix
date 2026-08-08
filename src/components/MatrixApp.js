@@ -368,7 +368,7 @@ export class MatrixApp {
                   src="${imageUrl}"
                   alt="${this.escapeHtml(product.name)}"
                   loading="lazy"
-                  onerror="this.onerror=null;this.src='${imageFallback}';"
+                  onerror="this.onerror=null;this.alt='';this.src='${imageFallback}';this.className='max-w-full max-h-full object-contain pointer-events-none';"
                   class="product-image"
                 >
               </div>
@@ -1030,7 +1030,7 @@ export class MatrixApp {
           <img
             src="${getImageUrl(product.imageUrl, 200)}"
             alt="${this.escapeHtml(product.name)}"
-            onerror="this.onerror=null;this.src='${imageFallback}';"
+            onerror="this.onerror=null;this.alt='';this.src='${imageFallback}';this.className='max-w-full max-h-full object-contain pointer-events-none';"
           >
         </div>
         <div class="modal-product-info">

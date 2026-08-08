@@ -42,7 +42,7 @@ export function renderSpecsModalContent(product) {
           <img
             src="${getImageUrl(firstImage, 400) || firstImage}"
             alt="${escapeHtml(product.name)}"
-            onerror="this.onerror=null;this.src='${imageFallback}';"
+            onerror="this.onerror=null;this.alt='';this.src='${imageFallback}';this.className='max-w-full max-h-full object-contain pointer-events-none';"
             class="specs-carousel-img"
             id="modalCarouselImg"
           >
@@ -55,7 +55,7 @@ export function renderSpecsModalContent(product) {
               data-img-src="${getImageUrl(img, 400) || img}"
               aria-label="View thumbnail ${idx + 1}"
             >
-              <img src="${getImageUrl(img, 100) || img}" alt="Thumb ${idx + 1}" onerror="this.onerror=null;this.src='${imageFallback}';">
+              <img src="${getImageUrl(img, 100) || img}" alt="Thumb ${idx + 1}" onerror="this.onerror=null;this.alt='';this.src='${imageFallback}';this.className='max-w-full max-h-full object-contain pointer-events-none';">
             </button>
           `).join('')}
         </div>
@@ -66,7 +66,7 @@ export function renderSpecsModalContent(product) {
         <img
           src="${getImageUrl(firstImage, 360) || firstImage}"
           alt="${escapeHtml(product.name)}"
-          onerror="this.onerror=null;this.src='${imageFallback}';"
+          onerror="this.onerror=null;this.alt='';this.src='${imageFallback}';this.className='max-w-full max-h-full object-contain pointer-events-none';"
           class="specs-image"
         >
       </div>
