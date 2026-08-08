@@ -1457,7 +1457,7 @@ const hardwareData = [
     category: "3D Printers",
     priceUsd: 579,
     directUrl: "https://us.store.bambulab.com/products/p1s",
-    imageUrl: "/images/amazon/item-bambu-lab-p1s.jpg",
+    imageUrl: "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg",
     affiliateNetwork: "awin",
     merchantId: "46345",
     roiScore: 88,
@@ -1467,9 +1467,9 @@ const hardwareData = [
       setup_time: "15 minutes"
     },
     images: [
-      "/images/amazon/item-bambu-lab-p1s.jpg",
-      "/images/amazon/item-bambu-lab-p1s.jpg",
-      "/images/amazon/item-bambu-lab-p1s.jpg"
+      "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg",
+      "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg&h=401",
+      "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg&h=402"
     ]
   },
   {
@@ -1501,7 +1501,7 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 3399,
     directUrl: "https://www.xtool.com/products/xtool-p2-55w-co2-laser-cutter",
-    imageUrl: "/images/amazon/item-xtool-p2s-55w.jpg",
+    imageUrl: "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459",
     affiliateNetwork: "impact",
     merchantId: "175642",
     roiScore: 90,
@@ -1511,9 +1511,9 @@ const hardwareData = [
       cameras: "16MP dual HD"
     },
     images: [
-      "/images/amazon/item-xtool-p2s-55w.jpg",
-      "/images/amazon/item-xtool-p2s-55w.jpg",
-      "/images/amazon/item-xtool-p2s-55w.jpg"
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459",
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459&h=401",
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459&h=402"
     ]
   },
   {
@@ -1589,7 +1589,7 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 5799,
     directUrl: "https://us.ecoflow.com/products/delta-pro-ultra",
-    imageUrl: "/images/amazon/item-ecoflow-delta-pro-ultra.jpg",
+    imageUrl: "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240",
     affiliateNetwork: "awin",
     merchantId: "59181",
     roiScore: 91,
@@ -1599,9 +1599,9 @@ const hardwareData = [
       battery_chemistry: "LiFePO4"
     },
     images: [
-      "/images/amazon/item-ecoflow-delta-pro-ultra.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-ultra.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-ultra.jpg"
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240",
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240&h=401",
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240&h=402"
     ]
   },
   {
@@ -1633,7 +1633,7 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 3629,
     directUrl: "https://enterprise.dji.com/mavic-3-enterprise",
-    imageUrl: "/images/amazon/item-dji-mavic-3-enterprise.jpg",
+    imageUrl: "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 93,
@@ -1643,9 +1643,9 @@ const hardwareData = [
       mapping: "Mechanical shutter and RTK support"
     },
     images: [
-      "/images/amazon/item-dji-mavic-3-enterprise.jpg",
-      "/images/amazon/item-dji-mavic-3-enterprise.jpg",
-      "/images/amazon/item-dji-mavic-3-enterprise.jpg"
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg",
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg&h=401",
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg&h=402"
     ]
   },
   {
@@ -1655,7 +1655,7 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 6999,
     directUrl: "https://enterprise.dji.com/matrice-4-series",
-    imageUrl: "/images/amazon/item-dji-matrice-4t.jpg",
+    imageUrl: "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg",
     affiliateNetwork: "impact",
     merchantId: "248631",
     roiScore: 94,
@@ -1665,9 +1665,9 @@ const hardwareData = [
       positioning: "Laser range finder and smart measurement"
     },
     images: [
-      "/images/amazon/item-dji-matrice-4t.jpg",
-      "/images/amazon/item-dji-matrice-4t.jpg",
-      "/images/amazon/item-dji-matrice-4t.jpg"
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg",
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg&h=401",
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg&h=402"
     ]
   },
   {
@@ -1721,7 +1721,7 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 4500,
     directUrl: "https://home.lamarzoccousa.com/product/linea-micra",
-    imageUrl: "/images/amazon/item-la-marzocco-linea-micra.jpg",
+    imageUrl: "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 89,
@@ -1731,9 +1731,9 @@ const hardwareData = [
       water_reservoir: "2 liters"
     },
     images: [
-      "/images/amazon/item-la-marzocco-linea-micra.jpg",
-      "/images/amazon/item-la-marzocco-linea-micra.jpg",
-      "/images/amazon/item-la-marzocco-linea-micra.jpg"
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png&h=401",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png&h=402"
     ]
   },
   {
@@ -1743,7 +1743,7 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 6600,
     directUrl: "https://home.lamarzoccousa.com/product/linea-mini",
-    imageUrl: "/images/amazon/item-la-marzocco-linea-mini.jpg",
+    imageUrl: "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 87,
@@ -1753,9 +1753,9 @@ const hardwareData = [
       water_reservoir: "2.5 liters"
     },
     images: [
-      "/images/amazon/item-la-marzocco-linea-mini.jpg",
-      "/images/amazon/item-la-marzocco-linea-mini.jpg",
-      "/images/amazon/item-la-marzocco-linea-mini.jpg"
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png&h=401",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png&h=402"
     ]
   },
   {
@@ -1831,7 +1831,7 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 1999,
     directUrl: "https://www.aventon.com/products/abound-lr-ebike",
-    imageUrl: "/images/amazon/item-aventon-abound-lr.jpg",
+    imageUrl: "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format",
     affiliateNetwork: "impact",
     merchantId: "231547",
     roiScore: 85,
@@ -1841,9 +1841,9 @@ const hardwareData = [
       max_range: "60 miles"
     },
     images: [
-      "/images/amazon/item-aventon-abound-lr.jpg",
-      "/images/amazon/item-aventon-abound-lr.jpg",
-      "/images/amazon/item-aventon-abound-lr.jpg"
+      "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format",
+      "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format&h=401",
+      "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format&h=402"
     ]
   },
   {
@@ -1922,7 +1922,7 @@ const hardwareData = [
     category: "3D Printers",
     priceUsd: 3499,
     directUrl: "https://www.prusa3d.com/product/original-prusa-xl-5-toolhead-semi-assembled/",
-    imageUrl: "/images/amazon/item-prusa-xl-5-toolhead.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 89,
@@ -1933,9 +1933,9 @@ const hardwareData = [
       modular_bed: "16 individually controlled segments"
     },
     images: [
-      "/images/amazon/item-prusa-xl-5-toolhead.jpg",
-      "/images/amazon/item-prusa-xl-5-toolhead.jpg",
-      "/images/amazon/item-prusa-xl-5-toolhead.jpg"
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -2106,7 +2106,7 @@ const hardwareData = [
     category: "3D Printers",
     priceUsd: 4399,
     directUrl: "https://formlabs.com/3d-printers/form-4/",
-    imageUrl: "/images/amazon/item-formlabs-form-4.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 89,
@@ -2117,9 +2117,9 @@ const hardwareData = [
       materials: "Over 35 industry-grade engineering resins"
     },
     images: [
-      "/images/amazon/item-formlabs-form-4.jpg",
-      "/images/amazon/item-formlabs-form-4.jpg",
-      "/images/amazon/item-formlabs-form-4.jpg"
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -2290,7 +2290,7 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 1499,
     directUrl: "https://www.xtool.com/products/xtool-m1-ultra-craft-machine",
-    imageUrl: "/images/amazon/item-xtool-m1-ultra.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "impact",
     merchantId: "175642",
     roiScore: 91,
@@ -2301,9 +2301,9 @@ const hardwareData = [
       materials: "Wood, acrylic, vinyl, fabric, leather, cardboard"
     },
     images: [
-      "/images/amazon/item-xtool-m1-ultra.jpg",
-      "/images/amazon/item-xtool-m1-ultra.jpg",
-      "/images/amazon/item-xtool-m1-ultra.jpg"
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -2313,7 +2313,7 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 6995,
     directUrl: "https://glowforge.com/products/glowforge-pro",
-    imageUrl: "/images/amazon/item-glowforge-pro.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 84,
@@ -2324,9 +2324,9 @@ const hardwareData = [
       optics: "Dual high-speed autofocus optical cameras"
     },
     images: [
-      "/images/amazon/item-glowforge-pro.jpg",
-      "/images/amazon/item-glowforge-pro.jpg",
-      "/images/amazon/item-glowforge-pro.jpg"
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -2359,7 +2359,7 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 2499,
     directUrl: "https://omtechlaser.com/products/polar-50w-desktop-laser-cutter-engraver",
-    imageUrl: "/images/amazon/item-omtech-polar-50w.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 89,
@@ -2370,9 +2370,9 @@ const hardwareData = [
       cooling: "Built-in internal water chiller & air assist"
     },
     images: [
-      "/images/amazon/item-omtech-polar-50w.jpg",
-      "/images/amazon/item-omtech-polar-50w.jpg",
-      "/images/amazon/item-omtech-polar-50w.jpg"
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -2474,7 +2474,7 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 2980,
     directUrl: "https://www.onefinitycnc.com/product-page/elite-series-foreman",
-    imageUrl: "/images/amazon/item-onefinity-foreman-elite.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 91,
@@ -2485,9 +2485,9 @@ const hardwareData = [
       materials: "Hardwoods, plastics, brass, aluminum"
     },
     images: [
-      "/images/amazon/item-onefinity-foreman-elite.jpg",
-      "/images/amazon/item-onefinity-foreman-elite.jpg",
-      "/images/amazon/item-onefinity-foreman-elite.jpg"
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -2497,7 +2497,7 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 6499,
     directUrl: "https://www.bantamtools.com/desktop-cnc-milling-machine",
-    imageUrl: "/images/amazon/item-bantam-tools-desktop-cnc.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 86,
@@ -2508,9 +2508,9 @@ const hardwareData = [
       aluminum_ready: "Optimized for prototyping aluminum 6061-T6"
     },
     images: [
-      "/images/amazon/item-bantam-tools-desktop-cnc.jpg",
-      "/images/amazon/item-bantam-tools-desktop-cnc.jpg",
-      "/images/amazon/item-bantam-tools-desktop-cnc.jpg"
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -2520,7 +2520,7 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 4999,
     directUrl: "https://www.makera.com/products/carvera",
-    imageUrl: "/images/amazon/item-makera-carvera.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 92,
@@ -2531,9 +2531,9 @@ const hardwareData = [
       enclosure: "Fully enclosed metal housing with window"
     },
     images: [
-      "/images/amazon/item-makera-carvera.jpg",
-      "/images/amazon/item-makera-carvera.jpg",
-      "/images/amazon/item-makera-carvera.jpg"
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3026,7 +3026,7 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 11500,
     directUrl: "https://enterprise.dji.com/matrice-350-rtk",
-    imageUrl: "/images/amazon/item-dji-matrice-350-rtk.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "impact",
     merchantId: "248631",
     roiScore: 95,
@@ -3037,9 +3037,9 @@ const hardwareData = [
       transmission: "O3 Enterprise 20 km range"
     },
     images: [
-      "/images/amazon/item-dji-matrice-350-rtk.jpg",
-      "/images/amazon/item-dji-matrice-350-rtk.jpg",
-      "/images/amazon/item-dji-matrice-350-rtk.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3049,7 +3049,7 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 13999,
     directUrl: "https://enterprise.dji.com/matrice-30",
-    imageUrl: "/images/amazon/item-dji-matrice-30t.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "impact",
     merchantId: "248631",
     roiScore: 94,
@@ -3060,9 +3060,9 @@ const hardwareData = [
       weather_rating: "IP55 operating from -20°C to 50°C"
     },
     images: [
-      "/images/amazon/item-dji-matrice-30t.jpg",
-      "/images/amazon/item-dji-matrice-30t.jpg",
-      "/images/amazon/item-dji-matrice-30t.jpg"
+      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3072,7 +3072,7 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 5498,
     directUrl: "https://enterprise.dji.com/mavic-3-enterprise",
-    imageUrl: "/images/amazon/item-dji-mavic-3-thermal.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "impact",
     merchantId: "248631",
     roiScore: 96,
@@ -3083,9 +3083,9 @@ const hardwareData = [
       rtk_accuracy: "Centimeter-level positioning with RTK module"
     },
     images: [
-      "/images/amazon/item-dji-mavic-3-thermal.jpg",
-      "/images/amazon/item-dji-mavic-3-thermal.jpg",
-      "/images/amazon/item-dji-mavic-3-thermal.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3095,7 +3095,7 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 16499,
     directUrl: "https://www.dji.com/inspire-3",
-    imageUrl: "/images/amazon/item-dji-inspire-3.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 88,
@@ -3106,9 +3106,9 @@ const hardwareData = [
       max_speed: "94 km/h high-speed cinema tracking"
     },
     images: [
-      "/images/amazon/item-dji-inspire-3.jpg",
-      "/images/amazon/item-dji-inspire-3.jpg",
-      "/images/amazon/item-dji-inspire-3.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3187,7 +3187,7 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 8999,
     directUrl: "https://shop.autelrobotics.com/products/evo-max-4t",
-    imageUrl: "/images/amazon/item-autel-evo-max-4t.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 91,
@@ -3198,9 +3198,9 @@ const hardwareData = [
       weather: "IP43 rugged weather resistance"
     },
     images: [
-      "/images/amazon/item-autel-evo-max-4t.jpg",
-      "/images/amazon/item-autel-evo-max-4t.jpg",
-      "/images/amazon/item-autel-evo-max-4t.jpg"
+      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3256,7 +3256,7 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 18500,
     directUrl: "https://www.skydio.com/x10",
-    imageUrl: "/images/amazon/item-skydio-x10-thermal.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 92,
@@ -3267,9 +3267,9 @@ const hardwareData = [
       night_flight: "Zero-light autonomy with active infrared illumination"
     },
     images: [
-      "/images/amazon/item-skydio-x10-thermal.jpg",
-      "/images/amazon/item-skydio-x10-thermal.jpg",
-      "/images/amazon/item-skydio-x10-thermal.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3279,7 +3279,7 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 2199,
     directUrl: "https://www.skydio.com/skydio-2-plus-enterprise",
-    imageUrl: "/images/amazon/item-skydio-2-plus-pro.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 85,
@@ -3290,9 +3290,9 @@ const hardwareData = [
       range: "6 km range with Skydio Enterprise Controller"
     },
     images: [
-      "/images/amazon/item-skydio-2-plus-pro.jpg",
-      "/images/amazon/item-skydio-2-plus-pro.jpg",
-      "/images/amazon/item-skydio-2-plus-pro.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3302,7 +3302,7 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 7500,
     directUrl: "https://www.parrot.com/en/drones/anafi-usa",
-    imageUrl: "/images/amazon/item-parrot-anafi-usa-gov.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 89,
@@ -3313,9 +3313,9 @@ const hardwareData = [
       deployment: "Hand launch and recovery in 55 seconds"
     },
     images: [
-      "/images/amazon/item-parrot-anafi-usa-gov.jpg",
-      "/images/amazon/item-parrot-anafi-usa-gov.jpg",
-      "/images/amazon/item-parrot-anafi-usa-gov.jpg"
+      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3371,7 +3371,7 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 4499,
     directUrl: "https://www.flir.com/products/vue-pro-r/",
-    imageUrl: "/images/amazon/item-flir-vue-pro-r-640.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 87,
@@ -3382,9 +3382,9 @@ const hardwareData = [
       storage: "On-board micro-SD 14-bit TIFF & radiometric JPEG"
     },
     images: [
-      "/images/amazon/item-flir-vue-pro-r-640.jpg",
-      "/images/amazon/item-flir-vue-pro-r-640.jpg",
-      "/images/amazon/item-flir-vue-pro-r-640.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3394,7 +3394,7 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 5999,
     directUrl: "https://yuneec.com/en/commercial/h520e-rtk/",
-    imageUrl: "/images/amazon/item-yuneec-h520e-rtk.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 84,
@@ -3405,9 +3405,9 @@ const hardwareData = [
       flight_time: "Up to 30 minutes payload flight duration"
     },
     images: [
-      "/images/amazon/item-yuneec-h520e-rtk.jpg",
-      "/images/amazon/item-yuneec-h520e-rtk.jpg",
-      "/images/amazon/item-yuneec-h520e-rtk.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3417,7 +3417,7 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 8700,
     directUrl: "https://home.lamarzoccousa.com/product/gs3-mp/",
-    imageUrl: "/images/amazon/item-la-marzocco-gs3-mp.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 93,
@@ -3428,9 +3428,9 @@ const hardwareData = [
       steam_wand: "Performance touch cool-water steam wand"
     },
     images: [
-      "/images/amazon/item-la-marzocco-gs3-mp.jpg",
-      "/images/amazon/item-la-marzocco-gs3-mp.jpg",
-      "/images/amazon/item-la-marzocco-gs3-mp.jpg"
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3555,7 +3555,7 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3299,
     directUrl: "https://profitec-espresso.com/en/products/pro700",
-    imageUrl: "/images/amazon/item-profitec-pro-700.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 92,
@@ -3566,9 +3566,9 @@ const hardwareData = [
       steam_power: "Up to 2.0 bar powerful steam pressure"
     },
     images: [
-      "/images/amazon/item-profitec-pro-700.jpg",
-      "/images/amazon/item-profitec-pro-700.jpg",
-      "/images/amazon/item-profitec-pro-700.jpg"
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3578,7 +3578,7 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 2499,
     directUrl: "https://profitec-espresso.com/en/products/pro600",
-    imageUrl: "/images/amazon/item-profitec-pro-600.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 90,
@@ -3589,9 +3589,9 @@ const hardwareData = [
       steam_pressure: "Steam boiler pressure up to 2.0 bar"
     },
     images: [
-      "/images/amazon/item-profitec-pro-600.jpg",
-      "/images/amazon/item-profitec-pro-600.jpg",
-      "/images/amazon/item-profitec-pro-600.jpg"
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3601,7 +3601,7 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3499,
     directUrl: "https://profitec-espresso.com/en/products/pro800",
-    imageUrl: "/images/amazon/item-profitec-pro-800-lever.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 88,
@@ -3612,9 +3612,9 @@ const hardwareData = [
       operation: "Near silent lever extraction pressure curve"
     },
     images: [
-      "/images/amazon/item-profitec-pro-800-lever.jpg",
-      "/images/amazon/item-profitec-pro-800-lever.jpg",
-      "/images/amazon/item-profitec-pro-800-lever.jpg"
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3624,7 +3624,7 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3499,
     directUrl: "https://www.ecm.de/en/products/details/product/Product/Details/synchronika/",
-    imageUrl: "/images/amazon/item-ecm-synchronika.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 93,
@@ -3635,9 +3635,9 @@ const hardwareData = [
       rotary_pump: "Low-noise rotary pump switchable water feed"
     },
     images: [
-      "/images/amazon/item-ecm-synchronika.jpg",
-      "/images/amazon/item-ecm-synchronika.jpg",
-      "/images/amazon/item-ecm-synchronika.jpg"
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3647,7 +3647,7 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 2199,
     directUrl: "https://www.ecm.de/en/products/details/product/Product/Details/mechanika-vi-slim/",
-    imageUrl: "/images/amazon/item-ecm-mechanika-vi-slim.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 89,
@@ -3658,9 +3658,9 @@ const hardwareData = [
       width: "Ultra-slim 25 cm space-saving housing"
     },
     images: [
-      "/images/amazon/item-ecm-mechanika-vi-slim.jpg",
-      "/images/amazon/item-ecm-mechanika-vi-slim.jpg",
-      "/images/amazon/item-ecm-mechanika-vi-slim.jpg"
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3670,7 +3670,7 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3999,
     directUrl: "https://decentespresso.com/de1pro",
-    imageUrl: "/images/amazon/item-decent-de1pro.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 96,
@@ -3681,9 +3681,9 @@ const hardwareData = [
       profiles: "Slayer, Lever, Blooming, and custom profiles"
     },
     images: [
-      "/images/amazon/item-decent-de1pro.jpg",
-      "/images/amazon/item-decent-de1pro.jpg",
-      "/images/amazon/item-decent-de1pro.jpg"
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3693,7 +3693,7 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 11500,
     directUrl: "https://slayerespresso.com/single-group/",
-    imageUrl: "/images/amazon/item-slayer-single-group.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 85,
@@ -3704,9 +3704,9 @@ const hardwareData = [
       craftsmanship: "Handcrafted wood actuators and Peruvian walnut handles"
     },
     images: [
-      "/images/amazon/item-slayer-single-group.jpg",
-      "/images/amazon/item-slayer-single-group.jpg",
-      "/images/amazon/item-slayer-single-group.jpg"
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3716,7 +3716,7 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 8900,
     directUrl: "https://www.sanremomachines.com/en/products/you/",
-    imageUrl: "/images/amazon/item-sanremo-you.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 90,
@@ -3727,9 +3727,9 @@ const hardwareData = [
       app: "Wi-Fi connectivity and dedicated configuration app"
     },
     images: [
-      "/images/amazon/item-sanremo-you.jpg",
-      "/images/amazon/item-sanremo-you.jpg",
-      "/images/amazon/item-sanremo-you.jpg"
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1517668808822-9ebb02f2a0e6?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3831,7 +3831,7 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 1999,
     directUrl: "https://www.aventon.com/products/aventure-2-ebike",
-    imageUrl: "/images/amazon/item-aventon-aventure-2.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "impact",
     merchantId: "231547",
     roiScore: 91,
@@ -3842,9 +3842,9 @@ const hardwareData = [
       range: "Up to 60 miles per battery charge"
     },
     images: [
-      "/images/amazon/item-aventon-aventure-2.jpg",
-      "/images/amazon/item-aventon-aventure-2.jpg",
-      "/images/amazon/item-aventon-aventure-2.jpg"
+      "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3854,7 +3854,7 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 1199,
     directUrl: "https://www.aventon.com/products/soltera-2-ebike",
-    imageUrl: "/images/amazon/item-aventon-soltera-2.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "impact",
     merchantId: "231547",
     roiScore: 93,
@@ -3865,9 +3865,9 @@ const hardwareData = [
       range: "Up to 46 miles on pedal assist"
     },
     images: [
-      "/images/amazon/item-aventon-soltera-2.jpg",
-      "/images/amazon/item-aventon-soltera-2.jpg",
-      "/images/amazon/item-aventon-soltera-2.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3877,7 +3877,7 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 5399,
     directUrl: "https://www.ternbicycles.com/us/bikes/471/gsd-s10-lx",
-    imageUrl: "/images/amazon/item-tern-gsd-s10-lx.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 95,
@@ -3888,9 +3888,9 @@ const hardwareData = [
       folding: "Vertical parking & flat-fold geometry"
     },
     images: [
-      "/images/amazon/item-tern-gsd-s10-lx.jpg",
-      "/images/amazon/item-tern-gsd-s10-lx.jpg",
-      "/images/amazon/item-tern-gsd-s10-lx.jpg"
+      "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3900,7 +3900,7 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 4499,
     directUrl: "https://www.ternbicycles.com/us/bikes/471/hsd-s8i",
-    imageUrl: "/images/amazon/item-tern-hsd-s8i.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 90,
@@ -3911,9 +3911,9 @@ const hardwareData = [
       brakes: "Magura MT4 hydraulic disc brakes"
     },
     images: [
-      "/images/amazon/item-tern-hsd-s8i.jpg",
-      "/images/amazon/item-tern-hsd-s8i.jpg",
-      "/images/amazon/item-tern-hsd-s8i.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3923,7 +3923,7 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 8750,
     directUrl: "https://www.r-m.de/en-us/bikes/load-60/",
-    imageUrl: "/images/amazon/item-riese-muller-load-60.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 89,
@@ -3934,9 +3934,9 @@ const hardwareData = [
       shifting: "Rohloff E-14 electronic shifting or Enviolo 380"
     },
     images: [
-      "/images/amazon/item-riese-muller-load-60.jpg",
-      "/images/amazon/item-riese-muller-load-60.jpg",
-      "/images/amazon/item-riese-muller-load-60.jpg"
+      "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3946,7 +3946,7 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 1799,
     directUrl: "https://www.radpowerbikes.com/products/radwagon-4-electric-cargo-bike",
-    imageUrl: "/images/amazon/item-rad-power-radwagon-4.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 92,
@@ -3957,9 +3957,9 @@ const hardwareData = [
       range: "45+ miles per charge"
     },
     images: [
-      "/images/amazon/item-rad-power-radwagon-4.jpg",
-      "/images/amazon/item-rad-power-radwagon-4.jpg",
-      "/images/amazon/item-rad-power-radwagon-4.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3969,7 +3969,7 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 3695,
     directUrl: "https://super73.com/products/super73-rx-mojave",
-    imageUrl: "/images/amazon/item-super73-rx-mojave.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 87,
@@ -3980,9 +3980,9 @@ const hardwareData = [
       tires: "GRZLY 20 × 4.5 in aggressive off-road tires"
     },
     images: [
-      "/images/amazon/item-super73-rx-mojave.jpg",
-      "/images/amazon/item-super73-rx-mojave.jpg",
-      "/images/amazon/item-super73-rx-mojave.jpg"
+      "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -3992,7 +3992,7 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 1199,
     directUrl: "https://lectricebikes.com/products/xp-3-0-long-range-black",
-    imageUrl: "/images/amazon/item-lectric-xp-3.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 94,
@@ -4003,9 +4003,9 @@ const hardwareData = [
       folding: "Compact foldable aluminum alloy frame"
     },
     images: [
-      "/images/amazon/item-lectric-xp-3.jpg",
-      "/images/amazon/item-lectric-xp-3.jpg",
-      "/images/amazon/item-lectric-xp-3.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -4015,7 +4015,7 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 4500,
     directUrl: "https://sur-ronusa.com/light-bee-x/",
-    imageUrl: "/images/amazon/item-sur-ron-light-bee-x.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 93,
@@ -4026,9 +4026,9 @@ const hardwareData = [
       frame: "Forged aluminum alloy lightweight chassis (104 lb)"
     },
     images: [
-      "/images/amazon/item-sur-ron-light-bee-x.jpg",
-      "/images/amazon/item-sur-ron-light-bee-x.jpg",
-      "/images/amazon/item-sur-ron-light-bee-x.jpg"
+      "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -4107,7 +4107,7 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 4e3,
     directUrl: "https://www.specialized.com/us/en/turbo-vado-4-0/p/206159",
-    imageUrl: "/images/amazon/item-specialized-turbo-vado-4.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80",
     affiliateNetwork: "none",
     merchantId: "direct",
     roiScore: 91,
@@ -4118,9 +4118,9 @@ const hardwareData = [
       suspension: "Suntour MobieA32 80mm suspension fork"
     },
     images: [
-      "/images/amazon/item-specialized-turbo-vado-4.jpg",
-      "/images/amazon/item-specialized-turbo-vado-4.jpg",
-      "/images/amazon/item-specialized-turbo-vado-4.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600&auto=format&fit=crop&q=80&h=402"
     ]
   },
   {
@@ -4178,12 +4178,12 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 3346,
     directUrl: "https://www.troteclaser.com/en-us/laser-machines/speedy-400",
-    imageUrl: "/images/amazon/item-omtech-80w-co2-nafz.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-omtech-80w-co2-nafz.jpg",
-      "/images/amazon/item-omtech-80w-co2-nafz.jpg",
-      "/images/amazon/item-omtech-80w-co2-nafz.jpg",
-      "/images/amazon/item-omtech-80w-co2-nafz.jpg"
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -4230,12 +4230,12 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 16568,
     directUrl: "https://www.autelrobotics.com/evo-ii-pro-v3",
-    imageUrl: "/images/amazon/item-skydio-x10-autonomous-pcm7.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-skydio-x10-autonomous-pcm7.jpg",
-      "/images/amazon/item-skydio-x10-autonomous-pcm7.jpg",
-      "/images/amazon/item-skydio-x10-autonomous-pcm7.jpg",
-      "/images/amazon/item-skydio-x10-autonomous-pcm7.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -4283,10 +4283,10 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 1053,
     directUrl: "https://www.skydio.com/products/skydio-x10",
-    imageUrl: "/images/amazon/item-dji-avata-2-qmcs.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-avata-2-qmcs.jpg",
-      "/images/amazon/item-dji-avata-2-qmcs.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "43944",
@@ -4358,10 +4358,10 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 982,
     directUrl: "https://ternbicycles.com/products/gsd-s10",
-    imageUrl: "/images/amazon/item-lectric-xp-30-xwj7.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-lectric-xp-30-xwj7.jpg",
-      "/images/amazon/item-lectric-xp-30-xwj7.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "28612",
@@ -4408,12 +4408,12 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 4297,
     directUrl: "https://www.ecoflow.com/products/river-2-pro",
-    imageUrl: "/images/amazon/item-ecoflow-delta-pro-010n.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-ecoflow-delta-pro-010n.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-010n.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-010n.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-010n.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1606832908644-b681c3e1b1b1?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1606832908644-b681c3e1b1b1?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "11223",
@@ -4462,11 +4462,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 921,
     directUrl: "https://www.omtech.com/80w-co2-laser-cutter.html",
-    imageUrl: "/images/amazon/item-aeon-nova-510-2040.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-aeon-nova-510-2040.jpg",
-      "/images/amazon/item-aeon-nova-510-2040.jpg",
-      "/images/amazon/item-aeon-nova-510-2040.jpg"
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=402&fit=crop"
     ],
     affiliateNetwork: "impact",
     merchantId: "63255",
@@ -4698,11 +4698,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 9490,
     directUrl: "https://www.aventon.com/products/aventon-aventure-2",
-    imageUrl: "/images/amazon/item-riese-mller-charger4-zx28.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-riese-mller-charger4-zx28.jpg",
-      "/images/amazon/item-riese-mller-charger4-zx28.jpg",
-      "/images/amazon/item-riese-mller-charger4-zx28.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "76478",
@@ -4749,10 +4749,10 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 1504,
     directUrl: "https://www.worx.com/products/landroid-m",
-    imageUrl: "/images/amazon/item-segway-navimow-h1500e-qstd.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-segway-navimow-h1500e-qstd.jpg",
-      "/images/amazon/item-segway-navimow-h1500e-qstd.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "33178",
@@ -4774,12 +4774,12 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 2569,
     directUrl: "https://www.kvdw.com/spirit",
-    imageUrl: "/images/amazon/item-lelit-bianca-v3-54y5.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-lelit-bianca-v3-54y5.jpg",
-      "/images/amazon/item-lelit-bianca-v3-54y5.jpg",
-      "/images/amazon/item-lelit-bianca-v3-54y5.jpg",
-      "/images/amazon/item-lelit-bianca-v3-54y5.jpg"
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1511537632536-b7a4896840a4?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1511537632536-b7a4896840a4?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "impact",
     merchantId: "12095",
@@ -4801,10 +4801,10 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 411,
     directUrl: "https://www.aeonlaser.com/nova-510",
-    imageUrl: "/images/amazon/item-sculpfun-s30-pro-bz5m.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-sculpfun-s30-pro-bz5m.jpg",
-      "/images/amazon/item-sculpfun-s30-pro-bz5m.jpg"
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -4905,12 +4905,12 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 1952,
     directUrl: "https://ternbicycles.com/products/gsd-s10",
-    imageUrl: "/images/amazon/item-aventon-aventure2-electric-lqc5.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-aventon-aventure2-electric-lqc5.jpg",
-      "/images/amazon/item-aventon-aventure2-electric-lqc5.jpg",
-      "/images/amazon/item-aventon-aventure2-electric-lqc5.jpg",
-      "/images/amazon/item-aventon-aventure2-electric-lqc5.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "48615",
@@ -4958,11 +4958,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 4314,
     directUrl: "https://www.skydio.com/products/skydio-x10",
-    imageUrl: "/images/amazon/item-autel-evo-ii-1q88.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-autel-evo-ii-1q88.jpg",
-      "/images/amazon/item-autel-evo-ii-1q88.jpg",
-      "/images/amazon/item-autel-evo-ii-1q88.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop"
     ],
     affiliateNetwork: "impact",
     merchantId: "58522",
@@ -5091,11 +5091,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 23889,
     directUrl: "https://www.bosslaser.com/boss-ls-3655-100w",
-    imageUrl: "/images/amazon/item-trotec-speedy-400-ld4p.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-trotec-speedy-400-ld4p.jpg",
-      "/images/amazon/item-trotec-speedy-400-ld4p.jpg",
-      "/images/amazon/item-trotec-speedy-400-ld4p.jpg"
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=402&fit=crop"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -5143,10 +5143,10 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 307,
     directUrl: "https://www.bluettipower.com/products/ac300-b300s",
-    imageUrl: "/images/amazon/item-jackery-solarsaga-200w-ncks.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-jackery-solarsaga-200w-ncks.jpg",
-      "/images/amazon/item-jackery-solarsaga-200w-ncks.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1606832908644-b681c3e1b1b1?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -5168,10 +5168,10 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 2069,
     directUrl: "https://www.aventon.com/products/aventon-aventure-2",
-    imageUrl: "/images/amazon/item-aventon-aventure2-electric-ucnc.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-aventon-aventure2-electric-ucnc.jpg",
-      "/images/amazon/item-aventon-aventure2-electric-ucnc.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "impact",
     merchantId: "97287",
@@ -5245,10 +5245,10 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 1116,
     directUrl: "https://www.lectricebikes.com/lectric-xp-3-0/",
-    imageUrl: "/images/amazon/item-worx-landroid-m-383q.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-worx-landroid-m-383q.jpg",
-      "/images/amazon/item-worx-landroid-m-383q.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "51074",
@@ -5297,11 +5297,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 3531,
     directUrl: "https://ternbicycles.com/products/gsd-s10",
-    imageUrl: "/images/amazon/item-husqvarna-automower-435x-yf6n.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-husqvarna-automower-435x-yf6n.jpg",
-      "/images/amazon/item-husqvarna-automower-435x-yf6n.jpg",
-      "/images/amazon/item-husqvarna-automower-435x-yf6n.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "67780",
@@ -5377,12 +5377,12 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 2998,
     directUrl: "https://www.dji.com/mini-4-pro",
-    imageUrl: "/images/amazon/item-dji-fly-more-hw6b.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-fly-more-hw6b.jpg",
-      "/images/amazon/item-dji-fly-more-hw6b.jpg",
-      "/images/amazon/item-dji-fly-more-hw6b.jpg",
-      "/images/amazon/item-dji-fly-more-hw6b.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -5429,10 +5429,10 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 317,
     directUrl: "https://www.bosslaser.com/boss-ls-3655-100w",
-    imageUrl: "/images/amazon/item-ortur-laser-master-pr65.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-ortur-laser-master-pr65.jpg",
-      "/images/amazon/item-ortur-laser-master-pr65.jpg"
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -5481,12 +5481,12 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 4309,
     directUrl: "https://www.parrot.com/en/a-nafi-us",
-    imageUrl: "/images/amazon/item-autel-evo-ii-37m5.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-autel-evo-ii-37m5.jpg",
-      "/images/amazon/item-autel-evo-ii-37m5.jpg",
-      "/images/amazon/item-autel-evo-ii-37m5.jpg",
-      "/images/amazon/item-autel-evo-ii-37m5.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "22470",
@@ -5559,10 +5559,10 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 307,
     directUrl: "https://www.uvlaser.com/unlv-980nm",
-    imageUrl: "/images/amazon/item-gweike-cloud-8w-srvb.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-gweike-cloud-8w-srvb.jpg",
-      "/images/amazon/item-gweike-cloud-8w-srvb.jpg"
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "29250",
@@ -5636,12 +5636,12 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 3067,
     directUrl: "https://www.dji.com/avata-2",
-    imageUrl: "/images/amazon/item-dji-fly-more-1wnn.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-fly-more-1wnn.jpg",
-      "/images/amazon/item-dji-fly-more-1wnn.jpg",
-      "/images/amazon/item-dji-fly-more-1wnn.jpg",
-      "/images/amazon/item-dji-fly-more-1wnn.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "92486",
@@ -5716,10 +5716,10 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 5346,
     directUrl: "https://amwoodstore.com/products/48v-5000w-fat-tire-electric-bike",
-    imageUrl: "/images/amazon/item-tern-gsd-s10-ofci.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-tern-gsd-s10-ofci.jpg",
-      "/images/amazon/item-tern-gsd-s10-ofci.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "39187",
@@ -5820,11 +5820,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 7965,
     directUrl: "https://www.dji.com/matrice-30",
-    imageUrl: "/images/amazon/item-parrot-anafi-usa-kq4k.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-parrot-anafi-usa-kq4k.jpg",
-      "/images/amazon/item-parrot-anafi-usa-kq4k.jpg",
-      "/images/amazon/item-parrot-anafi-usa-kq4k.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -5846,12 +5846,12 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 1055,
     directUrl: "https://www.freeflysystems.com/alta-x",
-    imageUrl: "/images/amazon/item-dji-avata-2-j86s.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-avata-2-j86s.jpg",
-      "/images/amazon/item-dji-avata-2-j86s.jpg",
-      "/images/amazon/item-dji-avata-2-j86s.jpg",
-      "/images/amazon/item-dji-avata-2-j86s.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "52504",
@@ -5873,12 +5873,12 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 1186,
     directUrl: "https://www.jackery.com/products/explorer-5000-plus",
-    imageUrl: "/images/amazon/item-bluetti-ac180-expandable-y4n4.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-bluetti-ac180-expandable-y4n4.jpg",
-      "/images/amazon/item-bluetti-ac180-expandable-y4n4.jpg",
-      "/images/amazon/item-bluetti-ac180-expandable-y4n4.jpg",
-      "/images/amazon/item-bluetti-ac180-expandable-y4n4.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1606832908644-b681c3e1b1b1?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1606832908644-b681c3e1b1b1?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "49006",
@@ -5900,11 +5900,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 1718,
     directUrl: "https://www.segway.com/na/en/navimow-h1500e.html",
-    imageUrl: "/images/amazon/item-super73-s2ez-electric-a5vf.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-super73-s2ez-electric-a5vf.jpg",
-      "/images/amazon/item-super73-s2ez-electric-a5vf.jpg",
-      "/images/amazon/item-super73-s2ez-electric-a5vf.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop"
     ],
     affiliateNetwork: "impact",
     merchantId: "35722",
@@ -5926,10 +5926,10 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 982,
     directUrl: "https://www.aventon.com/products/aventon-aventure-2",
-    imageUrl: "/images/amazon/item-lectric-xp-30-w7ic.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-lectric-xp-30-w7ic.jpg",
-      "/images/amazon/item-lectric-xp-30-w7ic.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -5977,12 +5977,12 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 4322,
     directUrl: "https://www.goalzero.com/collections/yeti-power-stations/products/yeti-6000x",
-    imageUrl: "/images/amazon/item-ecoflow-delta-pro-s9qc.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-ecoflow-delta-pro-s9qc.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-s9qc.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-s9qc.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-s9qc.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1606832908644-b681c3e1b1b1?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1606832908644-b681c3e1b1b1?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "68876",
@@ -6030,10 +6030,10 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 1634,
     directUrl: "https://www.dji.com/avata-2",
-    imageUrl: "/images/amazon/item-dji-mini-4-i9r2.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-mini-4-i9r2.jpg",
-      "/images/amazon/item-dji-mini-4-i9r2.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "93315",
@@ -6081,11 +6081,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 4513,
     directUrl: "https://www.bluettipower.com/products/ac300-b300s",
-    imageUrl: "/images/amazon/item-anker-solix-f3800-u570.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-anker-solix-f3800-u570.jpg",
-      "/images/amazon/item-anker-solix-f3800-u570.jpg",
-      "/images/amazon/item-anker-solix-f3800-u570.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1606832908644-b681c3e1b1b1?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "87403",
@@ -6216,10 +6216,10 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 354,
     directUrl: "https://www.omtech.com/80w-co2-laser-cutter.html",
-    imageUrl: "/images/amazon/item-ortur-laser-master-sdea.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-ortur-laser-master-sdea.jpg",
-      "/images/amazon/item-ortur-laser-master-sdea.jpg"
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "64184",
@@ -6241,11 +6241,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 5672,
     directUrl: "https://super73.com/collections/s2-ez",
-    imageUrl: "/images/amazon/item-tern-gsd-s10-rhim.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-tern-gsd-s10-rhim.jpg",
-      "/images/amazon/item-tern-gsd-s10-rhim.jpg",
-      "/images/amazon/item-tern-gsd-s10-rhim.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -6372,10 +6372,10 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 1063,
     directUrl: "https://www.autelrobotics.com/evo-ii-pro-v3",
-    imageUrl: "/images/amazon/item-dji-avata-2-9k5e.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-avata-2-9k5e.jpg",
-      "/images/amazon/item-dji-avata-2-9k5e.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "52194",
@@ -6422,10 +6422,10 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 4640,
     directUrl: "https://www.decentespresso.com/products/de1pro",
-    imageUrl: "/images/amazon/item-ecm-synchronika-pid-fyu8.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-ecm-synchronika-pid-fyu8.jpg",
-      "/images/amazon/item-ecm-synchronika-pid-fyu8.jpg"
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1511537632536-b7a4896840a4?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "13988",
@@ -6447,10 +6447,10 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 36373,
     directUrl: "https://www.dji.com/flir-mavic-3-thermal",
-    imageUrl: "/images/amazon/item-freefly-alta-x-cecj.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-freefly-alta-x-cecj.jpg",
-      "/images/amazon/item-freefly-alta-x-cecj.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "98327",
@@ -6472,11 +6472,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 307,
     directUrl: "https://www.troteclaser.com/en-us/laser-machines/speedy-400",
-    imageUrl: "/images/amazon/item-ortur-laser-master-vjtc.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-ortur-laser-master-vjtc.jpg",
-      "/images/amazon/item-ortur-laser-master-vjtc.jpg",
-      "/images/amazon/item-ortur-laser-master-vjtc.jpg"
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=402&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "90917",
@@ -6498,12 +6498,12 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 6268,
     directUrl: "https://www.dji.com/matrice-30",
-    imageUrl: "/images/amazon/item-dji-mavic-3-2jbn.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-mavic-3-2jbn.jpg",
-      "/images/amazon/item-dji-mavic-3-2jbn.jpg",
-      "/images/amazon/item-dji-mavic-3-2jbn.jpg",
-      "/images/amazon/item-dji-mavic-3-2jbn.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "impact",
     merchantId: "73363",
@@ -6551,12 +6551,12 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 5419,
     directUrl: "https://www.synesso.com/products/cyncra",
-    imageUrl: "/images/amazon/item-eversys-la-germania-a3oy.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-eversys-la-germania-a3oy.jpg",
-      "/images/amazon/item-eversys-la-germania-a3oy.jpg",
-      "/images/amazon/item-eversys-la-germania-a3oy.jpg",
-      "/images/amazon/item-eversys-la-germania-a3oy.jpg"
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1511537632536-b7a4896840a4?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1511537632536-b7a4896840a4?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "32091",
@@ -6657,12 +6657,12 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 1396,
     directUrl: "https://super73.com/collections/s2-ez",
-    imageUrl: "/images/amazon/item-amwood-48v-5000w-2mjr.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-amwood-48v-5000w-2mjr.jpg",
-      "/images/amazon/item-amwood-48v-5000w-2mjr.jpg",
-      "/images/amazon/item-amwood-48v-5000w-2mjr.jpg",
-      "/images/amazon/item-amwood-48v-5000w-2mjr.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=403&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "95457",
@@ -6684,11 +6684,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 2999,
     directUrl: "https://www.dji.com/avata-2",
-    imageUrl: "/images/amazon/item-dji-fly-more-5dla.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-fly-more-5dla.jpg",
-      "/images/amazon/item-dji-fly-more-5dla.jpg",
-      "/images/amazon/item-dji-fly-more-5dla.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -6736,11 +6736,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 2255,
     directUrl: "https://www.dji.com/mini-4-pro",
-    imageUrl: "/images/amazon/item-skydio-2-autonomous-a5x4.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-skydio-2-autonomous-a5x4.jpg",
-      "/images/amazon/item-skydio-2-autonomous-a5x4.jpg",
-      "/images/amazon/item-skydio-2-autonomous-a5x4.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop"
     ],
     affiliateNetwork: "awin",
     merchantId: "13219",
@@ -6762,11 +6762,11 @@ const hardwareData = [
     category: "3D Printers",
     priceUsd: 892,
     directUrl: "https://us.store.bambulab.com/products/h2",
-    imageUrl: "/images/amazon/item-bambu-lab-h2-high-speed-3d-print.jpg",
+    imageUrl: "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg",
     images: [
-      "/images/amazon/item-bambu-lab-h2-high-speed-3d-print.jpg",
-      "/images/amazon/item-bambu-lab-h2-high-speed-3d-print.jpg",
-      "/images/amazon/item-bambu-lab-h2-high-speed-3d-print.jpg"
+      "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg",
+      "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg&h=401",
+      "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "46345",
@@ -6877,11 +6877,11 @@ const hardwareData = [
     category: "3D Printers",
     priceUsd: 1315,
     directUrl: "https://www.prusa3d.com/product/core-one",
-    imageUrl: "/images/amazon/item-original-prusa-core-one-enclosed.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
     images: [
-      "/images/amazon/item-original-prusa-core-one-enclosed.jpg",
-      "/images/amazon/item-original-prusa-core-one-enclosed.jpg",
-      "/images/amazon/item-original-prusa-core-one-enclosed.jpg"
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -7061,11 +7061,11 @@ const hardwareData = [
     category: "3D Printers",
     priceUsd: 4641,
     directUrl: "https://formlabs.com/3d-printers/form-4b",
-    imageUrl: "/images/amazon/item-formlabs-form-4b-medical-grade-s.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80",
     images: [
-      "/images/amazon/item-formlabs-form-4b-medical-grade-s.jpg",
-      "/images/amazon/item-formlabs-form-4b-medical-grade-s.jpg",
-      "/images/amazon/item-formlabs-form-4b-medical-grade-s.jpg"
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -7130,11 +7130,11 @@ const hardwareData = [
     category: "3D Printers",
     priceUsd: 922,
     directUrl: "https://us.store.bambulab.com/products/h2",
-    imageUrl: "/images/amazon/item-bambu-lab-h2-high-speed-3d-print-e097ac.jpg",
+    imageUrl: "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg",
     images: [
-      "/images/amazon/item-bambu-lab-h2-high-speed-3d-print-e097ac.jpg",
-      "/images/amazon/item-bambu-lab-h2-high-speed-3d-print-e097ac.jpg",
-      "/images/amazon/item-bambu-lab-h2-high-speed-3d-print-e097ac.jpg"
+      "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg",
+      "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg&h=401",
+      "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "46345",
@@ -7245,11 +7245,11 @@ const hardwareData = [
     category: "3D Printers",
     priceUsd: 1232,
     directUrl: "https://www.prusa3d.com/product/core-one",
-    imageUrl: "/images/amazon/item-original-prusa-core-one-enclosed-fe59c9.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
     images: [
-      "/images/amazon/item-original-prusa-core-one-enclosed-fe59c9.jpg",
-      "/images/amazon/item-original-prusa-core-one-enclosed-fe59c9.jpg",
-      "/images/amazon/item-original-prusa-core-one-enclosed-fe59c9.jpg"
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -7429,11 +7429,11 @@ const hardwareData = [
     category: "3D Printers",
     priceUsd: 4412,
     directUrl: "https://formlabs.com/3d-printers/form-4b",
-    imageUrl: "/images/amazon/item-formlabs-form-4b-medical-grade-s-1d8b39.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80",
     images: [
-      "/images/amazon/item-formlabs-form-4b-medical-grade-s-1d8b39.jpg",
-      "/images/amazon/item-formlabs-form-4b-medical-grade-s-1d8b39.jpg",
-      "/images/amazon/item-formlabs-form-4b-medical-grade-s-1d8b39.jpg"
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=600&auto=format&fit=crop&q=80&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -7498,11 +7498,11 @@ const hardwareData = [
     category: "3D Printers",
     priceUsd: 868,
     directUrl: "https://us.store.bambulab.com/products/h2",
-    imageUrl: "/images/amazon/item-bambu-lab-h2-high-speed-3d-print-3fa4e5.jpg",
+    imageUrl: "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg",
     images: [
-      "/images/amazon/item-bambu-lab-h2-high-speed-3d-print-3fa4e5.jpg",
-      "/images/amazon/item-bambu-lab-h2-high-speed-3d-print-3fa4e5.jpg",
-      "/images/amazon/item-bambu-lab-h2-high-speed-3d-print-3fa4e5.jpg"
+      "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg",
+      "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg&h=401",
+      "https://store.bblcdn.com/s7/default/465c4c8bf2a746069eee46eda06f5a62/P1SC2-compressed.jpg&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "46345",
@@ -7613,11 +7613,11 @@ const hardwareData = [
     category: "3D Printers",
     priceUsd: 1257,
     directUrl: "https://www.prusa3d.com/product/core-one",
-    imageUrl: "/images/amazon/item-original-prusa-core-one-enclosed-d49cb7.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
     images: [
-      "/images/amazon/item-original-prusa-core-one-enclosed-d49cb7.jpg",
-      "/images/amazon/item-original-prusa-core-one-enclosed-d49cb7.jpg",
-      "/images/amazon/item-original-prusa-core-one-enclosed-d49cb7.jpg"
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -7728,11 +7728,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 3070,
     directUrl: "https://www.xtool.com/products/xtool-p2-55w-co2-laser-cutter",
-    imageUrl: "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e.jpg",
+    imageUrl: "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459",
     images: [
-      "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e.jpg",
-      "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e.jpg",
-      "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e.jpg"
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459",
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459&h=401",
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "175642",
@@ -7860,11 +7860,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 4299,
     directUrl: "https://www.omtech.com/100w-co2-laser-cutter.html",
-    imageUrl: "/images/amazon/item-omtech-100w-co2-laser-engraver-w.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-omtech-100w-co2-laser-engraver-w.jpg",
-      "/images/amazon/item-omtech-100w-co2-laser-engraver-w.jpg",
-      "/images/amazon/item-omtech-100w-co2-laser-engraver-w.jpg"
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "64184",
@@ -7882,11 +7882,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 3574,
     directUrl: "https://shop.carbide3d.com/products/shapeoko5pro",
-    imageUrl: "/images/amazon/item-shapeoko-5-pro-4x4-heavy-duty-cn.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
     images: [
-      "/images/amazon/item-shapeoko-5-pro-4x4-heavy-duty-cn.jpg",
-      "/images/amazon/item-shapeoko-5-pro-4x4-heavy-duty-cn.jpg",
-      "/images/amazon/item-shapeoko-5-pro-4x4-heavy-duty-cn.jpg"
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -7948,11 +7948,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 737,
     directUrl: "https://www.sculpfun.com/products/s30-ultra-33w",
-    imageUrl: "/images/amazon/item-sculpfun-s30-ultra-33w-professio.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-sculpfun-s30-ultra-33w-professio.jpg",
-      "/images/amazon/item-sculpfun-s30-ultra-33w-professio.jpg",
-      "/images/amazon/item-sculpfun-s30-ultra-33w-professio.jpg"
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "90917",
@@ -7970,11 +7970,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 1165,
     directUrl: "https://www.atomstack.com/products/a40-pro",
-    imageUrl: "/images/amazon/item-atomstack-a40-pro-48w-high-power.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-atomstack-a40-pro-48w-high-power.jpg",
-      "/images/amazon/item-atomstack-a40-pro-48w-high-power.jpg",
-      "/images/amazon/item-atomstack-a40-pro-48w-high-power.jpg"
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "90917",
@@ -7992,11 +7992,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 3415,
     directUrl: "https://www.xtool.com/products/xtool-p2-55w-co2-laser-cutter",
-    imageUrl: "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e-cbc004.jpg",
+    imageUrl: "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459",
     images: [
-      "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e-cbc004.jpg",
-      "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e-cbc004.jpg",
-      "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e-cbc004.jpg"
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459",
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459&h=401",
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "175642",
@@ -8124,11 +8124,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 4591,
     directUrl: "https://www.omtech.com/100w-co2-laser-cutter.html",
-    imageUrl: "/images/amazon/item-omtech-100w-co2-laser-engraver-w-b09c46.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-omtech-100w-co2-laser-engraver-w-b09c46.jpg",
-      "/images/amazon/item-omtech-100w-co2-laser-engraver-w-b09c46.jpg",
-      "/images/amazon/item-omtech-100w-co2-laser-engraver-w-b09c46.jpg"
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "64184",
@@ -8146,11 +8146,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 3189,
     directUrl: "https://shop.carbide3d.com/products/shapeoko5pro",
-    imageUrl: "/images/amazon/item-shapeoko-5-pro-4x4-heavy-duty-cn-712b52.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
     images: [
-      "/images/amazon/item-shapeoko-5-pro-4x4-heavy-duty-cn-712b52.jpg",
-      "/images/amazon/item-shapeoko-5-pro-4x4-heavy-duty-cn-712b52.jpg",
-      "/images/amazon/item-shapeoko-5-pro-4x4-heavy-duty-cn-712b52.jpg"
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -8212,11 +8212,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 805,
     directUrl: "https://www.sculpfun.com/products/s30-ultra-33w",
-    imageUrl: "/images/amazon/item-sculpfun-s30-ultra-33w-professio-3d2548.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-sculpfun-s30-ultra-33w-professio-3d2548.jpg",
-      "/images/amazon/item-sculpfun-s30-ultra-33w-professio-3d2548.jpg",
-      "/images/amazon/item-sculpfun-s30-ultra-33w-professio-3d2548.jpg"
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "90917",
@@ -8234,11 +8234,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 1138,
     directUrl: "https://www.atomstack.com/products/a40-pro",
-    imageUrl: "/images/amazon/item-atomstack-a40-pro-48w-high-power-248165.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-atomstack-a40-pro-48w-high-power-248165.jpg",
-      "/images/amazon/item-atomstack-a40-pro-48w-high-power-248165.jpg",
-      "/images/amazon/item-atomstack-a40-pro-48w-high-power-248165.jpg"
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "90917",
@@ -8256,11 +8256,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 3092,
     directUrl: "https://www.xtool.com/products/xtool-p2-55w-co2-laser-cutter",
-    imageUrl: "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e-c10e7a.jpg",
+    imageUrl: "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459",
     images: [
-      "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e-c10e7a.jpg",
-      "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e-c10e7a.jpg",
-      "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e-c10e7a.jpg"
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459",
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459&h=401",
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "175642",
@@ -8388,11 +8388,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 4539,
     directUrl: "https://www.omtech.com/100w-co2-laser-cutter.html",
-    imageUrl: "/images/amazon/item-omtech-100w-co2-laser-engraver-w-1a47b0.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-omtech-100w-co2-laser-engraver-w-1a47b0.jpg",
-      "/images/amazon/item-omtech-100w-co2-laser-engraver-w-1a47b0.jpg",
-      "/images/amazon/item-omtech-100w-co2-laser-engraver-w-1a47b0.jpg"
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "64184",
@@ -8410,11 +8410,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 3445,
     directUrl: "https://shop.carbide3d.com/products/shapeoko5pro",
-    imageUrl: "/images/amazon/item-shapeoko-5-pro-4x4-heavy-duty-cn-f74c21.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
     images: [
-      "/images/amazon/item-shapeoko-5-pro-4x4-heavy-duty-cn-f74c21.jpg",
-      "/images/amazon/item-shapeoko-5-pro-4x4-heavy-duty-cn-f74c21.jpg",
-      "/images/amazon/item-shapeoko-5-pro-4x4-heavy-duty-cn-f74c21.jpg"
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=401",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&auto=format&fit=crop&q=80&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -8476,11 +8476,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 748,
     directUrl: "https://www.sculpfun.com/products/s30-ultra-33w",
-    imageUrl: "/images/amazon/item-sculpfun-s30-ultra-33w-professio-d2eff3.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-sculpfun-s30-ultra-33w-professio-d2eff3.jpg",
-      "/images/amazon/item-sculpfun-s30-ultra-33w-professio-d2eff3.jpg",
-      "/images/amazon/item-sculpfun-s30-ultra-33w-professio-d2eff3.jpg"
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "90917",
@@ -8498,11 +8498,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 1267,
     directUrl: "https://www.atomstack.com/products/a40-pro",
-    imageUrl: "/images/amazon/item-atomstack-a40-pro-48w-high-power-c1a51b.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-atomstack-a40-pro-48w-high-power-c1a51b.jpg",
-      "/images/amazon/item-atomstack-a40-pro-48w-high-power-c1a51b.jpg",
-      "/images/amazon/item-atomstack-a40-pro-48w-high-power-c1a51b.jpg"
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "90917",
@@ -8520,11 +8520,11 @@ const hardwareData = [
     category: "CNC & Laser Cutters",
     priceUsd: 3617,
     directUrl: "https://www.xtool.com/products/xtool-p2-55w-co2-laser-cutter",
-    imageUrl: "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e-2ad04a.jpg",
+    imageUrl: "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459",
     images: [
-      "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e-2ad04a.jpg",
-      "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e-2ad04a.jpg",
-      "/images/amazon/item-xtool-p2s-55w-co2-laser-cutter-e-2ad04a.jpg"
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459",
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459&h=401",
+      "https://www.xtool.com/cdn/shop/files/mk-p2-p2s-v30_us_pc_p2s_2Bf1-black-productiveduo-black_10723-4360_ff86d9ca-713f-4a65-9a64-a7695ee0f6a9.webp?v=1767868459&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "175642",
@@ -8674,11 +8674,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 5599,
     directUrl: "https://us.ecoflow.com/products/delta-pro-ultra",
-    imageUrl: "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho.jpg",
+    imageUrl: "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240",
     images: [
-      "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho.jpg"
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240",
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240&h=401",
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "59181",
@@ -8784,11 +8784,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 5263,
     directUrl: "https://www.bluettipower.com/products/ac500-b300s",
-    imageUrl: "/images/amazon/item-bluetti-apex-5000w-expandable-ho.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-bluetti-apex-5000w-expandable-ho.jpg",
-      "/images/amazon/item-bluetti-apex-5000w-expandable-ho.jpg",
-      "/images/amazon/item-bluetti-apex-5000w-expandable-ho.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "58407",
@@ -8806,11 +8806,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 3633,
     directUrl: "https://www.anker.com/products/a1790",
-    imageUrl: "/images/amazon/item-anker-solix-f3800-home-power-sta.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-anker-solix-f3800-home-power-sta.jpg",
-      "/images/amazon/item-anker-solix-f3800-home-power-sta.jpg",
-      "/images/amazon/item-anker-solix-f3800-home-power-sta.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "87403",
@@ -8850,11 +8850,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 3769,
     directUrl: "https://www.goalzero.com/products/yeti-pro-4000",
-    imageUrl: "/images/amazon/item-goal-zero-yeti-pro-4000-high-out.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-goal-zero-yeti-pro-4000-high-out.jpg",
-      "/images/amazon/item-goal-zero-yeti-pro-4000-high-out.jpg",
-      "/images/amazon/item-goal-zero-yeti-pro-4000-high-out.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -8916,11 +8916,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 5563,
     directUrl: "https://us.ecoflow.com/products/delta-pro-ultra",
-    imageUrl: "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho-00f535.jpg",
+    imageUrl: "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240",
     images: [
-      "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho-00f535.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho-00f535.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho-00f535.jpg"
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240",
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240&h=401",
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "59181",
@@ -9026,11 +9026,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 4447,
     directUrl: "https://www.bluettipower.com/products/ac500-b300s",
-    imageUrl: "/images/amazon/item-bluetti-apex-5000w-expandable-ho-31abef.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-bluetti-apex-5000w-expandable-ho-31abef.jpg",
-      "/images/amazon/item-bluetti-apex-5000w-expandable-ho-31abef.jpg",
-      "/images/amazon/item-bluetti-apex-5000w-expandable-ho-31abef.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "58407",
@@ -9048,11 +9048,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 4180,
     directUrl: "https://www.anker.com/products/a1790",
-    imageUrl: "/images/amazon/item-anker-solix-f3800-home-power-sta-4032aa.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-anker-solix-f3800-home-power-sta-4032aa.jpg",
-      "/images/amazon/item-anker-solix-f3800-home-power-sta-4032aa.jpg",
-      "/images/amazon/item-anker-solix-f3800-home-power-sta-4032aa.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "87403",
@@ -9092,11 +9092,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 4357,
     directUrl: "https://www.goalzero.com/products/yeti-pro-4000",
-    imageUrl: "/images/amazon/item-goal-zero-yeti-pro-4000-high-out-8772f2.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-goal-zero-yeti-pro-4000-high-out-8772f2.jpg",
-      "/images/amazon/item-goal-zero-yeti-pro-4000-high-out-8772f2.jpg",
-      "/images/amazon/item-goal-zero-yeti-pro-4000-high-out-8772f2.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -9158,11 +9158,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 5245,
     directUrl: "https://us.ecoflow.com/products/delta-pro-ultra",
-    imageUrl: "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho-577406.jpg",
+    imageUrl: "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240",
     images: [
-      "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho-577406.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho-577406.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho-577406.jpg"
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240",
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240&h=401",
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "59181",
@@ -9268,11 +9268,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 4531,
     directUrl: "https://www.bluettipower.com/products/ac500-b300s",
-    imageUrl: "/images/amazon/item-bluetti-apex-5000w-expandable-ho-326bc7.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-bluetti-apex-5000w-expandable-ho-326bc7.jpg",
-      "/images/amazon/item-bluetti-apex-5000w-expandable-ho-326bc7.jpg",
-      "/images/amazon/item-bluetti-apex-5000w-expandable-ho-326bc7.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "58407",
@@ -9290,11 +9290,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 3775,
     directUrl: "https://www.anker.com/products/a1790",
-    imageUrl: "/images/amazon/item-anker-solix-f3800-home-power-sta-f6e5b8.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-anker-solix-f3800-home-power-sta-f6e5b8.jpg",
-      "/images/amazon/item-anker-solix-f3800-home-power-sta-f6e5b8.jpg",
-      "/images/amazon/item-anker-solix-f3800-home-power-sta-f6e5b8.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "87403",
@@ -9334,11 +9334,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 4141,
     directUrl: "https://www.goalzero.com/products/yeti-pro-4000",
-    imageUrl: "/images/amazon/item-goal-zero-yeti-pro-4000-high-out-c9270f.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-goal-zero-yeti-pro-4000-high-out-c9270f.jpg",
-      "/images/amazon/item-goal-zero-yeti-pro-4000-high-out-c9270f.jpg",
-      "/images/amazon/item-goal-zero-yeti-pro-4000-high-out-c9270f.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -9400,11 +9400,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 5263,
     directUrl: "https://us.ecoflow.com/products/delta-pro-ultra",
-    imageUrl: "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho-f6b30b.jpg",
+    imageUrl: "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240",
     images: [
-      "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho-f6b30b.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho-f6b30b.jpg",
-      "/images/amazon/item-ecoflow-delta-pro-ultra-whole-ho-f6b30b.jpg"
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240",
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240&h=401",
+      "https://us.ecoflow.com/cdn/shop/files/ecoflow-ecoflow-delta-pro-ultra-whole-home-backup-power-ul-9540-certificated-dpu-bundle-delta-pro-ultra-1-x-inverter-1-x-battery-1253485498.png?v=1786091054&width=1240&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "59181",
@@ -9510,11 +9510,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 5140,
     directUrl: "https://www.bluettipower.com/products/ac500-b300s",
-    imageUrl: "/images/amazon/item-bluetti-apex-5000w-expandable-ho-0f0367.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-bluetti-apex-5000w-expandable-ho-0f0367.jpg",
-      "/images/amazon/item-bluetti-apex-5000w-expandable-ho-0f0367.jpg",
-      "/images/amazon/item-bluetti-apex-5000w-expandable-ho-0f0367.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "58407",
@@ -9532,11 +9532,11 @@ const hardwareData = [
     category: "Off-Grid Solar & Power",
     priceUsd: 3632,
     directUrl: "https://www.anker.com/products/a1790",
-    imageUrl: "/images/amazon/item-anker-solix-f3800-home-power-sta-e49adb.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-anker-solix-f3800-home-power-sta-e49adb.jpg",
-      "/images/amazon/item-anker-solix-f3800-home-power-sta-e49adb.jpg",
-      "/images/amazon/item-anker-solix-f3800-home-power-sta-e49adb.jpg"
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "87403",
@@ -9576,11 +9576,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 5628,
     directUrl: "https://enterprise.dji.com/mavic-3-enterprise",
-    imageUrl: "/images/amazon/item-dji-mavic-3-enterprise-thermal-d.jpg",
+    imageUrl: "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg",
     images: [
-      "/images/amazon/item-dji-mavic-3-enterprise-thermal-d.jpg",
-      "/images/amazon/item-dji-mavic-3-enterprise-thermal-d.jpg",
-      "/images/amazon/item-dji-mavic-3-enterprise-thermal-d.jpg"
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg",
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg&h=401",
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -9598,11 +9598,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 7253,
     directUrl: "https://enterprise.dji.com/matrice-4-series",
-    imageUrl: "/images/amazon/item-dji-matrice-4t-multi-sensor-ente.jpg",
+    imageUrl: "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg",
     images: [
-      "/images/amazon/item-dji-matrice-4t-multi-sensor-ente.jpg",
-      "/images/amazon/item-dji-matrice-4t-multi-sensor-ente.jpg",
-      "/images/amazon/item-dji-matrice-4t-multi-sensor-ente.jpg"
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg",
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg&h=401",
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "248631",
@@ -9620,11 +9620,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 12207,
     directUrl: "https://enterprise.dji.com/matrice-350-rtk",
-    imageUrl: "/images/amazon/item-dji-matrice-350-rtk-flagship-com.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-matrice-350-rtk-flagship-com.jpg",
-      "/images/amazon/item-dji-matrice-350-rtk-flagship-com.jpg",
-      "/images/amazon/item-dji-matrice-350-rtk-flagship-com.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "248631",
@@ -9642,11 +9642,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 1020,
     directUrl: "https://www.dji.com/mini-4-pro",
-    imageUrl: "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer.jpg",
-      "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer.jpg",
-      "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "93315",
@@ -9664,11 +9664,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 1203,
     directUrl: "https://www.dji.com/avata-2",
-    imageUrl: "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat.jpg",
-      "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat.jpg",
-      "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -9708,11 +9708,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 3094,
     directUrl: "https://www.flir.com/products/e8-pro",
-    imageUrl: "/images/amazon/item-flir-e8-pro-high-resolution-infr.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-flir-e8-pro-high-resolution-infr.jpg",
-      "/images/amazon/item-flir-e8-pro-high-resolution-infr.jpg",
-      "/images/amazon/item-flir-e8-pro-high-resolution-infr.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -9730,11 +9730,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 9717,
     directUrl: "https://www.autelrobotics.com/productdetail/evo-max-4t",
-    imageUrl: "/images/amazon/item-autel-evo-max-4t-autonomous-ther.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-autel-evo-max-4t-autonomous-ther.jpg",
-      "/images/amazon/item-autel-evo-max-4t-autonomous-ther.jpg",
-      "/images/amazon/item-autel-evo-max-4t-autonomous-ther.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "52194",
@@ -9752,11 +9752,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 5458,
     directUrl: "https://www.autelrobotics.com/productdetail/evo-ii-dual-640t-v3",
-    imageUrl: "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma.jpg",
-      "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma.jpg",
-      "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "52194",
@@ -9774,11 +9774,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 17492,
     directUrl: "https://www.skydio.com/x10",
-    imageUrl: "/images/amazon/item-skydio-x10-autonomous-thermal-en.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop",
     images: [
-      "/images/amazon/item-skydio-x10-autonomous-thermal-en.jpg",
-      "/images/amazon/item-skydio-x10-autonomous-thermal-en.jpg",
-      "/images/amazon/item-skydio-x10-autonomous-thermal-en.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -9796,11 +9796,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 8788,
     directUrl: "https://www.parrot.com/en/drones/anafi-usa",
-    imageUrl: "/images/amazon/item-parrot-anafi-usa-gov-edition-tac.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop",
     images: [
-      "/images/amazon/item-parrot-anafi-usa-gov-edition-tac.jpg",
-      "/images/amazon/item-parrot-anafi-usa-gov-edition-tac.jpg",
-      "/images/amazon/item-parrot-anafi-usa-gov-edition-tac.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -9818,11 +9818,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 5393,
     directUrl: "https://enterprise.dji.com/mavic-3-enterprise",
-    imageUrl: "/images/amazon/item-dji-mavic-3-enterprise-thermal-d-f49a4b.jpg",
+    imageUrl: "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg",
     images: [
-      "/images/amazon/item-dji-mavic-3-enterprise-thermal-d-f49a4b.jpg",
-      "/images/amazon/item-dji-mavic-3-enterprise-thermal-d-f49a4b.jpg",
-      "/images/amazon/item-dji-mavic-3-enterprise-thermal-d-f49a4b.jpg"
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg",
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg&h=401",
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -9840,11 +9840,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 7430,
     directUrl: "https://enterprise.dji.com/matrice-4-series",
-    imageUrl: "/images/amazon/item-dji-matrice-4t-multi-sensor-ente-6a6878.jpg",
+    imageUrl: "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg",
     images: [
-      "/images/amazon/item-dji-matrice-4t-multi-sensor-ente-6a6878.jpg",
-      "/images/amazon/item-dji-matrice-4t-multi-sensor-ente-6a6878.jpg",
-      "/images/amazon/item-dji-matrice-4t-multi-sensor-ente-6a6878.jpg"
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg",
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg&h=401",
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "248631",
@@ -9862,11 +9862,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 10865,
     directUrl: "https://enterprise.dji.com/matrice-350-rtk",
-    imageUrl: "/images/amazon/item-dji-matrice-350-rtk-flagship-com-6d4f21.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-matrice-350-rtk-flagship-com-6d4f21.jpg",
-      "/images/amazon/item-dji-matrice-350-rtk-flagship-com-6d4f21.jpg",
-      "/images/amazon/item-dji-matrice-350-rtk-flagship-com-6d4f21.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "248631",
@@ -9884,11 +9884,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 1038,
     directUrl: "https://www.dji.com/mini-4-pro",
-    imageUrl: "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer-c050bf.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer-c050bf.jpg",
-      "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer-c050bf.jpg",
-      "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer-c050bf.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "93315",
@@ -9906,11 +9906,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 1219,
     directUrl: "https://www.dji.com/avata-2",
-    imageUrl: "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat-2862a2.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat-2862a2.jpg",
-      "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat-2862a2.jpg",
-      "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat-2862a2.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -9950,11 +9950,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 3531,
     directUrl: "https://www.flir.com/products/e8-pro",
-    imageUrl: "/images/amazon/item-flir-e8-pro-high-resolution-infr-96a2fa.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-flir-e8-pro-high-resolution-infr-96a2fa.jpg",
-      "/images/amazon/item-flir-e8-pro-high-resolution-infr-96a2fa.jpg",
-      "/images/amazon/item-flir-e8-pro-high-resolution-infr-96a2fa.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -9972,11 +9972,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 9577,
     directUrl: "https://www.autelrobotics.com/productdetail/evo-max-4t",
-    imageUrl: "/images/amazon/item-autel-evo-max-4t-autonomous-ther-b60030.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-autel-evo-max-4t-autonomous-ther-b60030.jpg",
-      "/images/amazon/item-autel-evo-max-4t-autonomous-ther-b60030.jpg",
-      "/images/amazon/item-autel-evo-max-4t-autonomous-ther-b60030.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "52194",
@@ -9994,11 +9994,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 6267,
     directUrl: "https://www.autelrobotics.com/productdetail/evo-ii-dual-640t-v3",
-    imageUrl: "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma-4c652e.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma-4c652e.jpg",
-      "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma-4c652e.jpg",
-      "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma-4c652e.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "52194",
@@ -10016,11 +10016,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 15604,
     directUrl: "https://www.skydio.com/x10",
-    imageUrl: "/images/amazon/item-skydio-x10-autonomous-thermal-en-f9ecff.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop",
     images: [
-      "/images/amazon/item-skydio-x10-autonomous-thermal-en-f9ecff.jpg",
-      "/images/amazon/item-skydio-x10-autonomous-thermal-en-f9ecff.jpg",
-      "/images/amazon/item-skydio-x10-autonomous-thermal-en-f9ecff.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10038,11 +10038,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 7867,
     directUrl: "https://www.parrot.com/en/drones/anafi-usa",
-    imageUrl: "/images/amazon/item-parrot-anafi-usa-gov-edition-tac-5fb072.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop",
     images: [
-      "/images/amazon/item-parrot-anafi-usa-gov-edition-tac-5fb072.jpg",
-      "/images/amazon/item-parrot-anafi-usa-gov-edition-tac-5fb072.jpg",
-      "/images/amazon/item-parrot-anafi-usa-gov-edition-tac-5fb072.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10060,11 +10060,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 5912,
     directUrl: "https://enterprise.dji.com/mavic-3-enterprise",
-    imageUrl: "/images/amazon/item-dji-mavic-3-enterprise-thermal-d-fd058b.jpg",
+    imageUrl: "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg",
     images: [
-      "/images/amazon/item-dji-mavic-3-enterprise-thermal-d-fd058b.jpg",
-      "/images/amazon/item-dji-mavic-3-enterprise-thermal-d-fd058b.jpg",
-      "/images/amazon/item-dji-mavic-3-enterprise-thermal-d-fd058b.jpg"
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg",
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg&h=401",
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10082,11 +10082,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 7426,
     directUrl: "https://enterprise.dji.com/matrice-4-series",
-    imageUrl: "/images/amazon/item-dji-matrice-4t-multi-sensor-ente-2be66f.jpg",
+    imageUrl: "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg",
     images: [
-      "/images/amazon/item-dji-matrice-4t-multi-sensor-ente-2be66f.jpg",
-      "/images/amazon/item-dji-matrice-4t-multi-sensor-ente-2be66f.jpg",
-      "/images/amazon/item-dji-matrice-4t-multi-sensor-ente-2be66f.jpg"
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg",
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg&h=401",
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "248631",
@@ -10104,11 +10104,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 11696,
     directUrl: "https://enterprise.dji.com/matrice-350-rtk",
-    imageUrl: "/images/amazon/item-dji-matrice-350-rtk-flagship-com-37b7a0.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-matrice-350-rtk-flagship-com-37b7a0.jpg",
-      "/images/amazon/item-dji-matrice-350-rtk-flagship-com-37b7a0.jpg",
-      "/images/amazon/item-dji-matrice-350-rtk-flagship-com-37b7a0.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "248631",
@@ -10126,11 +10126,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 914,
     directUrl: "https://www.dji.com/mini-4-pro",
-    imageUrl: "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer-9420a1.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer-9420a1.jpg",
-      "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer-9420a1.jpg",
-      "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer-9420a1.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "93315",
@@ -10148,11 +10148,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 1213,
     directUrl: "https://www.dji.com/avata-2",
-    imageUrl: "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat-c65b2c.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat-c65b2c.jpg",
-      "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat-c65b2c.jpg",
-      "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat-c65b2c.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10192,11 +10192,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 3082,
     directUrl: "https://www.flir.com/products/e8-pro",
-    imageUrl: "/images/amazon/item-flir-e8-pro-high-resolution-infr-7a7e1f.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-flir-e8-pro-high-resolution-infr-7a7e1f.jpg",
-      "/images/amazon/item-flir-e8-pro-high-resolution-infr-7a7e1f.jpg",
-      "/images/amazon/item-flir-e8-pro-high-resolution-infr-7a7e1f.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10214,11 +10214,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 9068,
     directUrl: "https://www.autelrobotics.com/productdetail/evo-max-4t",
-    imageUrl: "/images/amazon/item-autel-evo-max-4t-autonomous-ther-58d9c3.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-autel-evo-max-4t-autonomous-ther-58d9c3.jpg",
-      "/images/amazon/item-autel-evo-max-4t-autonomous-ther-58d9c3.jpg",
-      "/images/amazon/item-autel-evo-max-4t-autonomous-ther-58d9c3.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "52194",
@@ -10236,11 +10236,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 6154,
     directUrl: "https://www.autelrobotics.com/productdetail/evo-ii-dual-640t-v3",
-    imageUrl: "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma-8fe0b0.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma-8fe0b0.jpg",
-      "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma-8fe0b0.jpg",
-      "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma-8fe0b0.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "52194",
@@ -10258,11 +10258,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 15591,
     directUrl: "https://www.skydio.com/x10",
-    imageUrl: "/images/amazon/item-skydio-x10-autonomous-thermal-en-4be007.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop",
     images: [
-      "/images/amazon/item-skydio-x10-autonomous-thermal-en-4be007.jpg",
-      "/images/amazon/item-skydio-x10-autonomous-thermal-en-4be007.jpg",
-      "/images/amazon/item-skydio-x10-autonomous-thermal-en-4be007.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=403&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10280,11 +10280,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 8542,
     directUrl: "https://www.parrot.com/en/drones/anafi-usa",
-    imageUrl: "/images/amazon/item-parrot-anafi-usa-gov-edition-tac-bd1410.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop",
     images: [
-      "/images/amazon/item-parrot-anafi-usa-gov-edition-tac-bd1410.jpg",
-      "/images/amazon/item-parrot-anafi-usa-gov-edition-tac-bd1410.jpg",
-      "/images/amazon/item-parrot-anafi-usa-gov-edition-tac-bd1410.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=403&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10302,11 +10302,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 5189,
     directUrl: "https://enterprise.dji.com/mavic-3-enterprise",
-    imageUrl: "/images/amazon/item-dji-mavic-3-enterprise-thermal-d-f994d8.jpg",
+    imageUrl: "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg",
     images: [
-      "/images/amazon/item-dji-mavic-3-enterprise-thermal-d-f994d8.jpg",
-      "/images/amazon/item-dji-mavic-3-enterprise-thermal-d-f994d8.jpg",
-      "/images/amazon/item-dji-mavic-3-enterprise-thermal-d-f994d8.jpg"
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg",
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg&h=401",
+      "https://www-cdn.djiits.com/dps/1829a0d110ac80c641f7d22569e71796.svg&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10324,11 +10324,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 7062,
     directUrl: "https://enterprise.dji.com/matrice-4-series",
-    imageUrl: "/images/amazon/item-dji-matrice-4t-multi-sensor-ente-0f937f.jpg",
+    imageUrl: "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg",
     images: [
-      "/images/amazon/item-dji-matrice-4t-multi-sensor-ente-0f937f.jpg",
-      "/images/amazon/item-dji-matrice-4t-multi-sensor-ente-0f937f.jpg",
-      "/images/amazon/item-dji-matrice-4t-multi-sensor-ente-0f937f.jpg"
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg",
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg&h=401",
+      "https://www-cdn.djiits.com/dps/8d0d498b1e8af614016dd919e753b1f3.svg&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "248631",
@@ -10346,11 +10346,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 12170,
     directUrl: "https://enterprise.dji.com/matrice-350-rtk",
-    imageUrl: "/images/amazon/item-dji-matrice-350-rtk-flagship-com-61ea08.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-matrice-350-rtk-flagship-com-61ea08.jpg",
-      "/images/amazon/item-dji-matrice-350-rtk-flagship-com-61ea08.jpg",
-      "/images/amazon/item-dji-matrice-350-rtk-flagship-com-61ea08.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "248631",
@@ -10368,11 +10368,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 908,
     directUrl: "https://www.dji.com/mini-4-pro",
-    imageUrl: "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer-98e89c.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer-98e89c.jpg",
-      "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer-98e89c.jpg",
-      "/images/amazon/item-dji-mini-4-pro-rc-2-4k-hdr-camer-98e89c.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "93315",
@@ -10390,11 +10390,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 1313,
     directUrl: "https://www.dji.com/avata-2",
-    imageUrl: "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat-fa8c06.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat-fa8c06.jpg",
-      "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat-fa8c06.jpg",
-      "/images/amazon/item-dji-avata-2-fly-more-combo-3-bat-fa8c06.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10434,11 +10434,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 2990,
     directUrl: "https://www.flir.com/products/e8-pro",
-    imageUrl: "/images/amazon/item-flir-e8-pro-high-resolution-infr-da3365.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-flir-e8-pro-high-resolution-infr-da3365.jpg",
-      "/images/amazon/item-flir-e8-pro-high-resolution-infr-da3365.jpg",
-      "/images/amazon/item-flir-e8-pro-high-resolution-infr-da3365.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10456,11 +10456,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 8162,
     directUrl: "https://www.autelrobotics.com/productdetail/evo-max-4t",
-    imageUrl: "/images/amazon/item-autel-evo-max-4t-autonomous-ther-511ae5.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-autel-evo-max-4t-autonomous-ther-511ae5.jpg",
-      "/images/amazon/item-autel-evo-max-4t-autonomous-ther-511ae5.jpg",
-      "/images/amazon/item-autel-evo-max-4t-autonomous-ther-511ae5.jpg"
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "52194",
@@ -10478,11 +10478,11 @@ const hardwareData = [
     category: "Thermal & Mapping Drones",
     priceUsd: 5775,
     directUrl: "https://www.autelrobotics.com/productdetail/evo-ii-dual-640t-v3",
-    imageUrl: "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma-2cba7c.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma-2cba7c.jpg",
-      "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma-2cba7c.jpg",
-      "/images/amazon/item-autel-evo-ii-dual-640t-v3-therma-2cba7c.jpg"
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "52194",
@@ -10566,11 +10566,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3574,
     directUrl: "https://home.lamarzoccousa.com/product/linea-micra",
-    imageUrl: "/images/amazon/item-la-marzocco-linea-micra-home-dua.jpg",
+    imageUrl: "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png",
     images: [
-      "/images/amazon/item-la-marzocco-linea-micra-home-dua.jpg",
-      "/images/amazon/item-la-marzocco-linea-micra-home-dua.jpg",
-      "/images/amazon/item-la-marzocco-linea-micra-home-dua.jpg"
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png&h=401",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10588,11 +10588,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 5849,
     directUrl: "https://home.lamarzoccousa.com/product/linea-mini",
-    imageUrl: "/images/amazon/item-la-marzocco-linea-mini-professio.jpg",
+    imageUrl: "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png",
     images: [
-      "/images/amazon/item-la-marzocco-linea-mini-professio.jpg",
-      "/images/amazon/item-la-marzocco-linea-mini-professio.jpg",
-      "/images/amazon/item-la-marzocco-linea-mini-professio.jpg"
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png&h=401",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10676,11 +10676,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3245,
     directUrl: "https://www.profitec-espresso.com/profitec-pro-700",
-    imageUrl: "/images/amazon/item-profitec-pro-700-dual-boiler-pid.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-profitec-pro-700-dual-boiler-pid.jpg",
-      "/images/amazon/item-profitec-pro-700-dual-boiler-pid.jpg",
-      "/images/amazon/item-profitec-pro-700-dual-boiler-pid.jpg"
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "10638",
@@ -10698,11 +10698,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3930,
     directUrl: "https://www.ecm.de/en/products/details/product/Product/Specials/synchronika.html",
-    imageUrl: "/images/amazon/item-ecm-synchronika-pid-dual-boiler-.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-ecm-synchronika-pid-dual-boiler-.jpg",
-      "/images/amazon/item-ecm-synchronika-pid-dual-boiler-.jpg",
-      "/images/amazon/item-ecm-synchronika-pid-dual-boiler-.jpg"
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "13988",
@@ -10742,11 +10742,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 10959,
     directUrl: "https://synesso.com/es1",
-    imageUrl: "/images/amazon/item-synesso-es-1-single-group-commer.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-synesso-es-1-single-group-commer.jpg",
-      "/images/amazon/item-synesso-es-1-single-group-commer.jpg",
-      "/images/amazon/item-synesso-es-1-single-group-commer.jpg"
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "31660",
@@ -10830,11 +10830,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 4290,
     directUrl: "https://home.lamarzoccousa.com/product/linea-micra",
-    imageUrl: "/images/amazon/item-la-marzocco-linea-micra-home-dua-3136c5.jpg",
+    imageUrl: "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png",
     images: [
-      "/images/amazon/item-la-marzocco-linea-micra-home-dua-3136c5.jpg",
-      "/images/amazon/item-la-marzocco-linea-micra-home-dua-3136c5.jpg",
-      "/images/amazon/item-la-marzocco-linea-micra-home-dua-3136c5.jpg"
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png&h=401",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10852,11 +10852,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 5733,
     directUrl: "https://home.lamarzoccousa.com/product/linea-mini",
-    imageUrl: "/images/amazon/item-la-marzocco-linea-mini-professio-ce8e1e.jpg",
+    imageUrl: "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png",
     images: [
-      "/images/amazon/item-la-marzocco-linea-mini-professio-ce8e1e.jpg",
-      "/images/amazon/item-la-marzocco-linea-mini-professio-ce8e1e.jpg",
-      "/images/amazon/item-la-marzocco-linea-mini-professio-ce8e1e.jpg"
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png&h=401",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -10940,11 +10940,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3683,
     directUrl: "https://www.profitec-espresso.com/profitec-pro-700",
-    imageUrl: "/images/amazon/item-profitec-pro-700-dual-boiler-pid-674672.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-profitec-pro-700-dual-boiler-pid-674672.jpg",
-      "/images/amazon/item-profitec-pro-700-dual-boiler-pid-674672.jpg",
-      "/images/amazon/item-profitec-pro-700-dual-boiler-pid-674672.jpg"
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "10638",
@@ -10962,11 +10962,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3572,
     directUrl: "https://www.ecm.de/en/products/details/product/Product/Specials/synchronika.html",
-    imageUrl: "/images/amazon/item-ecm-synchronika-pid-dual-boiler--54beea.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-ecm-synchronika-pid-dual-boiler--54beea.jpg",
-      "/images/amazon/item-ecm-synchronika-pid-dual-boiler--54beea.jpg",
-      "/images/amazon/item-ecm-synchronika-pid-dual-boiler--54beea.jpg"
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "13988",
@@ -11006,11 +11006,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 11272,
     directUrl: "https://synesso.com/es1",
-    imageUrl: "/images/amazon/item-synesso-es-1-single-group-commer-ec9fdc.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-synesso-es-1-single-group-commer-ec9fdc.jpg",
-      "/images/amazon/item-synesso-es-1-single-group-commer-ec9fdc.jpg",
-      "/images/amazon/item-synesso-es-1-single-group-commer-ec9fdc.jpg"
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "31660",
@@ -11094,11 +11094,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3652,
     directUrl: "https://home.lamarzoccousa.com/product/linea-micra",
-    imageUrl: "/images/amazon/item-la-marzocco-linea-micra-home-dua-2c8cd1.jpg",
+    imageUrl: "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png",
     images: [
-      "/images/amazon/item-la-marzocco-linea-micra-home-dua-2c8cd1.jpg",
-      "/images/amazon/item-la-marzocco-linea-micra-home-dua-2c8cd1.jpg",
-      "/images/amazon/item-la-marzocco-linea-micra-home-dua-2c8cd1.jpg"
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png&h=401",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11116,11 +11116,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 5873,
     directUrl: "https://home.lamarzoccousa.com/product/linea-mini",
-    imageUrl: "/images/amazon/item-la-marzocco-linea-mini-professio-37f029.jpg",
+    imageUrl: "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png",
     images: [
-      "/images/amazon/item-la-marzocco-linea-mini-professio-37f029.jpg",
-      "/images/amazon/item-la-marzocco-linea-mini-professio-37f029.jpg",
-      "/images/amazon/item-la-marzocco-linea-mini-professio-37f029.jpg"
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png&h=401",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11204,11 +11204,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3354,
     directUrl: "https://www.profitec-espresso.com/profitec-pro-700",
-    imageUrl: "/images/amazon/item-profitec-pro-700-dual-boiler-pid-7b4d09.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-profitec-pro-700-dual-boiler-pid-7b4d09.jpg",
-      "/images/amazon/item-profitec-pro-700-dual-boiler-pid-7b4d09.jpg",
-      "/images/amazon/item-profitec-pro-700-dual-boiler-pid-7b4d09.jpg"
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "10638",
@@ -11226,11 +11226,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3643,
     directUrl: "https://www.ecm.de/en/products/details/product/Product/Specials/synchronika.html",
-    imageUrl: "/images/amazon/item-ecm-synchronika-pid-dual-boiler--2094ec.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-ecm-synchronika-pid-dual-boiler--2094ec.jpg",
-      "/images/amazon/item-ecm-synchronika-pid-dual-boiler--2094ec.jpg",
-      "/images/amazon/item-ecm-synchronika-pid-dual-boiler--2094ec.jpg"
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "awin",
     merchantId: "13988",
@@ -11270,11 +11270,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 10507,
     directUrl: "https://synesso.com/es1",
-    imageUrl: "/images/amazon/item-synesso-es-1-single-group-commer-095905.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-synesso-es-1-single-group-commer-095905.jpg",
-      "/images/amazon/item-synesso-es-1-single-group-commer-095905.jpg",
-      "/images/amazon/item-synesso-es-1-single-group-commer-095905.jpg"
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "31660",
@@ -11358,11 +11358,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 3877,
     directUrl: "https://home.lamarzoccousa.com/product/linea-micra",
-    imageUrl: "/images/amazon/item-la-marzocco-linea-micra-home-dua-275a25.jpg",
+    imageUrl: "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png",
     images: [
-      "/images/amazon/item-la-marzocco-linea-micra-home-dua-275a25.jpg",
-      "/images/amazon/item-la-marzocco-linea-micra-home-dua-275a25.jpg",
-      "/images/amazon/item-la-marzocco-linea-micra-home-dua-275a25.jpg"
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png&h=401",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2023/11/Micra-White-Front.png&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11380,11 +11380,11 @@ const hardwareData = [
     category: "Prosumer Espresso",
     priceUsd: 6179,
     directUrl: "https://home.lamarzoccousa.com/product/linea-mini",
-    imageUrl: "/images/amazon/item-la-marzocco-linea-mini-professio-8a89e8.jpg",
+    imageUrl: "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png",
     images: [
-      "/images/amazon/item-la-marzocco-linea-mini-professio-8a89e8.jpg",
-      "/images/amazon/item-la-marzocco-linea-mini-professio-8a89e8.jpg",
-      "/images/amazon/item-la-marzocco-linea-mini-professio-8a89e8.jpg"
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png&h=401",
+      "https://home.lamarzoccousa.com/wp-content/uploads/2024/02/Nera-mat-front-e1713981623547.png&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11512,11 +11512,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 2117,
     directUrl: "https://www.aventon.com/products/abound-lr-ebike",
-    imageUrl: "/images/amazon/item-aventon-abound-lr-cargo-long-ran.jpg",
+    imageUrl: "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format",
     images: [
-      "/images/amazon/item-aventon-abound-lr-cargo-long-ran.jpg",
-      "/images/amazon/item-aventon-abound-lr-cargo-long-ran.jpg",
-      "/images/amazon/item-aventon-abound-lr-cargo-long-ran.jpg"
+      "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format",
+      "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format&h=401",
+      "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "231547",
@@ -11556,11 +11556,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 5437,
     directUrl: "https://www.ternbicycles.com/us/bikes/471/gsd-s10-lx",
-    imageUrl: "/images/amazon/item-tern-gsd-s10-lx-heavy-cargo-fami.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-tern-gsd-s10-lx-heavy-cargo-fami.jpg",
-      "/images/amazon/item-tern-gsd-s10-lx-heavy-cargo-fami.jpg",
-      "/images/amazon/item-tern-gsd-s10-lx-heavy-cargo-fami.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11578,11 +11578,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 4260,
     directUrl: "https://www.ternbicycles.com/us/bikes/471/hsd-s8i",
-    imageUrl: "/images/amazon/item-tern-hsd-s8i-compact-utility-car.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-tern-hsd-s8i-compact-utility-car.jpg",
-      "/images/amazon/item-tern-hsd-s8i-compact-utility-car.jpg",
-      "/images/amazon/item-tern-hsd-s8i-compact-utility-car.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11600,11 +11600,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 9815,
     directUrl: "https://www.r-m.de/en-us/bikes/load4-75",
-    imageUrl: "/images/amazon/item-riese-m-ller-load4-75-full-suspe.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-riese-m-ller-load4-75-full-suspe.jpg",
-      "/images/amazon/item-riese-m-ller-load4-75-full-suspe.jpg",
-      "/images/amazon/item-riese-m-ller-load4-75-full-suspe.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11622,11 +11622,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 3567,
     directUrl: "https://super73.com/collections/r-series/products/super73-rx-mojave",
-    imageUrl: "/images/amazon/item-super73-rx-mojave-performance-el.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-super73-rx-mojave-performance-el.jpg",
-      "/images/amazon/item-super73-rx-mojave-performance-el.jpg",
-      "/images/amazon/item-super73-rx-mojave-performance-el.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "35722",
@@ -11644,11 +11644,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 1065,
     directUrl: "https://lectricebikes.com/products/xp-black",
-    imageUrl: "/images/amazon/item-lectric-xp-3-0-long-range-foldin.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-lectric-xp-3-0-long-range-foldin.jpg",
-      "/images/amazon/item-lectric-xp-3-0-long-range-foldin.jpg",
-      "/images/amazon/item-lectric-xp-3-0-long-range-foldin.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11666,11 +11666,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 5251,
     directUrl: "https://www.husqvarna.com/us/robotic-lawn-mowers/automower-435x-awd",
-    imageUrl: "/images/amazon/item-husqvarna-automower-435x-awd-epo.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-husqvarna-automower-435x-awd-epo.jpg",
-      "/images/amazon/item-husqvarna-automower-435x-awd-epo.jpg",
-      "/images/amazon/item-husqvarna-automower-435x-awd-epo.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11776,11 +11776,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 2038,
     directUrl: "https://www.aventon.com/products/abound-lr-ebike",
-    imageUrl: "/images/amazon/item-aventon-abound-lr-cargo-long-ran-55f317.jpg",
+    imageUrl: "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format",
     images: [
-      "/images/amazon/item-aventon-abound-lr-cargo-long-ran-55f317.jpg",
-      "/images/amazon/item-aventon-abound-lr-cargo-long-ran-55f317.jpg",
-      "/images/amazon/item-aventon-abound-lr-cargo-long-ran-55f317.jpg"
+      "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format",
+      "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format&h=401",
+      "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "231547",
@@ -11820,11 +11820,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 5732,
     directUrl: "https://www.ternbicycles.com/us/bikes/471/gsd-s10-lx",
-    imageUrl: "/images/amazon/item-tern-gsd-s10-lx-heavy-cargo-fami-849e07.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-tern-gsd-s10-lx-heavy-cargo-fami-849e07.jpg",
-      "/images/amazon/item-tern-gsd-s10-lx-heavy-cargo-fami-849e07.jpg",
-      "/images/amazon/item-tern-gsd-s10-lx-heavy-cargo-fami-849e07.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11842,11 +11842,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 4605,
     directUrl: "https://www.ternbicycles.com/us/bikes/471/hsd-s8i",
-    imageUrl: "/images/amazon/item-tern-hsd-s8i-compact-utility-car-728a3e.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-tern-hsd-s8i-compact-utility-car-728a3e.jpg",
-      "/images/amazon/item-tern-hsd-s8i-compact-utility-car-728a3e.jpg",
-      "/images/amazon/item-tern-hsd-s8i-compact-utility-car-728a3e.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11864,11 +11864,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 10558,
     directUrl: "https://www.r-m.de/en-us/bikes/load4-75",
-    imageUrl: "/images/amazon/item-riese-m-ller-load4-75-full-suspe-4d7275.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-riese-m-ller-load4-75-full-suspe-4d7275.jpg",
-      "/images/amazon/item-riese-m-ller-load4-75-full-suspe-4d7275.jpg",
-      "/images/amazon/item-riese-m-ller-load4-75-full-suspe-4d7275.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11886,11 +11886,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 3492,
     directUrl: "https://super73.com/collections/r-series/products/super73-rx-mojave",
-    imageUrl: "/images/amazon/item-super73-rx-mojave-performance-el-0558b4.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-super73-rx-mojave-performance-el-0558b4.jpg",
-      "/images/amazon/item-super73-rx-mojave-performance-el-0558b4.jpg",
-      "/images/amazon/item-super73-rx-mojave-performance-el-0558b4.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "35722",
@@ -11908,11 +11908,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 949,
     directUrl: "https://lectricebikes.com/products/xp-black",
-    imageUrl: "/images/amazon/item-lectric-xp-3-0-long-range-foldin-f92693.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-lectric-xp-3-0-long-range-foldin-f92693.jpg",
-      "/images/amazon/item-lectric-xp-3-0-long-range-foldin-f92693.jpg",
-      "/images/amazon/item-lectric-xp-3-0-long-range-foldin-f92693.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -11930,11 +11930,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 4762,
     directUrl: "https://www.husqvarna.com/us/robotic-lawn-mowers/automower-435x-awd",
-    imageUrl: "/images/amazon/item-husqvarna-automower-435x-awd-epo-06240c.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-husqvarna-automower-435x-awd-epo-06240c.jpg",
-      "/images/amazon/item-husqvarna-automower-435x-awd-epo-06240c.jpg",
-      "/images/amazon/item-husqvarna-automower-435x-awd-epo-06240c.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -12040,11 +12040,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 1845,
     directUrl: "https://www.aventon.com/products/abound-lr-ebike",
-    imageUrl: "/images/amazon/item-aventon-abound-lr-cargo-long-ran-b83b15.jpg",
+    imageUrl: "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format",
     images: [
-      "/images/amazon/item-aventon-abound-lr-cargo-long-ran-b83b15.jpg",
-      "/images/amazon/item-aventon-abound-lr-cargo-long-ran-b83b15.jpg",
-      "/images/amazon/item-aventon-abound-lr-cargo-long-ran-b83b15.jpg"
+      "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format",
+      "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format&h=401",
+      "https://aventon-images.imgix.net/files/01_Abound-LR_Stealth_Side_1-bike.jpg?v=1737999400&auto=compress,format&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "231547",
@@ -12084,11 +12084,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 5565,
     directUrl: "https://www.ternbicycles.com/us/bikes/471/gsd-s10-lx",
-    imageUrl: "/images/amazon/item-tern-gsd-s10-lx-heavy-cargo-fami-0b5925.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-tern-gsd-s10-lx-heavy-cargo-fami-0b5925.jpg",
-      "/images/amazon/item-tern-gsd-s10-lx-heavy-cargo-fami-0b5925.jpg",
-      "/images/amazon/item-tern-gsd-s10-lx-heavy-cargo-fami-0b5925.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -12106,11 +12106,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 4523,
     directUrl: "https://www.ternbicycles.com/us/bikes/471/hsd-s8i",
-    imageUrl: "/images/amazon/item-tern-hsd-s8i-compact-utility-car-b76c8d.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
     images: [
-      "/images/amazon/item-tern-hsd-s8i-compact-utility-car-b76c8d.jpg",
-      "/images/amazon/item-tern-hsd-s8i-compact-utility-car-b76c8d.jpg",
-      "/images/amazon/item-tern-hsd-s8i-compact-utility-car-b76c8d.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -12128,11 +12128,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 9937,
     directUrl: "https://www.r-m.de/en-us/bikes/load4-75",
-    imageUrl: "/images/amazon/item-riese-m-ller-load4-75-full-suspe-4c4bd4.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-riese-m-ller-load4-75-full-suspe-4c4bd4.jpg",
-      "/images/amazon/item-riese-m-ller-load4-75-full-suspe-4c4bd4.jpg",
-      "/images/amazon/item-riese-m-ller-load4-75-full-suspe-4c4bd4.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -12150,11 +12150,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 3915,
     directUrl: "https://super73.com/collections/r-series/products/super73-rx-mojave",
-    imageUrl: "/images/amazon/item-super73-rx-mojave-performance-el-1be629.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop",
     images: [
-      "/images/amazon/item-super73-rx-mojave-performance-el-1be629.jpg",
-      "/images/amazon/item-super73-rx-mojave-performance-el-1be629.jpg",
-      "/images/amazon/item-super73-rx-mojave-performance-el-1be629.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=401&fit=crop&h=402"
     ],
     affiliateNetwork: "impact",
     merchantId: "35722",
@@ -12172,11 +12172,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 972,
     directUrl: "https://lectricebikes.com/products/xp-black",
-    imageUrl: "/images/amazon/item-lectric-xp-3-0-long-range-foldin-bdabe8.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-lectric-xp-3-0-long-range-foldin-bdabe8.jpg",
-      "/images/amazon/item-lectric-xp-3-0-long-range-foldin-bdabe8.jpg",
-      "/images/amazon/item-lectric-xp-3-0-long-range-foldin-bdabe8.jpg"
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
@@ -12194,11 +12194,11 @@ const hardwareData = [
     category: "Utility EVs",
     priceUsd: 5047,
     directUrl: "https://www.husqvarna.com/us/robotic-lawn-mowers/automower-435x-awd",
-    imageUrl: "/images/amazon/item-husqvarna-automower-435x-awd-epo-7bc8dc.jpg",
+    imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop",
     images: [
-      "/images/amazon/item-husqvarna-automower-435x-awd-epo-7bc8dc.jpg",
-      "/images/amazon/item-husqvarna-automower-435x-awd-epo-7bc8dc.jpg",
-      "/images/amazon/item-husqvarna-automower-435x-awd-epo-7bc8dc.jpg"
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop&h=401",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=402&fit=crop&h=402"
     ],
     affiliateNetwork: "none",
     merchantId: "direct",
