@@ -7,7 +7,7 @@
     "dev": "vite",
     "sitemap": "node scripts/generate-sitemap.js",
     "maintenance": "node scripts/weekly-maintenance.js",
-    "prebuild": "node scripts/download-amazon-images.js && node scripts/generate-sitemap.js",
+    "prebuild": "node scripts/generate-sitemap.js",
     "build": "ajv test -s src/data/HardwareSchema.json -d src/data/hardware.json --valid && vite build",
     "preview": "vite preview"
   },
