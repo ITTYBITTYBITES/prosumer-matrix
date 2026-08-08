@@ -2,7 +2,6 @@
 // MATRIX TABLE COMPONENT
 // ============================================================================
 
-import { buildProductLink } from '../utils/linkBuilder.js';
 import { getImageUrl, getProductImageFallback } from '../utils/imageProxy.js';
 import { formatCurrency, formatSpecKey, formatSpecValue } from '../utils/formatUtils.js';
 
@@ -96,7 +95,6 @@ export function renderTableHtml(products = [], sortColumn = 'name', sortDirectio
         </thead>
         <tbody id="tableBody">
           ${products.map(product => {
-            const productLink = buildProductLink(product);
             const rawList = Array.isArray(product.images) && product.images.length > 0
               ? product.images
               : (product.imageUrl ? [product.imageUrl] : []);
@@ -140,15 +138,15 @@ export function renderTableHtml(products = [], sortColumn = 'name', sortDirectio
                 </td>
                 <td class="td-action">
                   <div class="action-cell">
-                    <a
-                      href="${productLink}"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      type="button"
                       class="btn-buy whitespace-nowrap"
-                      aria-label="View ${product.name} in a new tab"
+                      data-action="view-item"
+                      data-id="${product.id}"
+                      aria-label="View ${product.name} item details"
                     >
                       View Item →
-                    </a>
+                    </button>
                   </div>
                 </td>
               </tr>

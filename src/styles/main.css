@@ -265,15 +265,6 @@ input, select {
   min-width: 0;
 }
 
-.matrix-header-disclosure {
-  flex-basis: 100%;
-  text-align: center;
-  font-size: 0.6875rem;
-  line-height: 1.4;
-  color: var(--text-muted);
-  opacity: 0.85;
-}
-
 .matrix-title {
   font-family: var(--font-ui);
   font-size: 1.25rem;

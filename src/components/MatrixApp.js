@@ -95,9 +95,6 @@ export class MatrixApp {
               </div>
             </div>
           </div>
-          <div class="matrix-header-disclosure">
-            We may earn an affiliate commission from merchant links on this site at no extra cost to you.
-          </div>
         </header>
 
         <!-- Slide-Out Mobile Drawer -->
@@ -357,7 +354,6 @@ export class MatrixApp {
       const firstImage = rawList[0] || product.imageUrl;
       const imageUrl = getImageUrl(firstImage, 80) || firstImage;
       const imageFallback = getProductImageFallback(product);
-      const productLink = buildProductLink(product);
 
       return `
         <tr class="matrix-row" data-id="${product.id}" data-category="${product.category}">
@@ -390,15 +386,15 @@ export class MatrixApp {
           </td>
           <td class="td-action">
             <div class="action-cell">
-              <a
-                href="${productLink}"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
                 class="btn-buy whitespace-nowrap"
-                aria-label="View ${this.escapeHtml(product.name)} in a new tab"
+                data-action="view-item"
+                data-id="${product.id}"
+                aria-label="View ${this.escapeHtml(product.name)} item details"
               >
                 View Item →
-              </a>
+              </button>
             </div>
           </td>
         </tr>
@@ -423,7 +419,6 @@ export class MatrixApp {
     }
 
     return this.filteredProducts.map(product => {
-      const productLink = buildProductLink(product);
       const carouselHtml = renderImageCarouselHtml(product, 0);
 
       return `
@@ -461,15 +456,15 @@ export class MatrixApp {
                   <path d="M12 5v14M5 12l7 7 7-7"/>
                 </svg>
               </button>
-              <a
-                href="${productLink}"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
                 class="btn-buy mobile-card-cta whitespace-nowrap"
-                aria-label="View ${this.escapeHtml(product.name)} in a new tab"
+                data-action="view-item"
+                data-id="${product.id}"
+                aria-label="View ${this.escapeHtml(product.name)} item details"
               >
                 View Item →
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -733,7 +728,22 @@ export class MatrixApp {
         return;
       }
 
-      // 5. Table Specs Cell or Product Cell click (opens full specs)
+      // 5. "View Item" CTA click — route outbound merchant clicks through the
+      //    Specs modal so the affiliate micro-disclosure is shown adjacent to
+      //    the CTA instead of opening the merchant link directly.
+      const viewItemBtn = e.target.closest('[data-action="view-item"]');
+      if (viewItemBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const productId = viewItemBtn.dataset.id;
+        const product = this.products.find(p => p.id === productId);
+        if (product) {
+          this.setSelectedProduct(product);
+        }
+        return;
+      }
+
+      // 6. Table Specs Cell or Product Cell click (opens full specs)
       const specsCell = e.target.closest('.td-specs, .td-product[data-action="specs"], [data-action="specs"]');
       if (specsCell && !e.target.closest('a, button')) {
         const row = specsCell.closest('.matrix-row, .mobile-card');
