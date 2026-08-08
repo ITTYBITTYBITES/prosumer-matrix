@@ -54,12 +54,23 @@ export function getImageUrl(rawUrl, width = 400) {
     return '';
   }
 
-  // If it's a local image path, just return it directly.
-  // GitHub Pages will resolve relative to the root if we use the correct base path.
-  if (rawUrl.startsWith('/images/')) {
-    // Prefix with the Vite base URL or the repo name for GitHub Pages
-    const baseUrl = typeof import.meta !== 'undefined' && import.meta.env ? import.meta.env.BASE_URL : '/prosumer-matrix/';
-    return `${baseUrl.replace(/\/$/, '')}${rawUrl}`;
+  // If it's a data URI or placeholder, return directly
+  if (rawUrl.startsWith('data:') || rawUrl === '#placeholder') {
+    return rawUrl;
+  }
+
+  const baseUrl = typeof import.meta !== 'undefined' && import.meta.env ? import.meta.env.BASE_URL : '/prosumer-matrix/';
+  const normalizedBase = baseUrl.replace(/\/$/, '');
+
+  // If already prefixed with baseUrl
+  if (normalizedBase && rawUrl.startsWith(normalizedBase)) {
+    return rawUrl;
+  }
+
+  // If it's a local image path, resolve it with the base URL
+  if (rawUrl.startsWith('/images/') || rawUrl.startsWith('images/')) {
+    const cleanPath = rawUrl.startsWith('/') ? rawUrl : `/${rawUrl}`;
+    return `${normalizedBase}${cleanPath}`;
   }
 
   // Ensure we have a valid URL
@@ -71,9 +82,9 @@ export function getImageUrl(rawUrl, width = 400) {
 
   const encodedUrl = encodeURIComponent(rawUrl);
   const height = Math.round(width * 1); // Maintain aspect ratio
-  const baseUrl = 'https://images.weserv.nl/';
+  const weservBaseUrl = 'https://images.weserv.nl/';
 
-  return `${baseUrl}?url=${encodedUrl}&w=${width}&h=${height}&output=webp&q=85`;
+  return `${weservBaseUrl}?url=${encodedUrl}&w=${width}&h=${height}&output=webp&q=85`;
 }
 
 /**

@@ -35,7 +35,8 @@ export function renderSpecsModalContent(product) {
     `).join('')
     : '<p class="no-specs">No specifications available</p>';
 
-  const carouselHtml = rawList.length > 1
+  const hasCarousel = rawList.length > 1;
+  const carouselHtml = hasCarousel
     ? `
       <div class="specs-carousel-container" data-modal-carousel="true" data-product-id="${product.id}">
         <div class="specs-carousel-display">
@@ -61,7 +62,10 @@ export function renderSpecsModalContent(product) {
         </div>
       </div>
     `
-    : `
+    : '';
+
+  const heroHtml = !hasCarousel
+    ? `
       <div class="specs-hero-image">
         <img
           src="${getImageUrl(firstImage, 360) || firstImage}"
@@ -70,11 +74,13 @@ export function renderSpecsModalContent(product) {
           class="specs-image"
         >
       </div>
-    `;
+    `
+    : '';
 
   return `
+    ${carouselHtml}
     <div class="specs-header">
-      ${carouselHtml}
+      ${heroHtml}
       <div class="specs-meta">
         <span class="specs-brand">${escapeHtml(product.brand)}</span>
         <h3 class="specs-title">${escapeHtml(product.name)}</h3>
@@ -101,6 +107,10 @@ export function renderSpecsModalContent(product) {
           <span class="network-value">${escapeHtml(networkName)}</span>
         </div>
 
+        <p class="specs-disclosure" style="font-size: 11px; color: rgba(148, 163, 184, 0.8); text-align: center; margin-top: 16px; margin-bottom: 8px;">
+          * Clicking this link takes you to our partner merchant. We may earn a qualifying commission.
+        </p>
+
         <a
           href="${productLink}"
           target="_blank"
@@ -109,7 +119,7 @@ export function renderSpecsModalContent(product) {
           aria-label="View ${escapeHtml(product.name)} item details"
         >
           View Item →
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
             <polyline points="15 3 21 3 21 9"/>
             <line x1="10" y1="14" x2="21" y2="3"/>
