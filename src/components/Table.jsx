@@ -113,7 +113,7 @@ export function renderTableHtml(products = [], sortColumn = 'name', sortDirectio
                         src="${imageUrl}"
                         alt="${product.name}"
                         loading="lazy"
-                        onerror="this.onerror=null;this.src='${imageFallback}';"
+                        onerror="this.onerror=null;this.alt='';this.src='${imageFallback}';this.className='max-w-full max-h-full object-contain pointer-events-none';"
                         class="product-image"
                       >
                     </div>

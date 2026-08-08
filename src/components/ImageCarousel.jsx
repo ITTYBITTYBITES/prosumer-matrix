@@ -70,9 +70,17 @@ export function attachCarouselImageFallback(root) {
     if (!(img instanceof HTMLImageElement) || img.dataset.fallbackApplied) return;
 
     img.dataset.fallbackApplied = 'true';
+
+    // Clear alt text to prevent floating raw alt-text from appearing
+    img.alt = '';
+
+    // Replace src with the SVG fallback data URI
     const brand = img.dataset.brand || '';
     const category = img.dataset.category || '';
     img.src = getCarouselFallbackSvg(brand, category);
+
+    // Apply classes that ensure the fallback displays cleanly within the container
+    img.className = 'max-w-full max-h-full object-contain pointer-events-none';
   }, true);
 }
 

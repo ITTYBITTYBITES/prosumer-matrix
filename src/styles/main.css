@@ -2124,6 +2124,23 @@ input, select {
   border: 0;
 }
 
+/* Image utility classes for error fallback handling */
+.max-w-full {
+  max-width: 100% !important;
+}
+
+.max-h-full {
+  max-height: 100% !important;
+}
+
+.object-contain {
+  object-fit: contain !important;
+}
+
+.pointer-events-none {
+  pointer-events: none !important;
+}
+
 .text-mono {
   font-family: var(--font-mono);
 }
