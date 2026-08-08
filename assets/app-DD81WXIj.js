@@ -491,9 +491,6 @@ class MatrixApp {
               </div>
             </div>
           </div>
-          <div class="matrix-header-disclosure">
-            We may earn an affiliate commission from merchant links on this site at no extra cost to you.
-          </div>
         </header>
 
         <!-- Slide-Out Mobile Drawer -->
@@ -744,7 +741,6 @@ class MatrixApp {
       const firstImage = rawList[0] || product.imageUrl;
       const imageUrl = getImageUrl(firstImage, 80) || firstImage;
       const imageFallback = getProductImageFallback(product);
-      const productLink = buildProductLink(product);
       return `
         <tr class="matrix-row" data-id="${product.id}" data-category="${product.category}">
           <td class="td-product" data-action="specs" title="Click to view full specifications">
@@ -776,15 +772,15 @@ class MatrixApp {
           </td>
           <td class="td-action">
             <div class="action-cell">
-              <a
-                href="${productLink}"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
                 class="btn-buy whitespace-nowrap"
-                aria-label="View ${this.escapeHtml(product.name)} in a new tab"
+                data-action="view-item"
+                data-id="${product.id}"
+                aria-label="View ${this.escapeHtml(product.name)} item details"
               >
                 View Item →
-              </a>
+              </button>
             </div>
           </td>
         </tr>
@@ -807,7 +803,6 @@ class MatrixApp {
       `;
     }
     return this.filteredProducts.map((product) => {
-      const productLink = buildProductLink(product);
       const carouselHtml = renderImageCarouselHtml(product, 0);
       return `
         <div class="mobile-card" data-id="${product.id}">
@@ -844,15 +839,15 @@ class MatrixApp {
                   <path d="M12 5v14M5 12l7 7 7-7"/>
                 </svg>
               </button>
-              <a
-                href="${productLink}"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
                 class="btn-buy mobile-card-cta whitespace-nowrap"
-                aria-label="View ${this.escapeHtml(product.name)} in a new tab"
+                data-action="view-item"
+                data-id="${product.id}"
+                aria-label="View ${this.escapeHtml(product.name)} item details"
               >
                 View Item →
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -1060,6 +1055,17 @@ class MatrixApp {
         e.preventDefault();
         e.stopPropagation();
         const productId = specsBtn.dataset.id;
+        const product = this.products.find((p) => p.id === productId);
+        if (product) {
+          this.setSelectedProduct(product);
+        }
+        return;
+      }
+      const viewItemBtn = e.target.closest('[data-action="view-item"]');
+      if (viewItemBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        const productId = viewItemBtn.dataset.id;
         const product = this.products.find((p) => p.id === productId);
         if (product) {
           this.setSelectedProduct(product);
