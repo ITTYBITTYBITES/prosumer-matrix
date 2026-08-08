@@ -216,7 +216,8 @@ function renderSpecsModalContent(product) {
         <span class="specs-value">${escapeHtml(formatSpecValue(value))}</span>
       </div>
     `).join("") : '<p class="no-specs">No specifications available</p>';
-  const carouselHtml = rawList.length > 1 ? `
+  const hasCarousel = rawList.length > 1;
+  const carouselHtml = hasCarousel ? `
       <div class="specs-carousel-container" data-modal-carousel="true" data-product-id="${product.id}">
         <div class="specs-carousel-display">
           <img
@@ -240,7 +241,8 @@ function renderSpecsModalContent(product) {
           `).join("")}
         </div>
       </div>
-    ` : `
+    ` : "";
+  const heroHtml = !hasCarousel ? `
       <div class="specs-hero-image">
         <img
           src="${getImageUrl(firstImage, 360) || firstImage}"
@@ -249,10 +251,11 @@ function renderSpecsModalContent(product) {
           class="specs-image"
         >
       </div>
-    `;
+    ` : "";
   return `
+    ${carouselHtml}
     <div class="specs-header">
-      ${carouselHtml}
+      ${heroHtml}
       <div class="specs-meta">
         <span class="specs-brand">${escapeHtml(product.brand)}</span>
         <h3 class="specs-title">${escapeHtml(product.name)}</h3>
@@ -337,7 +340,7 @@ function renderImageCarouselHtml(product, activeIdx = 0) {
   const title = product.name || "Hardware";
   const category = product.category || "Product";
   const dotsHtml = imageList.length > 1 ? `
-      <div class="carousel-dots absolute bottom-2 left-0 right-0 flex justify-center gap-1.5 z-10 pointer-events-auto" data-product-id="${product.id}">
+      <div class="carousel-dots" data-product-id="${product.id}">
         ${imageList.map((_, idx) => `
           <button
             type="button"
@@ -372,13 +375,13 @@ function renderImageCarouselHtml(product, activeIdx = 0) {
     ` : "";
   return `
     <div
-      class="image-carousel relative group w-full bg-slate-900/80 rounded-t-lg overflow-hidden"
+      class="image-carousel"
       data-product-id="${product.id}"
       data-current-index="${currentIndex}"
       data-total-images="${imageList.length}"
     >
       <div
-        class="carousel-display h-48 sm:h-56 w-full flex items-center justify-center p-3 cursor-pointer overflow-x-auto snap-x snap-mandatory no-scrollbar"
+        class="carousel-display"
         data-action="specs"
         data-product-id="${product.id}"
         title="Click to view full specifications"
@@ -389,7 +392,7 @@ function renderImageCarouselHtml(product, activeIdx = 0) {
           loading="lazy"
           data-brand="${escapeXml(product.brand || "")}"
           data-category="${escapeXml(product.category || "")}"
-          class="carousel-img max-w-full max-h-full object-contain pointer-events-none transition-all duration-200"
+          class="carousel-img"
         >
         <span class="mobile-category-badge">${escapeXml(category)}</span>
       </div>
@@ -1256,7 +1259,7 @@ class MatrixApp {
     const mobileView = this.container.querySelector("#mobileView");
     const desktopContent = this.container.querySelector("#matrixContent");
     if (window.innerWidth < 768) {
-      if (mobileView) mobileView.style.display = "block";
+      if (mobileView) mobileView.style.display = "flex";
       if (desktopContent) desktopContent.style.display = "none";
     } else {
       if (mobileView) mobileView.style.display = "none";

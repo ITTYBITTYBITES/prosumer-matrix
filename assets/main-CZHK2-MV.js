@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/app-BcLKYfHI.js","assets/app-BKz4J8Ax.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/app-DVthIblS.js","assets/app-B8UFDXyo.css"])))=>i.map(i=>d[i]);
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -100,4 +100,4 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
     return baseModule().catch(handlePreloadError);
   });
 };
-__vitePreload(() => import("./app-BcLKYfHI.js"), true ? __vite__mapDeps([0,1]) : void 0).catch(() => window.showStartupError());
+__vitePreload(() => import("./app-DVthIblS.js"), true ? __vite__mapDeps([0,1]) : void 0).catch(() => window.showStartupError());
