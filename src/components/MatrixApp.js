@@ -992,8 +992,9 @@ export class MatrixApp {
     const desktopContent = this.container.querySelector('#matrixContent');
 
     if (window.innerWidth < 768) {
-      // Mobile view
-      if (mobileView) mobileView.style.display = 'block';
+      // Mobile view — must match `.matrix-mobile-view` (flex column + gap),
+      // otherwise cards collapse together with no spacing.
+      if (mobileView) mobileView.style.display = 'flex';
       if (desktopContent) desktopContent.style.display = 'none';
     } else {
       // Desktop & Tablet view

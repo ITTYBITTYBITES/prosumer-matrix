@@ -32,7 +32,8 @@ export function renderSpecsModalContent(product) {
     : '<p class="no-specs">No specifications available</p>';
 
   // Multi-image Carousel or single hero image
-  const carouselHtml = rawList.length > 1
+  const hasCarousel = rawList.length > 1;
+  const carouselHtml = hasCarousel
     ? `
       <div class="specs-carousel-container" data-modal-carousel="true" data-product-id="${product.id}">
         <div class="specs-carousel-display">
@@ -58,7 +59,10 @@ export function renderSpecsModalContent(product) {
         </div>
       </div>
     `
-    : `
+    : '';
+
+  const heroHtml = !hasCarousel
+    ? `
       <div class="specs-hero-image">
         <img
           src="${getImageUrl(firstImage, 360) || firstImage}"
@@ -67,11 +71,13 @@ export function renderSpecsModalContent(product) {
           class="specs-image"
         >
       </div>
-    `;
+    `
+    : '';
 
   return `
+    ${carouselHtml}
     <div class="specs-header">
-      ${carouselHtml}
+      ${heroHtml}
       <div class="specs-meta">
         <span class="specs-brand">${escapeHtml(product.brand)}</span>
         <h3 class="specs-title">${escapeHtml(product.name)}</h3>
