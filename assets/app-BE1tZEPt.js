@@ -223,7 +223,7 @@ function renderSpecsModalContent(product) {
           <img
             src="${getImageUrl(firstImage, 400) || firstImage}"
             alt="${escapeHtml(product.name)}"
-            onerror="this.onerror=null;this.src='${imageFallback}';"
+            onerror="this.onerror=null;this.alt='';this.src='${imageFallback}';this.className='max-w-full max-h-full object-contain pointer-events-none';"
             class="specs-carousel-img"
             id="modalCarouselImg"
           >
@@ -236,7 +236,7 @@ function renderSpecsModalContent(product) {
               data-img-src="${getImageUrl(img, 400) || img}"
               aria-label="View thumbnail ${idx + 1}"
             >
-              <img src="${getImageUrl(img, 100) || img}" alt="Thumb ${idx + 1}" onerror="this.onerror=null;this.src='${imageFallback}';">
+              <img src="${getImageUrl(img, 100) || img}" alt="Thumb ${idx + 1}" onerror="this.onerror=null;this.alt='';this.src='${imageFallback}';this.className='max-w-full max-h-full object-contain pointer-events-none';">
             </button>
           `).join("")}
         </div>
@@ -247,7 +247,7 @@ function renderSpecsModalContent(product) {
         <img
           src="${getImageUrl(firstImage, 360) || firstImage}"
           alt="${escapeHtml(product.name)}"
-          onerror="this.onerror=null;this.src='${imageFallback}';"
+          onerror="this.onerror=null;this.alt='';this.src='${imageFallback}';this.className='max-w-full max-h-full object-contain pointer-events-none';"
           class="specs-image"
         >
       </div>
@@ -326,9 +326,11 @@ function attachCarouselImageFallback(root) {
     const img = event.target;
     if (!(img instanceof HTMLImageElement) || img.dataset.fallbackApplied) return;
     img.dataset.fallbackApplied = "true";
+    img.alt = "";
     const brand = img.dataset.brand || "";
     const category = img.dataset.category || "";
     img.src = getCarouselFallbackSvg(brand, category);
+    img.className = "max-w-full max-h-full object-contain pointer-events-none";
   }, true);
 }
 function renderImageCarouselHtml(product, activeIdx = 0) {
@@ -744,7 +746,7 @@ class MatrixApp {
                   src="${imageUrl}"
                   alt="${this.escapeHtml(product.name)}"
                   loading="lazy"
-                  onerror="this.onerror=null;this.src='${imageFallback}';"
+                  onerror="this.onerror=null;this.alt='';this.src='${imageFallback}';this.className='max-w-full max-h-full object-contain pointer-events-none';"
                   class="product-image"
                 >
               </div>
@@ -1288,7 +1290,7 @@ class MatrixApp {
           <img
             src="${getImageUrl(product.imageUrl, 200)}"
             alt="${this.escapeHtml(product.name)}"
-            onerror="this.onerror=null;this.src='${imageFallback}';"
+            onerror="this.onerror=null;this.alt='';this.src='${imageFallback}';this.className='max-w-full max-h-full object-contain pointer-events-none';"
           >
         </div>
         <div class="modal-product-info">
