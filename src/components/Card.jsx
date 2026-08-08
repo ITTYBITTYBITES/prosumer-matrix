@@ -2,7 +2,6 @@
 // PRODUCT CARD COMPONENT
 // ============================================================================
 
-import { buildProductLink } from '../utils/linkBuilder.js';
 import { formatCurrency, formatSpecKey, formatSpecValue } from '../utils/formatUtils.js';
 import { renderImageCarouselHtml } from './ImageCarousel.jsx';
 
@@ -14,7 +13,6 @@ export function Card({ product, onSelectProduct } = {}) {
 
 export function renderCardHtml(product) {
   if (!product) return '';
-  const productLink = buildProductLink(product);
   const carouselHtml = renderImageCarouselHtml(product, 0);
 
   return `
@@ -57,15 +55,15 @@ export function renderCardHtml(product) {
               <path d="M12 5v14M5 12l7 7 7-7"/>
             </svg>
           </button>
-          <a
-            href="${productLink}"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
             class="btn-buy mobile-card-cta whitespace-nowrap"
-            aria-label="View ${product.name} in a new tab"
+            data-action="view-item"
+            data-id="${product.id}"
+            aria-label="View ${product.name} item details"
           >
             View Item →
-          </a>
+          </button>
         </div>
       </div>
     </div>

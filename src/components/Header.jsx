@@ -34,9 +34,6 @@ export function renderHeaderHtml(products = []) {
           </div>
         </div>
       </div>
-      <div class="matrix-header-disclosure">
-        We may earn an affiliate commission from merchant links on this site at no extra cost to you.
-      </div>
     </header>
   `;
 }
